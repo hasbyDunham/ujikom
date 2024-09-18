@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+    return view('visimisi');
 });
 
 Auth::routes(
@@ -20,4 +21,28 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::resource('user', UserController::class);
     Route::resource('home', HomeController::class);
     Route::resource('pengumuman', PengumumanController::class);
+});
+
+Route::get('/visimisi', function () {
+    return view('visimisi');
+});
+
+Route::get('/sambutandekan', function () {
+    return view('sambutandekan');
+});
+Route::get('/sejarah', function () {
+    return view('sejarah');
+});
+Route::get('/datadosen', function () {
+    return view('datadosen');
+});
+Route::get('/pimpinan', function () {
+    return view('pimpinan');
+});
+Route::get('/berita', function () {
+    return view('berita');
+});
+
+Route::get('/pengumuman', function () {
+    return view('pengumuman');
 });
