@@ -162,10 +162,10 @@
         <div class="container py-5">
             <div class="office pt-5">
                 <div class="section-title text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
-                    <h3 class="display-6 mb-4">Pengumuman <br> UIN Sunan Gunung Djati Bandung</h3>
+                    <h3 class="mb-4"><b>Pengumuman <br> UIN Sunan Gunung Djati Bandung</b></h3>
                 </div>
 
-                <div class="row g-4 justify-content-center">
+                <div class="row g-4 mb-5 justify-content-center">
                     @foreach ($pengumuman as $item)
                         <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
                             <div class="office-item p-4">
@@ -182,7 +182,10 @@
                         </div>
                     @endforeach
                 </div>
-
+                <div class="col-12 text-end">
+                    <a class="btn btn-success border-success rounded-pill py-3 px-5 wow fadeInUp"
+                        data-wow-delay="0.10s" href="{{ url('pengumuman') }}">Selengkapnya</a>
+                </div>
             </div>
         </div>
     </div>
@@ -193,7 +196,7 @@
         <div class="container py-5">
             <div class="office pt-5">
                 <div class="section-title text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
-                    <h2 class="display-6 mb-4">Berita UIN Sunan Gunung Djati Bandung</h2>
+                    <h2 class="mb-4"><b>Berita UIN Sunan Gunung Djati Bandung</b></h2>
                 </div>
 
                 <div class="row g-4 justify-content-center">
@@ -213,7 +216,10 @@
                         </div>
                     @endforeach
                 </div>
-
+                <div class="col-12 text-end">
+                    <a class="btn btn-success border-success rounded-pill py-3 px-5 wow fadeInUp"
+                        data-wow-delay="0.10s" href="{{ url('berita') }}">Selengkapnya</a>
+                </div>
             </div>
         </div>
     </div>
