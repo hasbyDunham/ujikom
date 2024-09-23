@@ -6,9 +6,9 @@
         </a>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav py-0 ms-auto">
-                <a href="{{ url('/') }}" class="nav-item nav-link active">Beranda</a>
+                <a href="{{ url('/beranda') }}" class="nav-item nav-link" id="home-link">Beranda</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link" data-bs-toggle="dropdown"><span
+                    <a href="#" class="nav-link" id="profil-link" data-bs-toggle="dropdown"><span
                             class="dropdown-toggle">Profil</span></a>
                     <div class="dropdown-menu m-0">
                         <a href="{{ url('sambutandekan') }}" class="dropdown-item">Sambutan Dekan</a>
@@ -20,7 +20,7 @@
                     </div>
                 </div>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link" data-bs-toggle="dropdown"><span
+                    <a href="#" class="nav-link" id="jurusan-link" data-bs-toggle="dropdown"><span
                             class="dropdown-toggle">Jurusan</span></a>
                     <div class="dropdown-menu m-0">
                         <a href="feature.html" class="dropdown-item">-</a>
@@ -28,7 +28,7 @@
                     </div>
                 </div>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link" data-bs-toggle="dropdown"><span
+                    <a href="#" class="nav-link" id="journal-link" data-bs-toggle="dropdown"><span
                             class="dropdown-toggle">Journal</span></a>
                     <div class="dropdown-menu m-0">
                         <a href="feature.html" class="dropdown-item">-</a>
@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link" data-bs-toggle="dropdown"><span
+                    <a href="#" class="nav-link" id="informasi-link" data-bs-toggle="dropdown"><span
                             class="dropdown-toggle">Informasi</span></a>
                     <div class="dropdown-menu m-0">
                         <a href="{{ url('berita') }}" class="dropdown-item">Berita</a>
@@ -44,7 +44,7 @@
                     </div>
                 </div>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link" data-bs-toggle="dropdown"><span
+                    <a href="#" class="nav-link" id="layanan-link" data-bs-toggle="dropdown"><span
                             class="dropdown-toggle">Layanan</span></a>
                     <div class="dropdown-menu m-0">
                         <a href="feature.html" class="dropdown-item">-</a>

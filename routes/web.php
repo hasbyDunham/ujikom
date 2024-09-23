@@ -3,12 +3,10 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\UserController;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
+Route::get('/beranda', function () {
     return view('welcome');
-    return view('visimisi');
 });
 
 Auth::routes(
