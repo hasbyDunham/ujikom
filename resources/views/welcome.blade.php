@@ -175,7 +175,7 @@
                                 </div>
                                 <div class="office-content d-flex flex-column">
                                     <h4 class="mb-2">{{ $item->judul_pengumuman }}</h4>
-                                    <p class="mb-0 fs-">{{ $item->deskripsi_pengumuman }}</p>
+                                    <p class="mb-0 fs-">{!! $item->deskripsi_pengumuman !!}</p>
                                     <a href="#" class="text-muted mb-2">Selengkapnya</a>
                                 </div>
                             </div>
@@ -209,7 +209,7 @@
                                 </div>
                                 <div class="office-content d-flex flex-column">
                                     <h4 class="mb-2">{{ $item->judul_pengumuman }}</h4>
-                                    <p class="mb-0 fs-">{{ $item->deskripsi_pengumuman }}</p>
+                                    <p class="mb-0 fs-">{!! $item->deskripsi_pengumuman !!}</p>
                                     <a href="#" class="text-muted mb-2">Selengkapnya</a>
                                 </div>
                             </div>
