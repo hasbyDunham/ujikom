@@ -1,8 +1,6 @@
 @extends('layouts.backend')
 @section('content')
     <div class="container-xxl flex-grow-1 container-p-y">
-        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Forms</span></h4>
-
         <!-- Basic Layout & Basic with Icons -->
         <div class="row">
             <!-- Basic Layout -->
@@ -28,7 +26,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>
+                            </div>  
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label" for="basic-default-name">Deskripsi</label>
                                 <div class="col-sm-10">
@@ -56,9 +54,9 @@
                                 @enderror
                             </div>
 
-                            <div class="row justify-content-end">
+                            <div class="row float-end">
                                 <div class="col-sm-10">
-                                    <button type="submit" class="btn btn-primary">Send</button>
+                                    <button type="submit" class="btn btn-primary">Kirim</button>
                                 </div>
                             </div>
                         </form>

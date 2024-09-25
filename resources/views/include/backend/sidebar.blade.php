@@ -1,11 +1,8 @@
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
-    <div class="app-brand demo">
-
+    <div class="app-brand demo mt-3 mb-2">
+        <span class="app-brand-text demo menu-text fw-bolder ms-5">
+            <img src="{{ asset('backend/assets/img/logo doang.png') }}" width="68" height="68">
         </span>
-        <span class="app-brand-text demo menu-text fw-bolder ms-2"><img
-                src="{{ asset('backend/assets/img/logo doang.png') }}" width="68" height="68"></span>
-        </a>
-
         <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
             <i class="bx bx-chevron-left bx-sm align-middle"></i>
         </a>
@@ -25,6 +22,12 @@
             <a href="{{ url('admin/pengumuman') }}" class="menu-link">
                 <i class="menu-icon bi bi-megaphone"></i></i>
                 <div data-i18n="Analytics">Pengumuman</div>
+            </a>
+        </li>
+        <li class="menu-item ">
+            <a href="{{ url('admin/berita') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-layout"></i>
+                <div data-i18n="Analytics">Berita</div>
             </a>
         </li>
         <li class="menu-item ">

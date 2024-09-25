@@ -7,6 +7,8 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ asset('frontend/img/logo doang.png') }}" />
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

@@ -1,8 +1,6 @@
 @extends('layouts.backend')
 @section('content')
     <div class="container-xxl flex-grow-1 container-p-y">
-        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Forms/</span> Horizontal Layouts</h4>
-
         <!-- Basic Layout & Basic with Icons -->
         <div class="row">
             <!-- Basic Layout -->
@@ -61,9 +59,9 @@
                                     </span>
                                 @enderror
                             </div>
-                            <div class="row justify-content-end">
+                            <div class="row float-end">
                                 <div class="col-sm-10">
-                                    <button type="submit" class="btn btn-primary">Send</button>
+                                    <button type="submit" class="btn btn-primary">Kirim</button>
                                 </div>
                             </div>
                         </form>
