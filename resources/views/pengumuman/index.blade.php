@@ -52,7 +52,7 @@
                                                         @method('DELETE')
                                                         @csrf
                                                         <button type="submit" class="dropdown-item"
-                                                            onclick="return confirm('Are you sure you want to delete this item?')">Delete</button>
+                                                            onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Tersebut?')">Delete</button>
                                                     </form>
                                                 </li>
                                             </ul>

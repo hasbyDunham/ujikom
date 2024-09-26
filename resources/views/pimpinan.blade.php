@@ -46,7 +46,7 @@
                     <img src="{{ asset('frontend/img/dekan-iwan (1).png') }}" class="img-fluid" alt="Gambar 1"
                         style="max-width: 80%;">
                     <div>
-                        <h4 style="color: black; margin-top: 10px;">Dr. Ecep Ismail, S.Ag., M.Ag.</h4>
+                        <h4 style="color: black; margin-top: 10px;">Dr. Iwan Setiawan, S.Ag., M.Pd., M.E.Sy.</h4>
                         <h4 style="color: orange;">Wakil Dekan I</h4>
                     </div>
                 </div>
@@ -62,7 +62,7 @@
                     <img src="{{ asset('frontend/img/dekan-kadar.png') }}" class="img-fluid" alt="Gambar 4"
                         style="max-width: 80%;">
                     <div>
-                        <h4 style="color: black; margin-top: 10px;">--</h4>
+                        <h4 style="color: black; margin-top: 10px;">Dr. H. Kadar Nurjaman, S.E., M.M</h4>
                         <h4 style="color: orange;">Wakil Dekan III</h4>
                     </div>
                 </div>

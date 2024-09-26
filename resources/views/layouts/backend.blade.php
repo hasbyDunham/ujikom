@@ -66,6 +66,9 @@
     {{-- ckeditor --}}
     <link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/43.1.0/ckeditor5.css" />
 
+    {{-- toast --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
 
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
@@ -90,6 +93,7 @@
           <div class="content-wrapper">
             <!-- Content -->
             @yield('content')
+
             <!-- / Content -->
 
             <!-- Footer -->
@@ -128,6 +132,13 @@
     <!-- Page JS -->
     <script src="{{ asset('backend/assets/js/dashboards-analytics.js') }}"></script>
 
+    {{-- toastr --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
+        integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    {{-- @include('sweetalert::alert') --}}
+
 
     <script src="https://cdn.ckeditor.com/ckeditor5/43.1.0/ckeditor5.umd.js"></script>
     <script>
@@ -155,9 +166,10 @@
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
   </body>
+
+  <script>
+      @if (Session::has('success'))
+          toastr.success("{{ Session::get('success') }}")
+      @endif
+  </script>
 </html>
-{{-- <script>
-    // Replace the <textarea id="editor1"> with a CKEditor 4
-    // instance, using default configuration.
-    CKEDITOR.replace( 'editor1' );
-</script> --}}

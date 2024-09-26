@@ -93,7 +93,7 @@ class PengumumanController extends Controller
 
         $pengumuman->save();
         return redirect()->route('pengumuman.index')
-        ->with('success','data berhasil ditedit');
+        ->with('success','data berhasil diperbarui');
     }
 
     /**

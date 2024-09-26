@@ -19,15 +19,15 @@
             </a>
         </li>
         <li class="menu-item ">
-            <a href="{{ url('admin/pengumuman') }}" class="menu-link">
-                <i class="menu-icon bi bi-megaphone"></i></i>
-                <div data-i18n="Analytics">Pengumuman</div>
-            </a>
-        </li>
-        <li class="menu-item ">
             <a href="{{ url('admin/berita') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-layout"></i>
                 <div data-i18n="Analytics">Berita</div>
+            </a>
+        </li>
+        <li class="menu-item ">
+            <a href="{{ url('admin/pengumuman') }}" class="menu-link">
+                <i class="menu-icon bi bi-megaphone"></i></i>
+                <div data-i18n="Analytics">Pengumuman</div>
             </a>
         </li>
         <li class="menu-item ">
