@@ -93,7 +93,7 @@
 
     <!-- Training Start -->
     <div class="container-fluid py-5">
-        <div class="container py-5">
+        <div class="container">
             <div class="section-title text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
                 <h1 class="display-6 mb-4">Pimpinan Fakultas</h1>
             </div>
@@ -158,9 +158,9 @@
     <!-- Training End -->
 
     <!-- Features Start -->
-    <div class="container-fluid contact overflow-hidden pb-5">
+    <div class="container-fluid contact overflow-hidden">
         <div class="container py-5">
-            <div class="office pt-5">
+            <div class="office">
                 <div class="section-title text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
                     <h3 class="mb-4"><b>Pengumuman <br> UIN Sunan Gunung Djati Bandung</b></h3>
                 </div>
@@ -171,11 +171,11 @@
                             <div class="office-item p-4">
                                 <div class="office-img mb-4">
                                     <img src="{{ asset('/images/pengumuman/' . $item->foto) }}"
-                                        class="img-fluid w-100 rounded" alt="">
+                                        class="img-fluid w-100" alt="">
                                 </div>
                                 <div class="office-content d-flex flex-column">
                                     <h4 class="mb-2">{{ $item->judul_pengumuman }}</h4>
-                                    <p class="mb-0 fs-">{!! $item->deskripsi_pengumuman !!}</p>
+                                    <p>{!! $item->deskripsi_pengumuman !!}</p>
                                     <a href="#" class="text-muted mb-2">Selengkapnya</a>
                                 </div>
                             </div>
@@ -192,33 +192,46 @@
     <!-- Features End -->
 
     <!-- Contact Start -->
-    <div class="container-fluid contact overflow-hidden pb-5">
+    <div class="container-fluid about py-5">
         <div class="container py-5">
-            <div class="office pt-5">
-                <div class="section-title text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
-                    <h2 class="mb-4"><b>Berita UIN Sunan Gunung Djati Bandung</b></h2>
+            <div class="row g-5">
+                <div class="wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="wow fadeInUp" data-wow-delay="0.1s">
+                    </div>
                 </div>
-
-                <div class="row g-4 justify-content-center">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="d-flex align-items-start">
+                        <h3 class="mb-4"><b>Berita Fakultas</b></h3>
+                    </div>
                     @foreach ($pengumuman as $item)
-                        <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
-                            <div class="office-item p-4">
-                                <div class="office-img mb-4">
-                                    <img src="{{ asset('/images/pengumuman/' . $item->foto) }}"
-                                        class="img-fluid w-100 rounded" alt="">
-                                </div>
-                                <div class="office-content d-flex flex-column">
-                                    <h4 class="mb-2">{{ $item->judul_pengumuman }}</h4>
-                                    <p class="mb-0 fs-">{!! $item->deskripsi_pengumuman !!}</p>
-                                    <a href="#" class="text-muted mb-2">Selengkapnya</a>
-                                </div>
+                        <div class="d-flex align-items-start">
+                            <div class="about-img">
+                                <img src="{{ asset('/images/pengumuman/' . $item->foto) }}"
+                                    class="img-fluid rounded w-50 h-50" alt="Image">
+                            </div>
+                            <div class="me-5">
+                                <h4><b>{{ $item->judul_pengumuman }}</b></h4>
                             </div>
                         </div>
+                        <hr class="w-100">
                     @endforeach
                 </div>
-                <div class="col-12 text-end">
-                    <a class="btn btn-success border-success rounded-pill py-3 px-5 wow fadeInUp"
-                        data-wow-delay="0.10s" href="{{ url('berita') }}">Selengkapnya</a>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="d-flex align-items-end">
+                        <h3 class="mb-4"><b>Berita UIN</b></h3>
+                    </div>
+                    @foreach ($pengumuman as $item)
+                        <div class="d-flex align-items-start">
+                            <div class="about-img">
+                                <img src="{{ asset('/images/pengumuman/' . $item->foto) }}"
+                                    class="img-fluid rounded w-50 h-50" alt="Image">
+                            </div>
+                            <div class="me-5">
+                                <h4><b>{{ $item->judul_pengumuman }}</b></h4>
+                            </div>
+                        </div>
+                        <hr class="w-100">
+                    @endforeach
                 </div>
             </div>
         </div>
