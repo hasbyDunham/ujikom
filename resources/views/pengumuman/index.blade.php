@@ -5,8 +5,8 @@
         <div class="container-xxl flex-grow-1 container-p-y">
             <!-- Basic Bootstrap Table -->
             <div class="card">
-                <h5 class="card-header">Data Pengumuman</h5>
-                <div class="card-header">
+                <div class="card-header d-flex align-items-center justify-content-between">
+                    <h5 class="mb-0">Data Pengumuman</h5>
                     <a href="{{ route('pengumuman.create') }}" class="btn btn-sm btn-primary" style="float: right">Tambah</a>
                 </div>
                 <div class="table-responsive text-nowrap">

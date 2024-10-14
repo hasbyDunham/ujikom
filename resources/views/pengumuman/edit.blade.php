@@ -45,19 +45,11 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="mb-2">
-                                <label for="">Image</label>
-                                @if ($pengumuman->foto)
-                                    <p><img src="{{ asset('image/pengumuman/' . $pengumuman->foto) }}" alt="Foto"
-                                            width="100px"></p>
-                                @endif
-                                <input type="file" name="foto" id="foto"
-                                    class="form-control @error('foto') is-invalid @enderror">
-                                @error('foto')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label" for="basic-default-name">Image</label>
+                                <img src="{{ asset('images/pengumuman/' . $pengumuman->foto) }}"
+                                    style="width: 200px;height: 100px;" class="mb-3">
+                                <input type="file" class="form-control" name="foto">
                             </div>
                             <div class="row float-end">
                                 <div class="col-sm-10">

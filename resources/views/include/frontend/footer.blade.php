@@ -15,7 +15,7 @@
                             Jalan Cimencrang, Panyileukan, Cimencrang, Gedebage, Kota Bandung, Jawa Barat 40292</p>
                     </div>
                     <h4 class="text-light text-center mb-1">Sosial Media</h4>
-                    <div class="d-flex align-items-center">
+                    <div class="d-flex justify-content-center">
                         <a class="btn mx-2 fs-5" href="https://www.facebook.com/uinsgdofficial/"><i
                                 class="fab fa-facebook-f"></i></a>
                         <a class="btn mx-2 fs-5" href="https://x.com/uinsgd_official"><i class="fab fa-twitter"></i></a>

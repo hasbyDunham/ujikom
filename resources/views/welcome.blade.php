@@ -8,6 +8,9 @@
     <meta content="" name="keywords">
     <meta content="" name="description">
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ asset('backend/assets/img/logo doang.png') }}" />
+
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -67,8 +70,8 @@
     <!-- Carousel End -->
 
     <!-- About Start -->
-    <div class="container-fluid about bg-light py-5 mb-0 mt-0">
-        <div class="container py-5">
+    <div class="container-fluid about py-4 mb-0 mt-0">
+        <div class="container py-4">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
                     <div class="about-img pb-5 ps-5">
@@ -91,8 +94,8 @@
     <!-- About End -->
 
 
-    <!-- Training Start -->
-    <div class="container-fluid py-5">
+    <!-- Pimpinan Start -->
+    <div class="container-fluid py-3">
         <div class="container">
             <div class="section-title text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
                 <h1 class="display-6 mb-4">Pimpinan Fakultas</h1>
@@ -155,18 +158,17 @@
             </div>
         </div>
     </div>
-    <!-- Training End -->
+    <!-- Pimpinan End -->
 
-    <!-- Features Start -->
+    <!-- Pengumuman Start -->
     <div class="container-fluid contact overflow-hidden">
-        <div class="container py-5">
+        <div class="container py-3">
             <div class="office">
                 <div class="section-title text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
                     <h3 class="mb-4"><b>Pengumuman <br> UIN Sunan Gunung Djati Bandung</b></h3>
                 </div>
-
                 <div class="row g-4 mb-5 justify-content-center">
-                    @foreach ($pengumuman as $item)
+                    @foreach ($pengumuman->sortByDesc('created_at')->take(4) as $item)
                         <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
                             <div class="office-item p-4">
                                 <div class="office-img mb-4">
@@ -189,44 +191,40 @@
             </div>
         </div>
     </div>
-    <!-- Features End -->
+    <!-- Pengumuman End -->
 
-    <!-- Contact Start -->
-    <div class="container-fluid about py-5">
-        <div class="container py-5">
+    <!-- Berita Start -->
+    <div class="container-fluid about py-3">
+        <div class="container py-3">
             <div class="row g-5">
-                <div class="wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="wow fadeInUp" data-wow-delay="0.1s">
-                    </div>
-                </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
                     <div class="d-flex align-items-start">
                         <h3 class="mb-4"><b>Berita Fakultas</b></h3>
                     </div>
-                    @foreach ($pengumuman as $item)
+                    @foreach ($pengumuman->sortByDesc('created_at')->take(4) as $item)
                         <div class="d-flex align-items-start">
                             <div class="about-img">
-                                <img src="{{ asset('/images/pengumuman/' . $item->foto) }}"
-                                    class="img-fluid rounded w-50 h-50" alt="Image">
+                                <img src="{{ asset('/images/pengumuman/' . $item->foto) }}" class="img-fluid rounded"
+                                    alt="Image" style="width: 150px; height: 100px">
                             </div>
-                            <div class="me-5">
+                            <div class="ms-4">
                                 <h4><b>{{ $item->judul_pengumuman }}</b></h4>
                             </div>
                         </div>
                         <hr class="w-100">
                     @endforeach
                 </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.4s">
                     <div class="d-flex align-items-end">
                         <h3 class="mb-4"><b>Berita UIN</b></h3>
                     </div>
-                    @foreach ($pengumuman as $item)
+                    @foreach ($pengumuman->sortByDesc('created_at')->take(4) as $item)
                         <div class="d-flex align-items-start">
                             <div class="about-img">
-                                <img src="{{ asset('/images/pengumuman/' . $item->foto) }}"
-                                    class="img-fluid rounded w-50 h-50" alt="Image">
+                                <img src="{{ asset('/images/pengumuman/' . $item->foto) }}" class="img-fluid rounded"
+                                    alt="Image" style="width: 150px; height: 100px">
                             </div>
-                            <div class="me-5">
+                            <div class="ms-4">
                                 <h4><b>{{ $item->judul_pengumuman }}</b></h4>
                             </div>
                         </div>
@@ -236,7 +234,7 @@
             </div>
         </div>
     </div>
-    <!-- Contact End -->
+    <!-- Berita End -->
 
     <!-- Footer Start -->
     @include('include.frontend.footer')
