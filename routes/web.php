@@ -46,3 +46,7 @@ Route::get('/berita', function () {
 Route::get('/pengumuman', function () {
     return view('pengumuman');
 });
+
+Route::get('/show', function () {
+    return view('show');
+});
