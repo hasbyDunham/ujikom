@@ -146,3 +146,10 @@
         </ul>
     </nav>
 @endsection
+
+@push('script')
+    <script>
+        var navbarColor = {!! json_encode(env('NAVBAR_COLOR', 'white')) !!};
+        var footerColor = {!! json_encode(env('FOOTER_COLOR', 'black')) !!};
+    </script>
+@endpush

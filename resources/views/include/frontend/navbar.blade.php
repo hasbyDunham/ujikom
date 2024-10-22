@@ -1,5 +1,5 @@
 <div class="container-fluid nav-bar p-0">
-    <nav class="navbar navbar-expand-lg navbar-light bg-white px-0 px-lg-5 py-0 py-lg-0 ms-auto">
+    <nav class="navbar navbar-expand-lg navbar-light px-0 px-lg-5 py-0 py-lg-0 ms-auto">
         <a href="" class="navbar-brand p-0">
             <h1 class="display-5 text-success mr-5"><img src="{{ asset('frontend/img/UIN-SGD.png') }}" class="img-fluid"
                     alt=""></h1>

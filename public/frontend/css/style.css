@@ -285,8 +285,8 @@
 }
 
 @media (min-width: 991.98px) {
-    .sticky-top .navbar-light {
-        background: var(--bs-light) !important;
+    .sticky-top .navbar-light .navbar {
+        background-color: null;
     }
 
     /*** Top and Bottom borders go out ***/
@@ -892,7 +892,7 @@
 
 /*** Footer Start ***/
 .footer {
-    background: rgb(27, 31, 28);
+    background-color: rgb(27, 31, 28);
 }
 
 .footer .footer-item a {

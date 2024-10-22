@@ -112,5 +112,11 @@
     document.getElementById('informasi-link').className += currentPage.includes("/berita") ? ' active' : '';
     document.getElementById('informasi-link').className += currentPage.includes("/pengumuman") ? ' active' : '';
 
+    $(document).ready(function () {
+        // Ubah warna navbar
+        $('.navbar').css('background-color', navbarColor);
+        // Ubah warna footer
+        $('.footer').css('background-color', footerColor);
+    });
 })(jQuery);
 
