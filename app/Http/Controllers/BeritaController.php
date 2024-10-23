@@ -8,14 +8,41 @@ use Illuminate\Support\Facades\Http;
 
 class BeritaController extends Controller
 {
+    public function getBeritaById(Request $request)
+    {
+        //     // \Log::info('ID yang diterima: ' . $id);
+        // dd($request->id);
+        $response = Http::get('https://uinsgd.ac.id/wp-json/wp/v2/posts/' . $request->id);
+        // dd($response);
+        //$berita = Berita::findOrFail($request->id);
+        $berita = $response->json();
+        return view('detail', ['berita' => $berita]);
+    }
 
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $response = Http::get('https://uinsgd.ac.id/wp-json/wp/v2/posts');
-        $berita = $response->json(); // Mengambil data sebagai array
+        // $response = Http::get('https://uinsgd.ac.id/wp-json/wp/v2/posts');
+        // $plainText = strip_tags($response);
+
+        // return view('berita.index', [ "data" => $response->collect(), $plainText]);
+        // $berita = $response->json(); // Mengambil data sebagai array
+        // return view('berita.index', compact('berita'));
+        //     $client = new Client();
+        //     $url = "https://uinsgd.ac.id/wp-json/wp/v2/posts";
+        //     $response = $client->request('GET', $url);
+        //     $content = $response->getBody()->getContents();
+        //     $contentArray = json_decode($content, true);
+        //     $data = $contentArray['data'];
+        //     if (is_array($contentArray)) {
+        //     return view('berita.index', ['data' => $contentArray]); // Langsung kirim $contentArray
+        // } else {
+        //     // Tangani error jika tidak sesuai dengan yang diharapkan
+        //     return view('berita.index', ['data' => []]); // Atau tampilkan pesan error
+        // }
+        $berita = Berita::latest()->get();
         return view('berita.index', compact('berita'));
     }
 
@@ -34,25 +61,25 @@ class BeritaController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'judul_berita'=> 'required',
-            'deskripsi'=> 'required',
-            'foto'=> 'required|max:2080|mimes:png,jpg',
+            'judul_berita' => 'required',
+            'deskripsi' => 'required',
+            'foto' => 'required|max:2080|mimes:png,jpg',
         ]);
 
         $berita = new Berita();
         $berita->judul_berita = $request->judul_berita;
         $berita->deskripsi = $request->deskripsi;
 
-        if($request->hasFile('foto')){
+        if ($request->hasFile('foto')) {
             $img = $request->file('foto');
             $name = rand(1000, 9999) . $img->getClientOriginalName();
-            $img ->move('images/berita/', $name);
+            $img->move('images/berita/', $name);
             $berita->foto = $name;
         }
 
         $berita->save();
         return redirect()->route('berita.index')
-        ->with('success','data berhasil ditambahkan');
+            ->with('success', 'data berhasil ditambahkan');
     }
 
     /**
@@ -78,25 +105,25 @@ class BeritaController extends Controller
     public function update(Request $request, $id)
     {
         $validated = $request->validate([
-            'judul_berita'=> 'required',
-            'deskripsi'=> 'required',
+            'judul_berita' => 'required',
+            'deskripsi' => 'required',
         ]);
 
         $berita = Berita::FindOrFail($id);
         $berita->judul_berita = $request->judul_berita;
         $berita->deskripsi = $request->deskripsi;
 
-        if($request->hasFile('foto')){
+        if ($request->hasFile('foto')) {
             $berita->deleteImage();
             $img = $request->file('foto');
             $name = rand(1000, 9999) . $img->getClientOriginalName();
-            $img ->move('images/berita/', $name);
+            $img->move('images/berita/', $name);
             $berita->foto = $name;
         }
 
         $berita->save();
         return redirect()->route('berita.index')
-        ->with('success','data berhasil ditedit');
+            ->with('success', 'data berhasil ditedit');
     }
 
     /**

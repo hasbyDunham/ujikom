@@ -236,7 +236,7 @@
         transform: rotateX(-75deg);
         transform-origin: 0% 0%;
         border: 0;
-        border-radius: 10px;
+        border-radius: 3px;
         transition: .5s;
         opacity: 0;
     }
@@ -889,6 +889,11 @@
 
 /*** Contact End ***/
 
+.about-img {
+    max-width: 150px;
+    height: auto;
+    display: block;
+}
 
 /*** Footer Start ***/
 .footer {

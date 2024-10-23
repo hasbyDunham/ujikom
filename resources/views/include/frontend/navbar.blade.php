@@ -4,7 +4,7 @@
             <h1 class="display-5 text-success mr-5"><img src="{{ asset('frontend/img/UIN-SGD.png') }}" class="img-fluid"
                     alt=""></h1>
         </a>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="collapse navbar-collapse" id="navbarToggleExternalContent">
             <div class="navbar-nav py-0 ms-auto">
                 <a href="{{ url('/beranda') }}" class="nav-item nav-link" id="home-link">Beranda</a>
                 <div class="nav-item dropdown">
@@ -57,5 +57,10 @@
             <h1 class="display-5 text-success mr-5"><img src="{{ asset('frontend/img/ptipd.png') }}" class="img-fluid"
                     alt=""></h1>
         </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
     </nav>
 </div>

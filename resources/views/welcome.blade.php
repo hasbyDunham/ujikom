@@ -35,6 +35,25 @@
 </head>
 
 <body>
+    {{-- @php
+    $response = Http::get('https://uinsgd.ac.id/wp-json/wp/v2/posts');
+    $berita = $response->successful() ? $response->json() : [];
+    // $berita = \App\Models\Berita::orderBy('id', 'desc')->get();
+    // $berita = Session::get('berita');
+    // $berita = $response->json();
+    // dd($berita);
+    // dd($berita);
+    @endphp --}}
+    @php
+        $response = Http::get('https://uinsgd.ac.id/wp-json/wp/v2/posts');
+        $berita = $response->successful() ? $response->json() : [];
+        $berita = collect($berita); // Ubah array menjadi koleksi jika perlu
+        // $berita = \App\Models\Berita::orderBy('id', 'desc')->get();
+        // $berita = Session::get('berita');
+        // $berita = $response->json();
+        // <pre>{{ var_dump($berita) }}</pre>
+        // dd($berita);
+    @endphp
     @php
         $pengumuman = \App\Models\Pengumuman::orderBy('id', 'asc')->get();
     @endphp
@@ -74,7 +93,7 @@
         <div class="container py-4">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
-                    <div class="about-img pb-5 ps-5">
+                    <div class="pb-5 ps-5">
                         <img src="{{ asset('frontend/img/mahasiswa.jpeg') }}" class="img-fluid rounded w-100"
                             style="object-fit: cover;" alt="Image">
                     </div>
@@ -205,7 +224,7 @@
                         <div class="d-flex align-items-start">
                             <div class="about-img">
                                 <img src="{{ asset('/images/pengumuman/' . $item->foto) }}" class="img-fluid rounded"
-                                    alt="Image" style="width: 150px; height: 100px">
+                                    alt="Image">
                             </div>
                             <div class="ms-4">
                                 <h4><b>{{ $item->judul_pengumuman }}</b></h4>
@@ -218,14 +237,25 @@
                     <div class="d-flex align-items-end">
                         <h3 class="mb-4"><b>Berita UIN</b></h3>
                     </div>
-                    @foreach ($pengumuman->sortByDesc('created_at')->take(4) as $item)
-                        <div class="d-flex align-items-start">
+                    @foreach ($berita->sortByDesc('created_at')->take(4) as $item)
+                        <div class="d-flex align-items-start ">
                             <div class="about-img">
-                                <img src="{{ asset('/images/pengumuman/' . $item->foto) }}" class="img-fluid rounded"
-                                    alt="Image" style="width: 150px; height: 100px">
+                                @if (
+                                    !empty($item['yoast_head_json']['og_image']) &&
+                                        is_array($item['yoast_head_json']['og_image']) &&
+                                        isset($item['yoast_head_json']['og_image'][0]['url']))
+                                    <img src="{{ $item['yoast_head_json']['og_image'][0]['url'] }}"
+                                        class="img-fluid rounded" alt="Image">
+                                @else
+                                    <img src="{{ asset('default.png') }}" class="img-fluid w-100 rounded"
+                                        alt="Gambar berita">
+                                @endif
+
                             </div>
                             <div class="ms-4">
-                                <h4><b>{{ $item->judul_pengumuman }}</b></h4>
+                                <h5><b><a
+                                            href="berita/{{ $item['id'] }}">{{ $item['yoast_head_json']['title'] ?? 'No Title' }}</a></b>
+                                </h5>
                             </div>
                         </div>
                         <hr class="w-100">

@@ -3,7 +3,7 @@
         <div class="row g-5">
             <div class="col-md-6 col-lg-6 col-xl-3">
                 <div class="footer-item d-flex flex-column">
-                    <img src="{{ asset('frontend/img/UIN-SGD.png') }}" alt="">
+                    <img src="{{ asset('frontend/img/logo-uin.png') }}" alt="">
                     <h4 class="text-light text-center">Fakultas Ekonomi dan Bisnis Islam</h4>
                 </div>
             </div>

@@ -1,8 +1,8 @@
 <?php
 
+use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PengumumanController;
-use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -49,4 +49,11 @@ Route::get('/pengumuman', function () {
 
 Route::get('/show', function () {
     return view('show');
+});
+
+Route::get('berita/{id}', 'App\Http\Controllers\BeritaController@getBeritaById');
+// Route::get('berita{id}', [BeritaController::class, 'getBeritaById']);
+
+Route::get('detail', function () {
+    return view('detail');
 });
