@@ -61,7 +61,6 @@
     @include('include.frontend.navbar')
     <!-- Navbar & Hero End -->
 
-
     <!-- Carousel Start -->
     <div class="carousel-header">
         <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
@@ -227,7 +226,7 @@
                                     alt="Image">
                             </div>
                             <div class="ms-4">
-                                <h4><b>{{ $item->judul_pengumuman }}</b></h4>
+                                <h4><b><a href="{{ url('pengumuman') }}">{{ $item->judul_pengumuman }}</a></b></h4>
                             </div>
                         </div>
                         <hr class="w-100">
@@ -250,7 +249,6 @@
                                     <img src="{{ asset('default.png') }}" class="img-fluid w-100 rounded"
                                         alt="Gambar berita">
                                 @endif
-
                             </div>
                             <div class="ms-4">
                                 <h5><b><a

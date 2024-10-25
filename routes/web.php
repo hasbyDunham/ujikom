@@ -57,3 +57,10 @@ Route::get('berita/{id}', 'App\Http\Controllers\BeritaController@getBeritaById')
 Route::get('detail', function () {
     return view('detail');
 });
+
+Route::get('pengumuman/{id}', 'App\Http\Controllers\PengumumanController@getPengumumanById');
+// Route::get('berita{id}', [BeritaController::class, 'getBeritaById']);
+
+Route::get('detailP', function () {
+    return view('detailP');
+});

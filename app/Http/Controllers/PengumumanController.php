@@ -10,6 +10,16 @@ class PengumumanController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+    public function getPengumumanById(Request $request)
+    {
+        //     // \Log::info('ID yang diterima: ' . $id);
+        // dd($request->id);
+        // dd($response);
+        // $pengumuman = Pengumuman::find(1);
+        $pengumuman = Pengumuman::findOrFail($request->id);
+        return view('detailP', ['pengumuman' => $pengumuman]);
+    }
     public function index()
     {
         $pengumuman = Pengumuman::latest()->get();
@@ -31,25 +41,25 @@ class PengumumanController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'judul_pengumuman'=> 'required',
-            'deskripsi_pengumuman'=> 'required',
-            'foto'=> 'required|max:2080|mimes:png,jpg',
+            'judul_pengumuman' => 'required',
+            'deskripsi_pengumuman' => 'required',
+            'foto' => 'required|max:2080|mimes:png,jpg',
         ]);
 
         $pengumuman = new Pengumuman();
         $pengumuman->judul_pengumuman = $request->judul_pengumuman;
         $pengumuman->deskripsi_pengumuman = $request->deskripsi_pengumuman;
 
-        if($request->hasFile('foto')){
+        if ($request->hasFile('foto')) {
             $img = $request->file('foto');
             $name = rand(1000, 9999) . $img->getClientOriginalName();
-            $img ->move('images/pengumuman/', $name);
+            $img->move('images/pengumuman/', $name);
             $pengumuman->foto = $name;
         }
 
         $pengumuman->save();
         return redirect()->route('pengumuman.index')
-        ->with('success','data berhasil ditambahkan');
+            ->with('success', 'data berhasil ditambahkan');
     }
 
     /**
@@ -75,25 +85,25 @@ class PengumumanController extends Controller
     public function update(Request $request, $id)
     {
         $validated = $request->validate([
-            'judul_pengumuman'=> 'required',
-            'deskripsi_pengumuman'=> 'required',
+            'judul_pengumuman' => 'required',
+            'deskripsi_pengumuman' => 'required',
         ]);
 
         $pengumuman = Pengumuman::FindOrFail($id);
         $pengumuman->judul_pengumuman = $request->judul_pengumuman;
         $pengumuman->deskripsi_pengumuman = $request->deskripsi_pengumuman;
 
-        if($request->hasFile('foto')){
+        if ($request->hasFile('foto')) {
             $produk->deleteImage();
             $img = $request->file('foto');
             $name = rand(1000, 9999) . $img->getClientOriginalName();
-            $img ->move('images/pengumuman/', $name);
+            $img->move('images/pengumuman/', $name);
             $pengumuman->foto = $name;
         }
 
         $pengumuman->save();
         return redirect()->route('pengumuman.index')
-        ->with('success','data berhasil diperbarui');
+            ->with('success', 'data berhasil diperbarui');
     }
 
     /**

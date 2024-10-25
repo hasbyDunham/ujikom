@@ -25,30 +25,34 @@
     <!-- Carousel End -->
 
     <!-- Pengumuman Section Start -->
+    @php
+        $pengumuman = \App\Models\Pengumuman::orderBy('id', 'asc')->get();
+    @endphp
     <div class="container py-5">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="display-5 mb-5" style="color: orange;">Pengumuman</h2>
+                <h2 class="display-5 mb-5">Pengumuman</h2>
             </div>
         </div>
         <div class="row g-4">
             <!-- Card 1 -->
-            <div class="col-md-4 mb-5">
-                <div class="card shadow-sm border-0">
-                    <img src="{{ asset('frontend/img/berita1.jfif') }}" class="card-img-top custom-img" alt="Berita 1">
-                    <div class="card-body">
-                        <h5 class="card-title" style="color: orange;">
-                            <a href="#" class="text-warning" style="text-decoration: none;">Surat Edaran
-                                Terkait Pencegahan Penyebaran Virus Corona</a>
-                        </h5>
-                        <p class="card-text">SURAT EDARAN Nomor: B-352/Un.05/II.4/HM.01/03/2020 TENTANG KEBIJAKAN
-                            AKADEMIK DAN NON-AKADEMIK UIN SUNAN GUNUNG DJATI BANDUNG TERKAIT...
-                        </p>
+            @foreach ($pengumuman as $item)
+                <div class="col-md-4 mb-5">
+                    <div class="card shadow-sm border-0">
+                        <img src="{{ asset('/images/pengumuman/' . $item->foto) }}" class="card-img-top custom-img"
+                            alt="Pengumuman 1">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a href="pengumuman/{{ $item['id'] }}">{{ $item->judul_pengumuman }}</a>
+                            </h5>
+                            <p class="card-text">{!! $item->deskripsi_pengumuman !!}
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            @endforeach
             <!-- Card 2 -->
-            <div class="col-md-4 mb-5">
+            {{-- <div class="col-md-4 mb-5">
                 <div class="card shadow-sm border-0">
                     <img src="{{ asset('frontend/img/berita2.jfif') }}" class="card-img-top custom-img" alt="Berita 2">
                     <div class="card-body">
@@ -75,7 +79,7 @@
                         </p>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
     <!-- Berita Section End -->

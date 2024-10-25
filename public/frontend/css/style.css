@@ -413,26 +413,11 @@
 }
 
 
-@media (max-width: 768px) {
+/* Untuk layar dengan lebar maksimal 768px */
+@media only screen and (max-width: 768px) {
     .carousel-header {
-        height: 700px !important;
-    }
-
-    .carousel-header .carousel-control-prev .carousel-control-prev-icon,
-    .carousel-header .carousel-control-next .carousel-control-next-icon {
-        margin-top: 500px;
-    }
-
-    .carousel-header .carousel-control-prev .carousel-control-prev-icon {
-        margin-left: 0px;
-    }
-
-    .carousel-header .carousel-control-next .carousel-control-next-icon {
-        margin-right: 0px;
-    }
-
-    .carousel-header .carousel .carousel-indicators {
-        padding: 0;
+        width: 100%;
+        height: auto;
     }
 }
 
@@ -893,6 +878,7 @@
     max-width: 150px;
     height: auto;
     display: block;
+    object-fit: cover;
 }
 
 /*** Footer Start ***/
