@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>febi uin sgd</title>
+    <title id="title-fakultas">febi uin sgd</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -66,9 +66,10 @@
         <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner" role="listbox">
                 <div class="carousel-item active">
-                    <img src="{{ asset('frontend/img/uin2.jpg') }}" class="img-fluid" alt="Image">
+                    {{-- <img src="{{ asset('frontend/img/uin2.jpg') }}" class="img-fluid" alt="Image"> --}}
+                    <img src="{{ asset('frontend/img/hero-image.jpg') }}" class="img-fluid" alt="Image">
                     <div class="carousel-caption">
-                        <img src="{{ asset('frontend/img/DEKAN-FEBI2.png') }}" alt="image"
+                        {{-- <img src="{{ asset('frontend/img/DEKAN-FEBI2.png') }}" alt="image"
                             class="img-fluid display-5 wow fadeInUp" data-wow-delay="0.3s"
                             style="max-width: 40%; max-height: 100%; margin-left: 55%; margin-top: 10%">
                         <div class="text-start p-4" style="max-width: 50%; margin-right: 40%">
@@ -79,7 +80,7 @@
                                 Universitas Islam Negeri <br>
                                 Sunan Gunung Djati Bandung
                             </h3>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -289,6 +290,11 @@
     <script>
         var navbarColor = {!! json_encode(env('NAVBAR_COLOR', 'white')) !!};
         var footerColor = {!! json_encode(env('FOOTER_COLOR', 'black')) !!};
+    </script>
+
+    {{-- Mengatur document title menggunakan variabel dari Laravel --}}
+    <script>
+        document.title = @json(config('app.title'));
     </script>
 </body>
 

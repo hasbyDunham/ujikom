@@ -103,7 +103,7 @@
     var currentPage = window.location.pathname;
 
     // Buat ternary untuk menentukan tautan mana yang aktif
-    document.getElementById('home-link').className += currentPage.includes("/beranda") ? ' active' : '';
+    document.getElementById('home-link').className += (!currentPage || currentPage === "/") ? ' active' : '';
     document.getElementById('profil-link').className += currentPage.includes("/sambutandekan") ? ' active' : '';
     document.getElementById('profil-link').className += currentPage.includes("/sejarah") ? ' active' : '';
     document.getElementById('profil-link').className += currentPage.includes("/visimisi") ? ' active' : '';
@@ -118,5 +118,9 @@
         // Ubah warna footer
         $('.footer').css('background-color', footerColor);
     });
+
+    // Mengatur title menggunakan variabel environment dari Vite
+    // document.title = import.meta.env.VITE_APP_TITLE || "uinsgd";
+
 })(jQuery);
 

@@ -6,7 +6,7 @@
         </a>
         <div class="collapse navbar-collapse" id="navbarToggleExternalContent">
             <div class="navbar-nav py-0 ms-auto">
-                <a href="{{ url('/beranda') }}" class="nav-item nav-link" id="home-link">Beranda</a>
+                <a href="{{ url('/') }}" class="nav-item nav-link" id="home-link">Beranda</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link" id="profil-link" data-bs-toggle="dropdown"><span
                             class="dropdown-toggle">Profil</span></a>

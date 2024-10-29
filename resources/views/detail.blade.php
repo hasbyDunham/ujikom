@@ -104,4 +104,9 @@
         var navbarColor = {!! json_encode(env('NAVBAR_COLOR', 'white')) !!};
         var footerColor = {!! json_encode(env('FOOTER_COLOR', 'black')) !!};
     </script>
+
+    {{-- Mengatur document title menggunakan variabel dari Laravel --}}
+    <script>
+        document.title = @json(config('app.title'));
+    </script>
 @endpush

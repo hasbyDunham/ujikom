@@ -1,4 +1,7 @@
 @extends('layouts.frontend')
+@section('style')
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+@endsection
 @section('content')
     <!-- Carousel Start -->
     <div class="carousel-header">
@@ -26,9 +29,23 @@
 
     <!-- Berita Section Start -->
     @php
+        use Illuminate\Support\Facades\Http;
+        use Illuminate\Support\Collection;
+        use Illuminate\Pagination\LengthAwarePaginator;
+        use Illuminate\Pagination\Paginator;
         $response = Http::get('https://uinsgd.ac.id/wp-json/wp/v2/posts');
         $berita = $response->successful() ? $response->json() : [];
         $berita = collect($berita); // Ubah array menjadi koleksi jika perlu
+        // Konfigurasi pagination manual
+        $currentPage = Paginator::resolveCurrentPage('page');
+        $perPage = 6;
+        $paginatedBerita = new LengthAwarePaginator(
+            $berita->forPage($currentPage, $perPage),
+            $berita->count(),
+            $perPage,
+            $currentPage,
+            ['path' => Paginator::resolveCurrentPath()],
+        );
         // $berita = \App\Models\Berita::orderBy('id', 'desc')->get();
         // $berita = Session::get('berita');
         // $berita = $response->json();
@@ -43,9 +60,9 @@
         </div>
         <div class="row g-4">
             <!-- Card 1 -->
-            @foreach ($berita->sortByDesc('created_at')->take(6) as $item)
+            @foreach ($berita as $item)
                 <div class="col-md-4 mb-5">
-                    <div class="card shadow-sm border-0">
+                    <div class="card shadow-sm border-2">
                         @if (
                             !empty($item['yoast_head_json']['og_image']) &&
                                 is_array($item['yoast_head_json']['og_image']) &&
@@ -64,6 +81,9 @@
                     </div>
                 </div>
             @endforeach
+            <div class="d-flex justify-content-center">
+                {{ $paginatedBerita->links() }}
+            </div>
             {{-- <!-- Card 2 -->
             <div class="col-md-4 mb-5">
                 <div class="card shadow-sm border-0">
@@ -96,7 +116,7 @@
         </div>
     </div>
     <!-- Berita Section End -->
-    <nav aria-label="Page navigation example">
+    {{-- <nav aria-label="Page navigation example">
         <ul class="pagination justify-content-center mb-5">
             <li class="page-item">
                 <a class="page-link" href="#" aria-label="Previous">
@@ -114,12 +134,17 @@
                 </a>
             </li>
         </ul>
-    </nav>
+    </nav> --}}
 @endsection
 
 @push('script')
     <script>
         var navbarColor = {!! json_encode(env('NAVBAR_COLOR', 'white')) !!};
         var footerColor = {!! json_encode(env('FOOTER_COLOR', 'black')) !!};
+    </script>
+
+    {{-- Mengatur document title menggunakan variabel dari Laravel --}}
+    <script>
+        document.title = @json(config('app.title'));
     </script>
 @endpush

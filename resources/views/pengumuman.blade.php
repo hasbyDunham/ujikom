@@ -38,7 +38,7 @@
             <!-- Card 1 -->
             @foreach ($pengumuman as $item)
                 <div class="col-md-4 mb-5">
-                    <div class="card shadow-sm border-0">
+                    <div class="card shadow-sm border-2">
                         <img src="{{ asset('/images/pengumuman/' . $item->foto) }}" class="card-img-top custom-img"
                             alt="Pengumuman 1">
                         <div class="card-body">
@@ -88,5 +88,10 @@
     <script>
         var navbarColor = {!! json_encode(env('NAVBAR_COLOR', 'white')) !!};
         var footerColor = {!! json_encode(env('FOOTER_COLOR', 'black')) !!};
+    </script>
+
+    {{-- Mengatur document title menggunakan variabel dari Laravel --}}
+    <script>
+        document.title = @json(config('app.title'));
     </script>
 @endpush
