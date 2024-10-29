@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\BeritaFController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\UserController;
@@ -21,6 +22,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::resource('home', HomeController::class);
     Route::resource('pengumuman', PengumumanController::class);
     Route::resource('berita', BeritaController::class);
+    Route::resource('beritaF', BeritaFController::class);
 });
 
 Route::get('/visimisi', function () {
@@ -63,4 +65,15 @@ Route::get('pengumuman/{id}', 'App\Http\Controllers\PengumumanController@getPeng
 
 Route::get('detailP', function () {
     return view('detailP');
+});
+
+Route::get('/beritaF', function () {
+    return view('beritaF');
+});
+
+Route::get('beritaF/{id}', 'App\Http\Controllers\BeritaFController@getBeritaFById');
+// Route::get('berita{id}', [BeritaController::class, 'getBeritaById']);
+
+Route::get('/detailF', function () {
+    return view('detailF');
 });

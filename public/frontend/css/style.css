@@ -223,6 +223,32 @@
     transition: .5s;
 }
 
+.navbar-toggler.active .navbar-toggler-icon {
+    background-image: none;
+    /* Menghapus ikon default */
+    position: relative;
+}
+
+.navbar-toggler.active .navbar-toggler-icon::before,
+.navbar-toggler.active .navbar-toggler-icon::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+    top: 50%;
+    left: 0;
+    transform-origin: center;
+}
+
+.navbar-toggler.active .navbar-toggler-icon::before {
+    transform: rotate(45deg);
+}
+
+.navbar-toggler.active .navbar-toggler-icon::after {
+    transform: rotate(-45deg);
+}
+
 .sticky-top .navbar-light .navbar-brand img {
     max-height: 85px;
 }
@@ -392,15 +418,20 @@
 
 .carousel-header .carousel-inner .carousel-item img {
     position: absolute;
+    /* position: relative; */
     width: 100%;
-    height: 100%;
+    /* min-height: 100px; */
+    height: auto;
     object-fit: cover;
+
 }
 
 .carousel-header .carousel-inner .carousel-item .carousel-caption {
     position: absolute;
+    /* position: relative; */
     width: 100%;
     height: 100%;
+    /* height: auto; */
     top: 0;
     left: 0;
     display: flex;
@@ -412,11 +443,83 @@
 }
 
 
-/* Untuk layar dengan lebar maksimal 768px */
-@media only screen and (max-width: 768px) {
+@media (max-width: 768px) {
     .carousel-header {
+        height: 200px !important;
+    }
+
+    .carousel-header .carousel-inner .carousel-item .carousel-caption {
+        width: 100%;
+        height: 205px;
+        /* height: 199px; */
+        /* .display-1 {
+            font-size: 100px;
+            text-align: left;
+            max-width: 100%;
+            margin: auto;
+        }
+        .display-3 {
+            font-size: 1.0em;
+            text-align: center;
+            max-width: 100%;
+            margin: auto;
+        } */
+
+    }
+
+    /* .carousel-header .carousel-inner .carousel-item img {
         width: 100%;
         height: auto;
+    } */
+    .carousel-caption img {
+        width: 10%;
+        height: auto;
+        /* Kurangi lebar gambar untuk mobile */
+    }
+
+    .carousel-header .carousel-control-prev .carousel-control-prev-icon,
+    .carousel-header .carousel-control-next .carousel-control-next-icon {
+        margin-top: 500px;
+    }
+
+    .carousel-header .carousel-control-prev .carousel-control-prev-icon {
+        margin-left: 0px;
+    }
+
+    .carousel-header .carousel-control-next .carousel-control-next-icon {
+        margin-right: 0px;
+    }
+
+    .carousel-header .carousel .carousel-indicators {
+        padding: 0;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Untuk layar dengan lebar maksimum 768px (tablet dan mobile) */
+    .carousel-caption h1 {
+        font-size: 1.4rem !important;
+        /* Sesuaikan ukuran untuk mobile */
+    }
+
+    .carousel-caption h3 {
+        font-size: 1rem !important;
+        /* Sesuaikan ukuran untuk mobile */
+    }
+}
+
+@media (max-width: 576px) {
+
+    /* Untuk layar dengan lebar maksimum 576px (mobile kecil) */
+    .carousel-caption h1 {
+        font-size: 1.2rem !important;
+        /* Ukuran lebih kecil untuk mobile kecil */
+    }
+
+    .carousel-caption h3 {
+        font-size: 0.9rem !important;
+        /* Ukuran lebih kecil untuk mobile kecil */
     }
 }
 

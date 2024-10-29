@@ -19,9 +19,9 @@
             </a>
         </li>
         <li class="menu-item ">
-            <a href="{{ url('admin/berita') }}" class="menu-link">
+            <a href="{{ url('admin/beritaF') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Analytics">Berita</div>
+                <div data-i18n="Analytics">Berita Fakultas</div>
             </a>
         </li>
         <li class="menu-item ">

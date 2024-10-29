@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Berita;
+use App\Models\BeritaF;
 use App\Models\Pengumuman;
 use App\Models\User;
 
@@ -27,7 +27,7 @@ class HomeController extends Controller
     {
         $user = User::count('id');
         $pengumuman = Pengumuman::count('id');
-        $berita = Berita::count('id');
-        return view('home', compact('user', 'pengumuman', 'berita'));
+        $beritaF = BeritaF::count('id');
+        return view('home', compact('user', 'pengumuman', 'beritaF'));
     }
 }

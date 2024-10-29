@@ -56,6 +56,7 @@
     @endphp
     @php
         $pengumuman = \App\Models\Pengumuman::orderBy('id', 'asc')->get();
+        $beritaF = \App\Models\beritaF::orderBy('id', 'asc')->get();
     @endphp
     <!-- Navbar & Hero Start -->
     @include('include.frontend.navbar')
@@ -66,13 +67,16 @@
         <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner" role="listbox">
                 <div class="carousel-item active">
-                    {{-- <img src="{{ asset('frontend/img/uin2.jpg') }}" class="img-fluid" alt="Image"> --}}
+                    {{-- <img src="{{ asset('frontend/img/hero-image2.jpg') }}" class="img-fluid" alt="Image"> --}}
                     <img src="{{ asset('frontend/img/hero-image.jpg') }}" class="img-fluid" alt="Image">
                     <div class="carousel-caption">
                         {{-- <img src="{{ asset('frontend/img/DEKAN-FEBI2.png') }}" alt="image"
                             class="img-fluid display-5 wow fadeInUp" data-wow-delay="0.3s"
-                            style="max-width: 40%; max-height: 100%; margin-left: 55%; margin-top: 10%">
-                        <div class="text-start p-4" style="max-width: 50%; margin-right: 40%">
+                            style="max-width: 40%; max-height: 100%; margin-left: 55%; margin-top: 10%"> --}}
+                        {{-- <img src="{{ asset('frontend/img/DEKAN-FEBI2.png') }}" alt="image"
+                            class="img-fluid display-5 wow fadeInUp" data-wow-delay="0.3s"
+                            style="width: 100%; height: auto; object-fit: contain; margin-left: 55%; max-height: 100%;"> --}}
+                        {{-- <div class="text-start p-4" style="max-width: 50%; margin-right: 40%">
                             <h1 class="display-3 text-capitalize text-white mb-3 wow fadeInUp" data-wow-delay="0.3s">
                                 Fakultas Ekonomi dan Bisnis Islam</h1>
                             <h3 class="display-1 text-white text-capitalize mb-4 mb-md-5 fs-3 wow fadeInUp"
@@ -93,7 +97,7 @@
         <div class="container py-4">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
-                    <div class="pb-5 ps-5">
+                    <div class="pb-5">
                         <img src="{{ asset('frontend/img/mahasiswa.jpeg') }}" class="img-fluid rounded w-100"
                             style="object-fit: cover;" alt="Image">
                     </div>
@@ -220,14 +224,14 @@
                     <div class="d-flex align-items-start">
                         <h3 class="mb-4"><b>Berita Fakultas</b></h3>
                     </div>
-                    @foreach ($pengumuman->sortByDesc('created_at')->take(4) as $item)
+                    @foreach ($beritaF->sortByDesc('created_at')->take(4) as $item)
                         <div class="d-flex align-items-start">
                             <div class="about-img">
-                                <img src="{{ asset('/images/pengumuman/' . $item->foto) }}" class="img-fluid rounded"
+                                <img src="{{ asset('/images/beritaF/' . $item->foto) }}" class="img-fluid rounded"
                                     alt="Image">
                             </div>
                             <div class="ms-4">
-                                <h4><b><a href="{{ url('pengumuman') }}">{{ $item->judul_pengumuman }}</a></b></h4>
+                                <h4><b><a href="{{ url('beritaF') }}">{{ $item->judul_beritaF }}</a></b></h4>
                             </div>
                         </div>
                         <hr class="w-100">

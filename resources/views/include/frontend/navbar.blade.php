@@ -41,6 +41,7 @@
                     <div class="dropdown-menu m-0">
                         <a href="{{ url('berita') }}" class="dropdown-item">Berita</a>
                         <a href="{{ url('pengumuman') }}" class="dropdown-item">Pengumuman</a>
+                        <a href="{{ url('beritaF') }}" class="dropdown-item">Berita Fakultas</a>
                     </div>
                 </div>
                 <div class="nav-item dropdown">
@@ -59,7 +60,7 @@
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
-            aria-expanded="false" aria-label="Toggle navigation">
+            aria-expanded="false" aria-label="Toggle navigation" onclick="this.classList.toggle('active')">
             <span class="navbar-toggler-icon"></span>
         </button>
     </nav>

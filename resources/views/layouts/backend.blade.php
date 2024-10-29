@@ -152,7 +152,7 @@
         } = CKEDITOR;
 
         ClassicEditor
-            .create(document.querySelector('#deskripsi_pengumuman'), {
+            .create(document.querySelector('#deskripsi'), {
                 plugins: [Essentials, Bold, Italic, Font, Paragraph],
                 toolbar: [
                     'undo', 'redo', '|', 'bold', 'italic', '|',

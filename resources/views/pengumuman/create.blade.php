@@ -26,14 +26,14 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>  
+                            </div>
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label" for="basic-default-name">Deskripsi</label>
                                 <div class="col-sm-10">
                                     {{-- <textarea type="text"
                                     class="form-control @error('deskripsi_pengumuman') is-invalid @enderror"
                                     name="deskripsi_pengumuman" id="deskripsi"></textarea> --}}
-                                    <textarea name="deskripsi_pengumuman" id="deskripsi_pengumuman" cols="30" rows="10"></textarea>
+                                    <textarea name="deskripsi_pengumuman" id="deskripsi" cols="30" rows="10"></textarea>
                                     @error('deskripsi_pengumuman')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -67,7 +67,5 @@
         </div>
     </div>
 @endsection
-
-
 @push('scriptjs')
 @endpush
