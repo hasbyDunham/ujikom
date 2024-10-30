@@ -196,7 +196,7 @@
                             <div class="office-item p-4">
                                 <div class="office-img mb-4">
                                     <img src="{{ asset('/images/pengumuman/' . $item->foto) }}"
-                                        class="img-fluid w-100" alt="">
+                                        class="img-fluid w-100 custom-img" alt="">
                                 </div>
                                 <div class="office-content d-flex flex-column">
                                     <h4 class="mb-2">{{ $item->judul_pengumuman }}</h4>

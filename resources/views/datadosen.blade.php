@@ -5,19 +5,7 @@
         <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner" role="listbox">
                 <div class="carousel-item active">
-                    <img src="{{ asset('frontend/img/uin2.jpg') }}" class="img-fluid carousel-img" alt="Image">
-                    <div class="carousel-caption">
-                        <div class="text-start p-4" style="max-width: 50%; margin-right: 40%">
-                            <h3 class="display-1 text-light text-capitalize mb-4 mb-md-5 fs-3 wow fadeInUp"
-                                data-wow-delay="0.5s">
-                                Fakultas Ekonomi dan Bisnis Islam
-                            </h3>
-                            <h3 class="display-6 text-capitalize mb-3 wow fadeInUp" style="color: orange;"
-                                data-wow-delay="0.3s">
-                                Data Dosen
-                            </h3>
-                        </div>
-                    </div>
+                    <img src="{{ asset('frontend/img/data-dosen.png') }}" class="img-fluid carousel-img" alt="Image">
                 </div>
             </div>
         </div>

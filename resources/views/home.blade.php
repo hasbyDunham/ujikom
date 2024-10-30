@@ -63,7 +63,7 @@
                             </div>
                             <h4 class="mb-0">{{ $beritaF }}</h4>
                         </div>
-                        <p class="mt-3">Data Berita</p>
+                        <p class="mt-3">Data Berita Fakultas</p>
                     </div>
                 </div>
             </div>
