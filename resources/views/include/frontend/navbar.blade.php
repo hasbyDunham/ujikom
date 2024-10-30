@@ -40,8 +40,8 @@
                             class="dropdown-toggle">Informasi</span></a>
                     <div class="dropdown-menu m-0">
                         <a href="{{ url('berita') }}" class="dropdown-item">Berita</a>
-                        <a href="{{ url('pengumuman') }}" class="dropdown-item">Pengumuman</a>
                         <a href="{{ url('beritaF') }}" class="dropdown-item">Berita Fakultas</a>
+                        <a href="{{ url('pengumuman') }}" class="dropdown-item">Pengumuman</a>
                     </div>
                 </div>
                 <div class="nav-item dropdown">

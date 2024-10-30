@@ -199,7 +199,7 @@
                                         class="img-fluid w-100 custom-img" alt="">
                                 </div>
                                 <div class="office-content d-flex flex-column">
-                                    <h4 class="mb-2">{{ $item->judul_pengumuman }}</h4>
+                                    <h4 class="mb-2"><b><a href="pengumuman/{{ $item['id'] }}">{{ $item->judul_pengumuman }}</a></b></h4>
                                     <p>{!! $item->deskripsi_pengumuman !!}</p>
                                     <a href="#" class="text-muted mb-2">Selengkapnya</a>
                                 </div>
@@ -231,7 +231,7 @@
                                     alt="Image">
                             </div>
                             <div class="ms-4">
-                                <h4><b><a href="{{ url('beritaF') }}">{{ $item->judul_beritaF }}</a></b></h4>
+                                <h4><b><a href="beritaF/{{ $item['id'] }}">{{ $item->judul_beritaF }}</a></b></h4>
                             </div>
                         </div>
                         <hr class="w-100">
