@@ -14,7 +14,7 @@
 
     <!-- Pengumuman Section Start -->
     @php
-        $pengumuman = \App\Models\Pengumuman::orderBy('id', 'asc')->get();
+        $pengumuman = \App\Models\Pengumuman::orderBy('id', 'asc')->paginate(6);
     @endphp
     <div class="container py-5">
         <div class="row">
@@ -39,6 +39,9 @@
                     </div>
                 </div>
             @endforeach
+            <div class="d-flex justify-content-center">
+                {{ $pengumuman->links() }}
+            </div>
             <!-- Card 2 -->
             {{-- <div class="col-md-4 mb-5">
                 <div class="card shadow-sm border-0">

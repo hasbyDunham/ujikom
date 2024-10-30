@@ -13,16 +13,15 @@
                         <a href="#" class="h1 display-5">{{ $beritaF->judul_beritaF }}</a>
                     </div>
                     <div class="d-flex justify-content-between">
-                        <a href="#" class="text-dark link-hover me-3"><i
-                                class="bi bi-bookmark-fill"></i>Berita Fakultas</a>
+                        <a href="#" class="text-dark link-hover me-3"><i class="bi bi-bookmark-fill"></i>Berita
+                            Fakultas</a>
                         <a href="#" class="text-dark link-hover me-3"><i class="bi bi-clock"></i>
                             {{ $beritaF->created_at->format('d M Y') }}</a>
                         <a href="#" class="text-dark link-hover me-3"><i class="bi bi-person-circle"></i> Oleh
                             Admin</a>
                     </div>
                     <br>
-                    <img src="{{ asset('/images/beritaF/' . $beritaF->foto) }}" class="img-fluid w-100"
-                        alt="">
+                    <img src="{{ asset('/images/beritaF/' . $beritaF->foto) }}" class="img-fluid w-100" alt="">
                     {{-- <img width="750" height="350" src="https://uinsgd.ac.id/wp-content/uploads/2024/10/1728298036.jpg"
                     class="attachment-full size-full wp-image-54663" alt="" srcset="https://uinsgd.ac.id/wp-content/uploads/2024/10/1728298036.jpg 1600w,
                     https://uinsgd.ac.id/wp-content/uploads/2024/10/1728298036-300x169.jpg 300w,
@@ -57,7 +56,7 @@
                                                     <div class="rounded-circle position-relative">
                                                         <div class="">
                                                             <img src="{{ asset('/images/beritaF/' . $item->foto) }}"
-                                                                class="img-fluid w-100" alt="">
+                                                                class="img-fluid rounded w-100" alt="">
                                                         </div>
                                                     </div>
                                                 </div>

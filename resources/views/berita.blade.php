@@ -21,10 +21,15 @@
         use Illuminate\Support\Collection;
         use Illuminate\Pagination\LengthAwarePaginator;
         use Illuminate\Pagination\Paginator;
+
+        // Mengambil data dari API
         $response = Http::get('https://uinsgd.ac.id/wp-json/wp/v2/posts');
         $berita = $response->successful() ? $response->json() : [];
-        $berita = collect($berita); // Ubah array menjadi koleksi jika perlu
-        // Konfigurasi pagination manual
+
+        // Mengonversi array ke koleksi
+        $berita = collect($berita);
+
+        // Konfigurasi pagination
         $currentPage = Paginator::resolveCurrentPage('page');
         $perPage = 6;
         $paginatedBerita = new LengthAwarePaginator(
@@ -34,21 +39,16 @@
             $currentPage,
             ['path' => Paginator::resolveCurrentPath()],
         );
-        // $berita = \App\Models\Berita::orderBy('id', 'desc')->get();
-        // $berita = Session::get('berita');
-        // $berita = $response->json();
-        // <pre>{{ var_dump($berita) }}</pre>
-        // dd($berita);
     @endphp
     <div class="container py-5">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="display-5 mb-5">Berita Terbaru</h2>
+                <h2 class="display-5 mb-5">Berita UIN</h2>
             </div>
         </div>
         <div class="row g-4">
             <!-- Card 1 -->
-            @foreach ($berita as $item)
+            @foreach ($paginatedBerita as $item)
                 <div class="col-md-4 mb-5">
                     <div class="card shadow-sm border-2">
                         @if (

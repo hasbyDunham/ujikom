@@ -102,7 +102,7 @@
                             style="object-fit: cover;" alt="Image">
                     </div>
                 </div>
-                <div class="col-lg-5 wow fadeInRight" data-wow-delay="0.4s">
+                <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.4s">
                     <div class="section-title text-start mb-5">
                         <h1 class="display-5 mb-4">Kuliah di Fakultas Ekonomi dan Bisnis Islam</h1>
                         <p class="mb-4">Fakultas Ekonomi dan Bisnis Islam adalah jalur pendidikan yang aplikatif
@@ -199,9 +199,10 @@
                                         class="img-fluid w-100 custom-img" alt="">
                                 </div>
                                 <div class="office-content d-flex flex-column">
-                                    <h4 class="mb-2"><b><a href="pengumuman/{{ $item['id'] }}">{{ $item->judul_pengumuman }}</a></b></h4>
+                                    <h4 class="mb-2"><b><a
+                                                href="pengumuman/{{ $item['id'] }}">{{ $item->judul_pengumuman }}</a></b>
+                                    </h4>
                                     <p>{!! $item->deskripsi_pengumuman !!}</p>
-                                    <a href="#" class="text-muted mb-2">Selengkapnya</a>
                                 </div>
                             </div>
                         </div>

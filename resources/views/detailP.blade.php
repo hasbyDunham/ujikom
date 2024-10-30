@@ -57,7 +57,7 @@
                                                     <div class="rounded-circle position-relative">
                                                         <div class="">
                                                             <img src="{{ asset('/images/pengumuman/' . $item->foto) }}"
-                                                                class="img-fluid w-100" alt="">
+                                                                class="img-fluid rounded w-100" alt="">
                                                         </div>
                                                     </div>
                                                 </div>

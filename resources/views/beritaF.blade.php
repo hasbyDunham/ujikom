@@ -5,7 +5,7 @@
         <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner" role="listbox">
                 <div class="carousel-item active">
-                    <img src="{{ asset('frontend/img/berita-fakultas.jpg') }}" class="img-fluid carousel-img" alt="Image">  
+                    <img src="{{ asset('frontend/img/berita-fakultas.jpg') }}" class="img-fluid carousel-img" alt="Image">
                 </div>
             </div>
         </div>
@@ -14,7 +14,7 @@
 
     <!-- beritaF Section Start -->
     @php
-        $beritaF = \App\Models\BeritaF::orderBy('id', 'asc')->get();
+        $beritaF = \App\Models\BeritaF::orderBy('id', 'asc')->paginate(6);
     @endphp
     <div class="container py-5">
         <div class="row">
@@ -39,6 +39,9 @@
                     </div>
                 </div>
             @endforeach
+            <div class="d-flex justify-content-center">
+                {{ $beritaF->links() }}
+            </div>
             <!-- Card 2 -->
             {{-- <div class="col-md-4 mb-5">
                 <div class="card shadow-sm border-0">
