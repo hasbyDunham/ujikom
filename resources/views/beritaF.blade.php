@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 @section('content')
     <!-- Carousel Start -->
-    <div class="carousel-header">
+    <div class="carousel-head">
         <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner" role="listbox">
                 <div class="carousel-item active">

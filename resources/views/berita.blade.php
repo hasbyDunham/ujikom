@@ -4,7 +4,7 @@
 @endsection
 @section('content')
     <!-- Carousel Start -->
-    <div class="carousel-header">
+    <div class="carousel-head">
         <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner" role="listbox">
                 <div class="carousel-item active">
@@ -23,7 +23,7 @@
         use Illuminate\Pagination\Paginator;
 
         // Mengambil data dari API
-        $response = Http::get('https://uinsgd.ac.id/wp-json/wp/v2/posts');
+        $response = Http::get('https://uinsgd.ac.id/wp-json/wp/v2/posts?per_page=100');
         $berita = $response->successful() ? $response->json() : [];
 
         // Mengonversi array ke koleksi

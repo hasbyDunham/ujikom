@@ -49,7 +49,7 @@
                             class="dropdown-toggle">Layanan</span></a>
                     <div class="dropdown-menu m-0">
                         <a href="feature.html" class="dropdown-item">-</a>
-                        <a href="countries.html" class="dropdown-item">-p</a>
+                        <a href="countries.html" class="dropdown-item">-</a>
                     </div>
                 </div>
             </div>

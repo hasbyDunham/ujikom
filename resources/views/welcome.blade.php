@@ -56,7 +56,7 @@
     @endphp
     @php
         $pengumuman = \App\Models\Pengumuman::orderBy('id', 'asc')->get();
-        $beritaF = \App\Models\beritaF::orderBy('id', 'asc')->get();
+        $beritaF = \App\Models\BeritaF::orderBy('id', 'asc')->get();
     @endphp
     <!-- Navbar & Hero Start -->
     @include('include.frontend.navbar')
