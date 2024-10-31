@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 @section('content')
     <!-- Carousel Start -->
-    <div class="carousel-header">
+    <div class="carousel-head">
         <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner" role="listbox">
                 <div class="carousel-item active">
@@ -13,12 +13,12 @@
     <!-- Carousel End -->
 
     <!-- About Start -->
-    <div class="container-fluid about mb-0 mt-0">
-        <div class="container">
+    <div class="container-fluid about py-4 mb-0 mt-0">
+        <div class="container py-4">
             <div class="row g-5 d-flex align-items-start">
                 <div class="col-lg-12 wow fadeInLeft d-flex flex-column text-center mx-auto" data-wow-delay="0.2s">
                     <div class="section-title mb-5">
-                        <h1 class="display-5 mb-4" style="color: orange;">Sejarah (FEBI)</h1>
+                        <h1 class="display-5 mb-4">Sejarah (FEBI)</h1>
                         <p class="text-start">Fakultas Ekonomi dan Bisnis Islam (FEBI) di Universitas Islam Negeri
                             Sunan Gunung Djati (UIN
                             SGD) Bandung didirikan oleh Rektor UIN SGD Bandung, Prof. Dr. H. Mahmud, M.Si.

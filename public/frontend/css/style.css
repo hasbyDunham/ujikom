@@ -367,6 +367,7 @@
     /* You can adjust the height to your preference */
     object-fit: cover;
     /* This will ensure the images maintain aspect ratio while covering the space */
+    border-radius: 3px;
 }
 
 /*** Single Page Hero Header End ***/
@@ -527,7 +528,6 @@
 
 
 /*** Carousel Hero Header End ***/
-
 
 /*** Counter Facts Start ***/
 .counter-facts {

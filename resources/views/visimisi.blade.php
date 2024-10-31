@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 @section('content')
     <!-- Carousel Start -->
-    <div class="carousel-header">
+    <div class="carousel-head">
         <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner" role="listbox">
                 <div class="carousel-item active">
@@ -10,18 +10,18 @@
             </div>
         </div>
     </div>
-    <!-- Carousel End -->
+    <!-- Carousel End -->
 
     <!-- About Start -->
-    <div class="container-fluid about bg-light py-5 mb-0 mt-0">
-        <div class="container py-5">
+    <div class="container-fluid about py-4 mb-0 mt-0">
+        <div class="container py-4">
             <!-- Motto and Visi Section (Sejajar) -->
             <div class="row g-5 justify-content-center">
                 <!-- Motto Section -->
                 <div class="col-lg-6 wow fadeInLeft d-flex flex-column align-items-center text-center"
                     data-wow-delay="0.2s">
                     <div class="section-title mb-5">
-                        <h1 class="display-5 mb-4" style="color: orange;">Motto</h1>
+                        <h1 class="display-5 mb-4">Motto</h1>
                         <p class="mb-4">"Unggul, Kompetitif, Moderat"</p>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
                 <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.4s">
                     <div class="section-title text-start mb-5">
                         <center>
-                            <h1 class="display-5 mb-4" style="color: orange;">Visi</h1>
+                            <h1 class="display-5 mb-4">Visi</h1>
                         </center>
                         <p class="mb-4">
                             “Menjadi Universitas Islam Negeri yang Unggul, Kompetitif, dan Inovatif berbasis Rahmatan
@@ -46,7 +46,7 @@
                 <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.4s">
                     <div class="section-title text-start mb-5">
                         <center>
-                            <h1 class="display-5 mb-4" style="color: orange;">Misi</h1>
+                            <h1 class="display-5 mb-4">Misi</h1>
                         </center>
                         <ol style="line-height: 1.8; padding-left: 15px;">
                             <li>Menyelenggarakan pendidikan yang berkualitas dan berkeadilan, berdaya saing global,
@@ -70,7 +70,7 @@
                 <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.6s">
                     <div class="section-title text-start mb-5">
                         <center>
-                            <h1 class="display-5 mb-4" style="color: orange;">Tujuan</h1>
+                            <h1 class="display-5 mb-4">Tujuan</h1>
                         </center>
                         <ol style="line-height: 1.8; padding-left: 15px; text-align: left;">
                             <li>Menyiapkan peserta didik dan lulusan yang berakhlak karimah, berwawasan luas

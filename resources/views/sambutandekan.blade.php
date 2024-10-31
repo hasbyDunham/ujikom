@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 @section('content')
     <!-- Carousel Start -->
-    <div class="carousel-header">
+    <div class="carousel-head">
         <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner" role="listbox">
                 <div class="carousel-item active">
@@ -10,11 +10,11 @@
             </div>
         </div>
     </div>
-    <!-- Carousel End -->
+    <!-- Carousel End -->
 
     <!-- About Start -->
-    <div class="container-fluid about py-5 mb-0 mt-0">
-        <div class="container py-5">
+    <div class="container-fluid about py-4 mb-0 mt-0">
+        <div class="container py-4">
             <div class="row g-5 d-flex align-items-center">
                 <!-- Gambar di sebelah kiri -->
                 <div class="col-lg-6">
@@ -24,7 +24,7 @@
                 <!-- Teks di sebelah kanan -->
                 <div class="col-lg-6 wow fadeInLeft d-flex flex-column text-start" data-wow-delay="0.2s">
                     <div class="section-title mb-5">
-                        <h1 class="display-5 mb-4" style="color: orange;">Sambutan Dekan</h1>
+                        <h1 class="display-5 mb-4">Sambutan Dekan</h1>
                         <p>Assalamualaikum, Wr, Wb.</p>
                         <p>Puji serta syukur semoga senantiasa tercurah ke hadirat Allah Swt. Salawat serta salam semoga
                             tercurah limpahkan kepada junjungan kita Rasulullah Muhammad SAW.

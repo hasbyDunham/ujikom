@@ -202,7 +202,6 @@
                                     <h4 class="mb-2"><b><a
                                                 href="pengumuman/{{ $item['id'] }}">{{ $item->judul_pengumuman }}</a></b>
                                     </h4>
-                                    <p>{!! $item->deskripsi_pengumuman !!}</p>
                                 </div>
                             </div>
                         </div>
