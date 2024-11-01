@@ -117,6 +117,10 @@
         $('.navbar').css('background-color', navbarColor);
         // Ubah warna footer
         $('.footer').css('background-color', footerColor);
+        // Ubah warna teks navbar
+        $(':root').css('--teks-navbar-color', teksNavbar);
+        // Ubah warna teks navbar
+        $(':root').css('--teks-footer-color', teksFooter);
     });
 
     // Mengatur title menggunakan variabel environment dari Vite

@@ -1,11 +1,11 @@
 <div class="container-fluid nav-bar p-0">
     <nav class="navbar navbar-expand-lg navbar-light px-0 px-lg-5 py-0 py-lg-0 ms-auto">
-        <a href="" class="navbar-brand p-0">
-            <h1 class="display-5 text-success mr-5"><img src="{{ asset('frontend/img/UIN-SGD.png') }}" class="img-fluid"
-                    alt=""></h1>
+        <a href="{{ url('/') }}" class="navbar-brand p-0">
+            <h1 class="display-5 text-success mr-5"><img src="{{ asset('frontend/img/logo-navbar.png') }}"
+                    class="img-fluid" alt="" style="width: 100%; height:50%"></h1>
         </a>
         <div class="collapse navbar-collapse" id="navbarToggleExternalContent">
-            <div class="navbar-nav py-0 ms-auto">
+            <div class="navbar-nav py-0 ms-auto me-5">
                 <a href="{{ url('/') }}" class="nav-item nav-link" id="home-link">Beranda</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link" id="profil-link" data-bs-toggle="dropdown"><span
@@ -54,11 +54,7 @@
                 </div>
             </div>
         </div>
-        <a href="" class="navbar-brand p-0">
-            <h1 class="display-5 text-success mr-5"><img src="{{ asset('frontend/img/ptipd.png') }}" class="img-fluid"
-                    alt=""></h1>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
             aria-expanded="false" aria-label="Toggle navigation" onclick="this.classList.toggle('active')">
             <span class="navbar-toggler-icon"></span>

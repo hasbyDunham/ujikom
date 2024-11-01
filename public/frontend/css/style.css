@@ -1,3 +1,21 @@
+:root {
+    --teks-navbar-color: {
+            {
+            config('app.teks_navbar_color')
+        }
+    }
+
+    ;
+
+    --teks-footer-color: {
+            {
+            config('app.teks_footer_color')
+        }
+    }
+
+    ;
+}
+
 /*** Spinner Start ***/
 /*** Spinner ***/
 #spinner {
@@ -199,7 +217,7 @@
     position: relative;
     margin-right: 25px;
     padding: 40px 0;
-    color: rgb(34, 170, 34);
+    color: var(--teks-navbar-color);
     font-size: 14px;
     font-weight: 400;
     outline: none;
@@ -208,18 +226,19 @@
 
 .sticky-top .navbar-light .navbar-nav .nav-link {
     padding: 35px 0;
-    color: rgb(34, 170, 34);
+    color: var(--teks-navbar-color);
 }
 
 .navbar-light .navbar-nav .nav-link:hover,
 .navbar-light .navbar-nav .nav-link.active {
-    color: rgb(34, 170, 34);
+    color: var(--teks-navbar-color);
 }
 
 .navbar-light .navbar-brand img {
     position: flex;
     justify-content: center;
-    max-height: 100px;
+    max-height: 70px;
+    margin: 13px;
     transition: .5s;
 }
 
@@ -250,7 +269,7 @@
 }
 
 .sticky-top .navbar-light .navbar-brand img {
-    max-height: 85px;
+    max-height: 60px;
 }
 
 @media (min-width: 1200px) {
@@ -305,7 +324,9 @@
     }
 
     .navbar-light .navbar-brand img {
-        max-height: 45px;
+        max-height: 50px;
+        margin-top: 5px;
+        margin-left: 3px;
     }
 }
 
@@ -993,17 +1014,22 @@
 
 .footer .footer-item a {
     line-height: 30px;
-    color: var(--bs-white);
+    color: var(--teks-footer-color);
     transition: 0.5s;
 }
 
 .footer .footer-item p {
     line-height: 30px;
+    color: var(--teks-footer-color);
+}
+
+.footer .footer-item h4 {
+    color: var(--teks-footer-color);
 }
 
 .footer .footer-item a:hover {
     letter-spacing: 2px;
-    color: rgb(21, 175, 42);
+    color: var(--teks-navbar-color);
 }
 
 /*** Footer End ***/
