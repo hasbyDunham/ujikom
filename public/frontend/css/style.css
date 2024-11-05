@@ -287,7 +287,7 @@
 }
 
 .dropdown .dropdown-menu a:hover {
-    color: rgb(34, 170, 34);
+    color: var(--teks-navbar-color);
     transition: 0, 5s;
 }
 
