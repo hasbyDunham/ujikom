@@ -19,7 +19,7 @@
                                 <div class="col-sm-10">
                                     <input type="text"
                                         class="form-control @error('judul_beritaF') is-invalid @enderror"
-                                        name="judul_beritaF" id="judul_beritaF">
+                                        name="judul_beritaF" id="judul_beritaF" value="{{ old('judul_beritaF')}}">
                                     @error('judul_beritaF')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -30,7 +30,7 @@
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label" for="basic-default-name">Deskripsi</label>
                                 <div class="col-sm-10">
-                                    <textarea name="deskripsiF" id="deskripsi" cols="30" rows="10"></textarea>
+                                    <textarea name="deskripsiF" id="deskripsi" cols="30" rows="10">{{ old('deskripsiF') }}</textarea>
                                     @error('deskripsiF')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>

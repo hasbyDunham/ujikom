@@ -19,7 +19,7 @@
                                 <div class="col-sm-10">
                                     <input type="text"
                                         class="form-control @error('judul_pengumuman') is-invalid @enderror"
-                                        name="judul_pengumuman" id="judul_pengumuman">
+                                        name="judul_pengumuman" id="judul_pengumuman" value="{{ old('judul_pengumuman') }}">
                                     @error('judul_pengumuman')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -33,7 +33,7 @@
                                     {{-- <textarea type="text"
                                     class="form-control @error('deskripsi_pengumuman') is-invalid @enderror"
                                     name="deskripsi_pengumuman" id="deskripsi"></textarea> --}}
-                                    <textarea name="deskripsi_pengumuman" id="deskripsi" cols="30" rows="10"></textarea>
+                                    <textarea name="deskripsi_pengumuman" id="deskripsi" cols="30" rows="10">{{ old('deskripsi_pengumuman')}}</textarea>
                                     @error('deskripsi_pengumuman')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
