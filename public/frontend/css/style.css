@@ -45,13 +45,19 @@
     justify-content: center;
     transition: 0.5s;
     z-index: 99;
-    color: var(--teks-navbar-color);
+    background-color: var(--teks-navbar-color);
+    color: white;
 }
 
 /*** Button Start ***/
 .btn {
     font-weight: 600;
     transition: .5s;
+}
+
+.btn-selengkapnya {
+    background-color: var(--teks-navbar-color);
+    color: white;
 }
 
 .btn-square {

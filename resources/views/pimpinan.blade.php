@@ -22,7 +22,7 @@
                         <!-- Gambar utama di bawah judul -->
                         <img src="{{ asset('frontend/img/FU-DEKAN1.png') }}" class="img-fluid mx-auto d-block"
                             alt="Pimpinan FEBI" style="max-width: 60%;">
-                        <h3 style="color: black;">Prof. Dr. Wahyudin Darmalaksana, M.Ag</h3>
+                        <h3 style="color: black;" class="mt-2">Prof. Dr. Wahyudin Darmalaksana, M.Ag</h3>
                         <h4>Dekan</h4>
                     </div>
                 </div>
@@ -34,7 +34,7 @@
                     <img src="{{ asset('frontend/img/FU-WD-1.png') }}" class="img-fluid" alt="Gambar 1"
                         style="max-width: 80%;">
                     <div>
-                        <h4 style="color: black; margin-top: 10px;">Dr. Ecep Ismail, S.Ag., M.Ag.</h4>
+                        <h4 style="color: black; margin-top: 10px;" class="mt-2">Dr. Ecep Ismail, S.Ag., M.Ag.</h4>
                         <h4>Wakil Dekan I</h4>
                     </div>
                 </div>
@@ -42,7 +42,7 @@
                     <img src="{{ asset('frontend/img/FU-WD-2.png') }}" class="img-fluid" alt="Gambar 2"
                         style="max-width: 80%;">
                     <div>
-                        <h4 style="color: black; margin-top: 10px;">Dr. Muhlas, S.Ag., M.Hum.</h4>
+                        <h4 style="color: black; margin-top: 10px;" class="mt-2">Dr. Muhlas, S.Ag., M.Hum.</h4>
                         <h4>Wakil Dekan II</h4>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
                     <img src="{{ asset('frontend/img/FU-WD-3.png') }}" class="img-fluid" alt="Gambar 4"
                         style="max-width: 80%;">
                     <div>
-                        <h4 style="color: black; margin-top: 10px;">Dr. R. Yuli Ahmad Hambali, M.Hum.</h4>
+                        <h4 style="color: black; margin-top: 10px;" class="mt-2">Dr. R. Yuli Ahmad Hambali, M.Hum.</h4>
                         <h4>Wakil Dekan III</h4>
                     </div>
                 </div>

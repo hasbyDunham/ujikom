@@ -105,9 +105,12 @@
                 <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.4s">
                     <div class="section-title text-start mb-5">
                         <h1 class="display-5 mb-4">Kuliah di Fakultas Ushuluddin</h1>
-                        <p class="mb-4">Bentuk kebijaksanaan, tingkatkan keahlian, dan kembangkan kepribadian dalam nilai-nilai Islam bersama kami.
-                            Explore Fakultas Ushuluddin dan temukan informasi lebih lanjut mengenai proses pendaftaran, biaya kuliah,
-                             dan program beasiswa yang tersedia di Universitas Islam Negeri Sunan Gunung Djati Bandung.</p>
+                        <p class="mb-4">Bentuk kebijaksanaan, tingkatkan keahlian, dan kembangkan kepribadian dalam
+                            nilai-nilai Islam bersama kami.
+                            Explore Fakultas Ushuluddin dan temukan informasi lebih lanjut mengenai proses pendaftaran,
+                            biaya kuliah,
+                            dan program beasiswa yang tersedia di Universitas Islam Negeri Sunan Gunung Djati Bandung.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -198,17 +201,17 @@
                                         class="img-fluid w-100 custom-img" alt="">
                                 </div>
                                 <div class="office-content d-flex flex-column">
-                                    <h4 class="mb-2"><b><a
-                                        href="pengumuman/{{ $item['id'] }}">{{ $item->judul_pengumuman }}</a></b>
-                                    </h4>
+                                    <h5 class="mb-2"><b><a
+                                                href="pengumuman/{{ $item['id'] }}">{{ $item->judul_pengumuman }}</a></b>
+                                    </h5>
                                 </div>
                             </div>
                         </div>
                     @endforeach
                 </div>
                 <div class="col-12 text-end">
-                    <a class="btn btn-success border-success rounded-pill py-3 px-5 wow fadeInUp"
-                        data-wow-delay="0.10s" href="{{ url('pengumuman') }}">Selengkapnya</a>
+                    <a class="btn btn-selengkapnya rounded-pill py-3 px-5 wow fadeInUp" data-wow-delay="0.10s"
+                        href="{{ url('pengumuman') }}">Selengkapnya</a>
                 </div>
             </div>
         </div>

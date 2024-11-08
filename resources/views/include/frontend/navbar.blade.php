@@ -23,9 +23,11 @@
                     <a href="#" class="nav-link" id="jurusan-link" data-bs-toggle="dropdown"><span
                             class="dropdown-toggle">Jurusan</span></a>
                     <div class="dropdown-menu m-0">
-<<<<<<< HEAD
-                        <a href="feature.html" class="dropdown-item">-</a>
-                        <a href="countries.html" class="dropdown-item">-</a>
+                        <a href="https://afi.uinsgd.ac.id/" class="dropdown-item">Aqidah dan Filsafat Islam</a>
+                        <a href="http://saa.uinsgd.ac.id/" class="dropdown-item">Studi Agama-agama</a>
+                        <a href="https://iat.uinsgd.ac.id/" class="dropdown-item">Ilmu Al-Qur'an dan Tafsir</a>
+                        <a href="https://tp.uinsgd.ac.id/" class="dropdown-item">Tasawuf dan Psikoterapi</a>
+                        <a href="https://ih.uinsgd.ac.id/" class="dropdown-item">Ilmu Hadist</a>
                     </div>
                 </div>
                 {{-- <div class="nav-item dropdown">
@@ -34,14 +36,6 @@
                     <div class="dropdown-menu m-0">
                         <a href="feature.html" class="dropdown-item">-</a>
                         <a href="countries.html" class="dropdown-item">-</a>
-=======
-                        <a href="https://afi.uinsgd.ac.id/" class="dropdown-item">Aqidah dan Filsafat Islam</a>
-                        <a href="http://saa.uinsgd.ac.id/" class="dropdown-item">Studi Agama-agama</a>
-                        <a href="https://iat.uinsgd.ac.id/" class="dropdown-item">Ilmu Al-Qur'an dan Tafsir</a>
-                        <a href="https://tp.uinsgd.ac.id/" class="dropdown-item">Tasawuf dan Psikoterapi</a>
-                        <a href="https://ih.uinsgd.ac.id/" class="dropdown-item">Ilmu Hadist</a>
->>>>>>> 2f47d7ef3b46b56f67f78c2c07140018306ecdec
-                    </div>
                 </div> --}}
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link" id="informasi-link" data-bs-toggle="dropdown"><span
@@ -52,7 +46,6 @@
                         <a href="{{ url('pengumuman') }}" class="dropdown-item">Pengumuman</a>
                     </div>
                 </div>
-<<<<<<< HEAD
                 {{-- <div class="nav-item dropdown">
                     <a href="#" class="nav-link" id="layanan-link" data-bs-toggle="dropdown"><span
                             class="dropdown-toggle"><b>Layanan</b></span></a>
@@ -61,8 +54,6 @@
                         <a href="countries.html" class="dropdown-item">-</a>
                     </div>
                 </div> --}}
-=======
->>>>>>> 2f47d7ef3b46b56f67f78c2c07140018306ecdec
             </div>
         </div>
         <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse"

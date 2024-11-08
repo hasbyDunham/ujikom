@@ -18,7 +18,7 @@
             <div class="row g-5 d-flex align-items-center">
                 <!-- Gambar di sebelah kiri -->
                 <div class="col-lg-6">
-                    <img src="{{ asset('frontend/img/FU-DEKAN1.png') }}" alt="image" class="img-fluid wow fadeInUp"
+                    <img src="{{ asset('frontend/img/FU-DEKAN1.png') }}" alt="image" class="img-fluid wow fadeInUp mb-5"
                         data-wow-delay="0.3s" style="max-width: 100%; height: auto;">
                 </div>
                 <!-- Teks di sebelah kanan -->
@@ -26,15 +26,24 @@
                     <div class="section-title mt-5">
                         <h1 class="display-5 mb-4">Sambutan Dekan</h1>
                         <p>Assalamualaikum, Wr, Wb.</p>
-                        <p>Puji serta syukur semoga senantiasa tercurah ke hadirat Allah Swt. Salawat serta salam semoga
-                            tercurah limpahkan kepada junjungan kita Rasulullah Muhammad SAW.
+                        <p>Puji syukur kita panjatkan kehadirat Allah Subhanahu wa Ta'ala yang telah memberikan limpahan
+                            rahmat dan hidayah-Nya untuk kita semua. Atas nama Dekanat Fakultas Ushuluddin UIN Sunan Gunung
+                            Djati Bandung, saya
+                            dengan rendah hati mengucapkan selamat datang ke website resmi Fakultas Ushuluddin kepada
+                            seluruh civitas akademika, mahasiswa, dosen, staf, dan tamu.
                         </p>
-
-                        <p>Saya mewakili seluruh civitas akademika FU UIN Sunan Gunung Djati Bandung dengan bangga dan
-                            berbahagia menyambut kehadiran para calon pembelajar dan penggerak ekonomi bangsa. Selamat
-                            bergabung menjadi bagian dari keluarga besar FU UIN Bandung
-                            .</p>
-
+                        <p>Fakultas Ushuluddin UIN Sunan Gunung Djati Bandung adalah sebuah lembaga pendidikan tinggi yang
+                            berkomitmen kuat
+                            untuk menjaga, memahami, dan menyebarkan ajaran agama Islam sebagai rahmatan lil'alamin.
+                            Fakultas Ushuluddin berupaya menjembatani antara agama dan kehidupan sehari-hari, antara ilmu
+                            pengetahuan dan nilai-nilai moral, serta antara kearifan lokal dan global.
+                        </p>
+                        <p>
+                            Terakhir, saya ingin mengucapkan terima kasih kepada seluruh civitas akademika yang telah
+                            berperan aktif dalam mengembangkan fakultas ini. Mari bersama-sama kita terus berupaya
+                            meningkatkan mutu pendidikan dan pengabdian kepada masyarakat, serta mengambil peran dalam
+                            menciptakan dunia yang lebih baik sesuai dengan tuntunan agama.
+                        </p>
                         <p>Terima kasih telah berkunjung di tempat kami.</p>
 
                         <p>Wallahul Muwaffiq ila Aqwamit Tharieq.<br>
