@@ -70,7 +70,7 @@
                 </div>
             @endforeach
             <div class="d-flex justify-content-center">
-                {{ $paginatedBerita->links() }}
+                {{ $paginatedBerita->links('vendor.pagination.custom') }}
             </div>
             {{-- <!-- Card 2 -->
             <div class="col-md-4 mb-5">
@@ -136,5 +136,64 @@
     {{-- Mengatur document title menggunakan variabel dari Laravel --}}
     <script>
         document.title = @json(config('app.title'));
+    </script>
+    <script>
+        const totalPages = 17; // Jumlah total halaman
+        const pagination = document.getElementById("pagination");
+        let currentPage = 1; // Halaman saat ini
+
+        function renderPagination(page) {
+            pagination.innerHTML = ''; // Reset pagination
+            let startPage = page - 1 > 0 ? page - 1 : 1;
+            let endPage = page + 1 <= totalPages ? page + 1 : totalPages;
+
+            // Tombol ke halaman sebelumnya
+            if (page > 1) {
+                const prev = document.createElement("li");
+                prev.innerHTML = "&laquo;";
+                prev.onclick = () => updatePagination(page - 1);
+                pagination.appendChild(prev);
+            }
+
+            // Menampilkan halaman yang aktif dan dua halaman di sebelah kanan
+            for (let i = startPage; i <= endPage; i++) {
+                const pageItem = document.createElement("li");
+                pageItem.innerText = i;
+                pageItem.classList.add(i === page ? "active" : "");
+                pageItem.onclick = () => updatePagination(i);
+                pagination.appendChild(pageItem);
+            }
+
+            // Jika halaman terakhir belum tercapai, tambahkan "..."
+            if (endPage < totalPages - 1) {
+                const dots = document.createElement("li");
+                dots.innerText = "...";
+                pagination.appendChild(dots);
+            }
+
+            // Halaman terakhir
+            if (endPage < totalPages) {
+                const lastPage = document.createElement("li");
+                lastPage.innerText = totalPages;
+                lastPage.onclick = () => updatePagination(totalPages);
+                pagination.appendChild(lastPage);
+            }
+
+            // Tombol ke halaman berikutnya
+            if (page < totalPages) {
+                const next = document.createElement("li");
+                next.innerHTML = "&raquo;";
+                next.onclick = () => updatePagination(page + 1);
+                pagination.appendChild(next);
+            }
+        }
+
+        function updatePagination(page) {
+            currentPage = page;
+            renderPagination(page);
+        }
+
+        // Inisialisasi pagination
+        renderPagination(currentPage);
     </script>
 @endpush
