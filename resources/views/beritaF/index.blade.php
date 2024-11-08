@@ -17,7 +17,7 @@
                                 <th>Judul Berita</th>
                                 <th>Deskripsi</th>
                                 <th>Foto</th>
-                                <th>Actions</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         @php $no = 1; @endphp
