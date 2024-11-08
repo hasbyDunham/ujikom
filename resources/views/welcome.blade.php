@@ -104,7 +104,7 @@
                 </div>
                 <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.4s">
                     <div class="section-title text-start mb-5">
-                        <h1 class="display-5 mb-4">Kuliah di Fakultas Ekonomi dan Bisnis Islam</h1>
+                        <h1 class="display-5 mb-4">Kuliah di Fakultas Ushuluddin</h1>
                         <p class="mb-4">Fakultas Ekonomi dan Bisnis Islam adalah jalur pendidikan yang aplikatif
                             dan sangat strategis untuk memenuhi kebutuhan bidang ekonomi khususnya sektor perbankan
                             Nasioanal serta memenuhi tantangan perkembangan dan pengembangan ilmu pengetahuan dan
