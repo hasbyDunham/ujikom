@@ -33,7 +33,7 @@
                             <h5 class="card-title">
                                 <a href="pengumuman/{{ $item['id'] }}">{{ $item->judul_pengumuman }}</a>
                             </h5>
-                            <p class="card-text">{!! $item->deskripsi_pengumuman !!}
+                            {{-- <p class="card-text">{!! $item->deskripsi_pengumuman !!} --}}
                             </p>
                         </div>
                     </div>
