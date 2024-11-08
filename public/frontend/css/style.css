@@ -23,6 +23,7 @@
     visibility: hidden;
     transition: opacity .5s ease-out, visibility 0s linear .5s;
     z-index: 99999;
+    color: var(--teks-navbar-color);
 }
 
 #spinner.show {
@@ -44,6 +45,7 @@
     justify-content: center;
     transition: 0.5s;
     z-index: 99;
+    color: var(--teks-navbar-color);
 }
 
 /*** Button Start ***/
@@ -553,6 +555,12 @@
 
 
 /*** Carousel Hero Header End ***/
+.content-text {
+    text-align: justify;
+    /* Meratakan teks kanan dan kiri */
+    line-height: 1.6;
+    /* Spasi antar baris */
+}
 
 /*** Counter Facts Start ***/
 .counter-facts {
@@ -1031,13 +1039,17 @@
     color: var(--teks-footer-color);
 }
 
+.footer .footer-item img {
+    max-width: 150px;
+    margin: 0 auto;
+}
+
 .footer .footer-item a:hover {
     letter-spacing: 2px;
     color: var(--teks-navbar-color);
 }
 
 /*** Footer End ***/
-
 
 /*** copyright Start ***/
 .copyright {

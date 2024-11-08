@@ -3,16 +3,16 @@
         <div class="row g-5">
             <div class="col-md-6 col-lg-6 col-xl-3">
                 <div class="footer-item d-flex flex-column">
-                    <img src="{{ asset('frontend/img/logo-uin.png') }}" alt="">
-                    <h4 class="text-center">Fakultas Ekonomi dan Bisnis Islam</h4>
+                    <img src="{{ asset('frontend/img/Logo-UIN-Putih.png') }}" alt="">
+                    <h4 class="text-center mt-2">Fakultas Ekonomi dan Bisnis Islam</h4>
                 </div>
             </div>
             <div class="col-md-6 col-lg-6 col-xl-3">
                 <div class="footer-item d-flex flex-column">
                     <h4 class="text-center mb-4">Alamat</h4>
                     <div class="mb-3">
-                        <p class="text-center mb-4"><b>Kampus 2 - Gedung FEBI</b> <br>
-                            Jalan Cimencrang, Panyileukan, Cimencrang, Gedebage, Kota Bandung, Jawa Barat 40292</p>
+                        <p class="text-center mb-4"><b>Kampus 2 <br> Gedung Fakultas Ushuluddin</b> <br>
+                            Jalan Soekarno Hatta, Kota Bandung, Jawa Barat 40292</p>
                     </div>
                     <h4 class="text-center mb-1">Sosial Media</h4>
                     <div class="d-flex justify-content-center">
