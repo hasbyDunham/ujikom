@@ -308,7 +308,11 @@
     .navbar.navbar-expand-lg .navbar-toggler {
         padding: 10px 20px;
         border: 1px solid var(--bs-primary) !important;
-        color: var(--bs-primary);
+        color: var(--teks-navbar-color);
+    }
+
+    .navbar.navbar.navbar-expand-lg .navbar-toggler.active {
+        margin-left: 81%;
     }
 
     .navbar-light .navbar-collapse {
