@@ -16,13 +16,13 @@
     <div class="container-fluid about bg-light py-4 mb-0 mt-0">
         <div class="container py-4">
             <div class="row g-5 d-flex align-items-center">
-                <div class="col-lg-12 wow fadeInLeft d-flex flex-column text-center mx-auto" data-wow-delay="0.2s">
+                <h1 class="display-6 text-center wow fadeInRight" data-wow-delay="0.2s">Pimpinan Fakultas Ushuluddin</h1>
+                <div class="col-lg-6 wow fadeInLeft d-flex flex-column text-center mx-auto" data-wow-delay="0.2s">
                     <div class="section-title mb-5">
-                        <h1 class="display-5 mb-4">Pimpinan (FEBI)</h1>
                         <!-- Gambar utama di bawah judul -->
-                        <img src="{{ asset('frontend/img/DEKAN-FEBI2.png') }}" class="img-fluid mx-auto d-block"
+                        <img src="{{ asset('frontend/img/FU-DEKAN1.png') }}" class="img-fluid mx-auto d-block"
                             alt="Pimpinan FEBI" style="max-width: 60%;">
-                        <h3 style="color: black;">Dr. H. Dudang Gojali, S.Ag., M.Ag.,</h3>
+                        <h3 style="color: black;" class="mt-2">Prof. Dr. Wahyudin Darmalaksana, M.Ag</h3>
                         <h4>Dekan</h4>
                     </div>
                 </div>
@@ -31,26 +31,26 @@
             <!-- Row for three images below the main image -->
             <div class="row g-4 d-flex justify-content-center">
                 <div class="col-md-4 d-flex flex-column align-items-center text-center">
-                    <img src="{{ asset('frontend/img/dekan-iwan (1).png') }}" class="img-fluid" alt="Gambar 1"
+                    <img src="{{ asset('frontend/img/FU-WD-1.png') }}" class="img-fluid" alt="Gambar 1"
                         style="max-width: 80%;">
                     <div>
-                        <h4 style="color: black; margin-top: 10px;">Dr. Iwan Setiawan, S.Ag., M.Pd., M.E.Sy.</h4>
+                        <h4 style="color: black; margin-top: 10px;" class="mt-2">Dr. Ecep Ismail, S.Ag., M.Ag.</h4>
                         <h4>Wakil Dekan I</h4>
                     </div>
                 </div>
                 <div class="col-md-4 d-flex flex-column align-items-center text-center">
-                    <img src="{{ asset('frontend/img/dekan-zaky.png') }}" class="img-fluid" alt="Gambar 2"
+                    <img src="{{ asset('frontend/img/FU-WD-2.png') }}" class="img-fluid" alt="Gambar 2"
                         style="max-width: 80%;">
                     <div>
-                        <h4 style="color: black; margin-top: 10px;">Dr. Muhammad Zaky, M.Si.</h4>
+                        <h4 style="color: black; margin-top: 10px;" class="mt-2">Dr. Muhlas, S.Ag., M.Hum.</h4>
                         <h4>Wakil Dekan II</h4>
                     </div>
                 </div>
                 <div class="col-md-4 d-flex flex-column align-items-center text-center">
-                    <img src="{{ asset('frontend/img/dekan-kadar.png') }}" class="img-fluid" alt="Gambar 4"
+                    <img src="{{ asset('frontend/img/FU-WD-3.png') }}" class="img-fluid" alt="Gambar 4"
                         style="max-width: 80%;">
                     <div>
-                        <h4 style="color: black; margin-top: 10px;">Dr. H. Kadar Nurjaman, S.E., M.M</h4>
+                        <h4 style="color: black; margin-top: 10px;" class="mt-2">Dr. R. Yuli Ahmad Hambali, M.Hum.</h4>
                         <h4>Wakil Dekan III</h4>
                     </div>
                 </div>

@@ -18,13 +18,13 @@
             <!-- Motto and Visi Section (Sejajar) -->
             <div class="row g-5 justify-content-center">
                 <!-- Motto Section -->
-                <div class="col-lg-6 wow fadeInLeft d-flex flex-column align-items-center text-center"
+                {{-- <div class="col-lg-6 wow fadeInLeft d-flex flex-column align-items-center text-center"
                     data-wow-delay="0.2s">
                     <div class="section-title mb-5">
                         <h1 class="display-5 mb-4">Motto</h1>
                         <p class="mb-4">"Unggul, Kompetitif, Moderat"</p>
                     </div>
-                </div>
+                </div> --}}
                 <!-- Visi Section -->
                 <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.4s">
                     <div class="section-title text-start mb-5">
@@ -32,9 +32,7 @@
                             <h1 class="display-5 mb-4">Visi</h1>
                         </center>
                         <p class="mb-4">
-                            “Menjadi Universitas Islam Negeri yang Unggul, Kompetitif, dan Inovatif berbasis Rahmatan
-                            Lil
-                            Alamin di Asia Tenggara Tahun 2029”
+                            “Menjadi pusat studi dan informasi keushuluddinan yang unggul dan kompetitif di Asean tahun 2025”
                         </p>
                     </div>
                 </div>
@@ -49,20 +47,12 @@
                             <h1 class="display-5 mb-4">Misi</h1>
                         </center>
                         <ol style="line-height: 1.8; padding-left: 15px;">
-                            <li>Menyelenggarakan pendidikan yang berkualitas dan berkeadilan, berdaya saing global,
-                                serta
-                                menggunakan piranti TIK terkini dan terbarukan.</li>
-                            <li>Menyelenggarakan penelitian dan kajian yang fokus pada isu-isu strategis, inovatif, dan
-                                fungsional untuk pengembangan ipteks, profesi, dan masyarakat.</li>
-                            <li>Mengembangkan pengabdian kepada masyarakat yang berkontribusi pada peningkatan indeks
-                                literasi moderasi beragama, peningkatan kualitas kehidupan beragama, dan intensifikasi
-                                dialog antar budaya pada tingkat nasional maupun tingkat Asia Tenggara.</li>
-                            <li>Menciptakan lulusan yang memiliki keimanan dan ketaqwaan yang kuat, berwawasan luas,
-                                berakhlak
-                                karimah, serta mampu bersaing secara global, dengan semangat kebangsaan yang kuat.</li>
-                            <li>Menyelenggarakan tata kelola layanan akademik dan administrasi berbasis TIK, yang
-                                transparan,
-                                akuntabel, serta mendukung iklim akademik yang mampu mewujudkan visi Universitas.</li>
+                            <li>Menyelenggarakan pendidikan dan penelitian di bidang ilmu-ilmu keushuluddinan berbasis Islam damai sebagai rahmat bagi semesta alam.
+                            </li>
+                            <li>Menyelenggarakan pendidikan, penelitian, dan pengabdian masyarakat di bidang ilmu-ilmu keushuluddinan yang memiliki tingkat relevansi dengan perubahan dan perkembangan sosial-keagamaan di masyarakat.
+                            </li>
+                            <li>Menginformasikan produk-produk Tridarma kepada masyarakat seluas-luasnya dengan prinsip mensosialisasikan Islam damai sebagai rahmat bagi semesta alam.
+                            </li>
                         </ol>
                     </div>
                 </div>
@@ -70,35 +60,27 @@
                 <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.6s">
                     <div class="section-title text-start mb-5">
                         <center>
-                            <h1 class="display-5 mb-4">Tujuan</h1>
+                            <h1 class="display-5 mb-4">Sasaran</h1>
                         </center>
                         <ol style="line-height: 1.8; padding-left: 15px; text-align: left;">
-                            <li>Menyiapkan peserta didik dan lulusan yang berakhlak karimah, berwawasan luas
-                                (knowledgeable), terampil (skillful), inovatif, mandiri, dan berjiwa kepemimpinan
-                                melalui
-                                penyediaan sistem pendidikan berkualitas, terintegrasi, dan berkelanjutan sehingga mampu
-                                menerapkan, mengembangkan, memperkaya, dan memajukan Ipteks, kebudayaan nasional, dan
-                                masyarakat.</li>
-                            <li>Mengembangkan, mengintegrasikan, dan menyebarluaskan Ipteks sesuai perkembangan zaman
-                                yang
-                                berkontribusi pada peningkatan kesejahteraan masyarakat dan memperkuat kebudayaan
-                                nasional.</li>
-                            <li>Melalui berbagai bentuk PKM, Universitas mampu berkontribusi dalam pemberdayaan
-                                masyarakat
-                                dalam berbagai aspek kehidupan, penguatan literasi moderasi beragama, dan peningkatan
-                                kerukunan beragama. Hal ini memperkuat peran Universitas sebagai penyelenggara
-                                pendidikan
-                                tinggi, bekerja sama dengan lembaga dan asosiasi profesi baik di dalam maupun luar
-                                negeri,
-                                sehingga lulusan dapat memperoleh keahlian pada tingkat profesional.</li>
-                            <li>Menyiapkan alumni yang mampu berkiprah pada pengembangan masyarakat, ipteks, berdaya
-                                saing
-                                global, serta mampu menjadi problem solver dan agent of change.</li>
-                            <li>Menjadi lembaga pendidikan tinggi yang memberikan kemudahan layanan yang terbuka,
-                                terhubung,
-                                kolaboratif, dan berdaya saing global melalui digitalisasi layanan, kemitraan yang
-                                strategis
-                                dengan berbagai institusi.</li>
+                            <li>Pengembangan kelembagaan dan tata kelola yang diorientasikan kepada pelayanan civitas akademika.
+                            </li>
+                            <li>Pembinaan Sumber Daya Manusia.
+                            </li>
+                            <li>Merumuskan kurikulum yang disesuaikan dengan perkembangan ilmu pengetahuan dan kebutuhan masyarakat.
+                            </li>
+                            <li>Menciptakan suasana akademik yang kondusif.
+                            </li>
+                            <li>Mengembangkan perpustakaan yang memenuhi kebutuhan civitas akademika.
+                            </li>
+                            <li>Menghasilkan penelitian-penelitian yang merespons berbagai fenomena keagamaan di masyarakat.
+                            </li>
+                            <li>Melakukan pengabdian pada masyarakat berupa pembinaan desa-desa tertinggal.
+                            </li>
+                            <li>Mengoptimalkan peranan alumni.
+                            </li>
+                            <li>Membuka peluang kerja sama dengan lembaga luar seluasluasnya.
+                            </li>
                         </ol>
                     </div>
                 </div>

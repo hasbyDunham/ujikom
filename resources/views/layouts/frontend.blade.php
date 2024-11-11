@@ -54,7 +54,7 @@
     <!-- Footer End -->
 
     <!-- Back to Top -->
-    <a href="#" class="btn btn-success btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#" class="btn btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>
 
 
     <!-- JavaScript Libraries -->
