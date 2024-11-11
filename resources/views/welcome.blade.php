@@ -194,7 +194,7 @@
                 </div>
                 <div class="row g-4 mb-5 justify-content-center">
                     @foreach ($pengumuman->sortByDesc('created_at')->take(4) as $item)
-                        <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.1s">
                             <div class="office-item p-4">
                                 <div class="office-img mb-4">
                                     <img src="{{ asset('/images/pengumuman/' . $item->foto) }}"
@@ -233,7 +233,7 @@
                                     alt="Image">
                             </div>
                             <div class="ms-4">
-                                <h4><b><a href="beritaF/{{ $item['id'] }}">{{ $item->judul_beritaF }}</a></b></h4>
+                                <h5><b><a href="beritaF/{{ $item['id'] }}">{{ $item->judul_beritaF }}</a></b></h5>
                             </div>
                         </div>
                         <hr class="w-100">

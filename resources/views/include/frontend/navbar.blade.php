@@ -13,7 +13,7 @@
                     <div class="dropdown-menu m-0">
                         <a href="{{ url('sambutandekan') }}" class="dropdown-item">Sambutan Dekan</a>
                         <a href="{{ url('sejarah') }}" class="dropdown-item">Sejarah</a>
-                        <a href="{{ url('visimisi') }}" class="dropdown-item">Motto, Visi, Misi dan Tujuan</a>
+                        <a href="{{ url('visimisi') }}" class="dropdown-item">Visi, Misi dan Tujuan</a>
                         <a href="{{ url('pimpinan') }}" class="dropdown-item">Pimpinan Fakultas</a>
                         {{-- <a href="{{ url('datadosen') }}" class="dropdown-item">Data Dosen</a>
                         <a href="#" class="dropdown-item">Data Tendik</a> --}}
