@@ -5,7 +5,16 @@
         <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner" role="listbox">
                 <div class="carousel-item active">
-                    <img src="{{ asset('frontend/img/pimpinan.png') }}" class="img-fluid carousel-img" alt="Image">
+                    <img src="{{ asset('frontend/img/banner-menu.jpg') }}" class="img-fluid" alt="Image">
+                    <div class="carousel-caption">
+                        <div class="text-start pb-5" style="max-width: 100%; margin-right: 40%">
+                            <h3 class="display-1 text-white text-capitalize fs-3 wow fadeInUp" data-wow-delay="0.5s">
+                                Fakultas Ushuluddin
+                            </h3>
+                            <h2 class="display-5 text-capitalize text-white wow fadeInUp" data-wow-delay="0.3s">
+                                Pimpinan Fakultas</h1>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
