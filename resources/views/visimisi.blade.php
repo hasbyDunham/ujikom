@@ -5,7 +5,16 @@
         <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner" role="listbox">
                 <div class="carousel-item active">
-                    <img src="{{ asset('frontend/img/visimisi.png') }}" class="img-fluid carousel-img" alt="Image">
+                    <img src="{{ asset('frontend/img/banner-menu.jpg') }}" class="img-fluid" alt="Image">
+                    <div class="carousel-caption">
+                        <div class="text-start pb-5" style="max-width: 100%; margin-right: 40%">
+                            <h3 class="display-1 text-white text-capitalize fs-3 wow fadeInUp" data-wow-delay="0.5s">
+                                Fakultas Ushuluddin
+                            </h3>
+                            <h2 class="display-5 text-capitalize text-white wow fadeInUp" data-wow-delay="0.3s">
+                                Visi, Misi, dan Tujuan</h1>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -32,7 +41,8 @@
                             <h1 class="display-5 mb-4">Visi</h1>
                         </center>
                         <p class="mb-4">
-                            “Menjadi pusat studi dan informasi keushuluddinan yang unggul dan kompetitif di Asean tahun 2025”
+                            “Menjadi pusat studi dan informasi keushuluddinan yang unggul dan kompetitif di Asean tahun
+                            2025”
                         </p>
                     </div>
                 </div>
@@ -47,11 +57,15 @@
                             <h1 class="display-5 mb-4">Misi</h1>
                         </center>
                         <ol style="line-height: 1.8; padding-left: 15px;">
-                            <li>Menyelenggarakan pendidikan dan penelitian di bidang ilmu-ilmu keushuluddinan berbasis Islam damai sebagai rahmat bagi semesta alam.
+                            <li>Menyelenggarakan pendidikan dan penelitian di bidang ilmu-ilmu keushuluddinan berbasis Islam
+                                damai sebagai rahmat bagi semesta alam.
                             </li>
-                            <li>Menyelenggarakan pendidikan, penelitian, dan pengabdian masyarakat di bidang ilmu-ilmu keushuluddinan yang memiliki tingkat relevansi dengan perubahan dan perkembangan sosial-keagamaan di masyarakat.
+                            <li>Menyelenggarakan pendidikan, penelitian, dan pengabdian masyarakat di bidang ilmu-ilmu
+                                keushuluddinan yang memiliki tingkat relevansi dengan perubahan dan perkembangan
+                                sosial-keagamaan di masyarakat.
                             </li>
-                            <li>Menginformasikan produk-produk Tridarma kepada masyarakat seluas-luasnya dengan prinsip mensosialisasikan Islam damai sebagai rahmat bagi semesta alam.
+                            <li>Menginformasikan produk-produk Tridarma kepada masyarakat seluas-luasnya dengan prinsip
+                                mensosialisasikan Islam damai sebagai rahmat bagi semesta alam.
                             </li>
                         </ol>
                     </div>
@@ -63,11 +77,13 @@
                             <h1 class="display-5 mb-4">Sasaran</h1>
                         </center>
                         <ol style="line-height: 1.8; padding-left: 15px; text-align: left;">
-                            <li>Pengembangan kelembagaan dan tata kelola yang diorientasikan kepada pelayanan civitas akademika.
+                            <li>Pengembangan kelembagaan dan tata kelola yang diorientasikan kepada pelayanan civitas
+                                akademika.
                             </li>
                             <li>Pembinaan Sumber Daya Manusia.
                             </li>
-                            <li>Merumuskan kurikulum yang disesuaikan dengan perkembangan ilmu pengetahuan dan kebutuhan masyarakat.
+                            <li>Merumuskan kurikulum yang disesuaikan dengan perkembangan ilmu pengetahuan dan kebutuhan
+                                masyarakat.
                             </li>
                             <li>Menciptakan suasana akademik yang kondusif.
                             </li>

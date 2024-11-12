@@ -68,7 +68,7 @@
             <div class="carousel-inner" role="listbox">
                 <div class="carousel-item active">
                     {{-- <img src="{{ asset('frontend/img/hero-image2.jpg') }}" class="img-fluid" alt="Image"> --}}
-                    <img src="{{ asset('frontend/img/hero-image.jpg') }}" class="img-fluid" alt="Image">
+                    <img src="{{ asset('frontend/img/banner-ushuluddin.jpg') }}" class="img-fluid" alt="Image">
                     <div class="carousel-caption">
                         {{-- <img src="{{ asset('frontend/img/DEKAN-FEBI2.png') }}" alt="image"
                             class="img-fluid display-5 wow fadeInUp" data-wow-delay="0.3s"
