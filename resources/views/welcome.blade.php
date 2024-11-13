@@ -123,7 +123,7 @@
     <div class="container-fluid photo-dekan py-3">
         <div class="container">
             <div class="section-title text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
-                <h1 class="display-6 mb-4">Pimpinan Fakultas</h1>
+                <h1 class="display-6 mb-4">Pimpinan Fakultas Ushuluddin</h1>
             </div>
             <div class="row g-4">
                 <div class="col-lg-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
