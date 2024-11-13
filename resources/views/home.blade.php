@@ -14,10 +14,6 @@
                                         <b>{{ Auth::user()->name }}</b>
                                     @endguest! 🎉
                                 </h5>
-
-                                <p class="mb-4">
-                                    You have done <span class="fw-bold">72%</span> Selamat datang di halaman Dashboard
-                                </p>
                             </div>
                         </div>
                     </div>
