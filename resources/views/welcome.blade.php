@@ -93,16 +93,16 @@
     <!-- Carousel End -->
 
     <!-- About Start -->
-    <div class="container-fluid about py-4 mb-0 mt-0">
+    <div class="container-fluid  about-ushuluddin py-4 mb-0 mt-0">
         <div class="container py-4">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
                     <div class="pb-5">
-                        <img src="{{ asset('frontend/img/mahasiswa.jpeg') }}" class="img-fluid rounded w-100"
-                            style="object-fit: cover;" alt="Image">
+                        <img src="{{ asset('frontend/img/mahasiswa.jpeg') }}"
+                            class="img-fluid rounded w-100 img-ushuluddin" style="object-fit: cover;" alt="Image">
                     </div>
                 </div>
-                <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.4s">
+                <div class="col-lg-6 wow fadeInRight teks-ushuluddin" data-wow-delay="0.4s">
                     <div class="section-title text-start mb-5">
                         <h1 class="display-5 mb-4">Kuliah di Fakultas Ushuluddin</h1>
                         <p class="mb-4">Bentuk kebijaksanaan, tingkatkan keahlian, dan kembangkan kepribadian dalam
@@ -120,7 +120,7 @@
 
 
     <!-- Pimpinan Start -->
-    <div class="container-fluid py-3">
+    <div class="container-fluid photo-dekan py-3">
         <div class="container">
             <div class="section-title text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
                 <h1 class="display-6 mb-4">Pimpinan Fakultas</h1>
@@ -193,7 +193,7 @@
                     <h3 class="mb-4"><b>Pengumuman</b></h3>
                 </div>
                 <div class="row g-4 mb-5 justify-content-center">
-                    @foreach ($pengumuman->sortByDesc('created_at')->take(4) as $item)
+                    @foreach ($pengumuman->sortByDesc('created_at')->take(3) as $item)
                         <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.1s">
                             <div class="office-item p-4">
                                 <div class="office-img mb-4">
@@ -238,6 +238,10 @@
                         </div>
                         <hr class="w-100">
                     @endforeach
+                    <div class="col-12 text-center">
+                        <a class="btn btn-selengkapnya rounded-pill py-2 px-5 wow fadeInUp" data-wow-delay="0.10s"
+                            href="{{ url('beritaF') }}">Selengkapnya</a>
+                    </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.4s">
                     <div class="d-flex align-items-end">
@@ -265,6 +269,10 @@
                         </div>
                         <hr class="w-100">
                     @endforeach
+                    <div class="col-12 text-center">
+                        <a class="btn btn-selengkapnya rounded-pill py-2 px-5 wow fadeInUp" data-wow-delay="0.10s"
+                            href="{{ url('berita') }}">Selengkapnya</a>
+                    </div>
                 </div>
             </div>
         </div>

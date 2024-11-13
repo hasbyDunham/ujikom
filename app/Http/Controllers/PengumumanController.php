@@ -95,7 +95,7 @@ class PengumumanController extends Controller
         $pengumuman->deskripsi_pengumuman = $request->deskripsi_pengumuman;
 
         if ($request->hasFile('foto')) {
-            $produk->deleteImage();
+            // $produk->deleteImage();
             $img = $request->file('foto');
             $name = rand(1000, 9999) . $img->getClientOriginalName();
             $img->move('images/pengumuman/', $name);
