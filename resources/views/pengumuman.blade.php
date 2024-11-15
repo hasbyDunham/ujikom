@@ -23,7 +23,9 @@
 
     <!-- Pengumuman Section Start -->
     @php
+        // $pengumuman = \App\Models\Pengumuman::where('flag', '1')->orderBy('id', 'asc')->paginate(6);
         $pengumuman = \App\Models\Pengumuman::orderBy('id', 'asc')->paginate(6);
+        // $pengumuman = \App\Models\Pengumuman::where('flag', 1);
     @endphp
     <div class="container py-5">
         <div class="row">
@@ -43,6 +45,7 @@
                                 <a href="pengumuman/{{ $item['id'] }}">{{ $item->judul_pengumuman }}</a>
                             </h5>
                             {{-- <p class="card-text">{!! $item->deskripsi_pengumuman !!} --}}
+                                {{ $item->author->name }}
                             </p>
                         </div>
                     </div>

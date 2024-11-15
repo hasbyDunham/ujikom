@@ -45,11 +45,14 @@ class PengumumanController extends Controller
             'judul_pengumuman' => 'required',
             'deskripsi_pengumuman' => 'required',
             'foto' => 'required|max:2080|mimes:png,jpg',
+            'flag' => 'required'
         ]);
 
         $pengumuman = new Pengumuman();
         $pengumuman->judul_pengumuman = $request->judul_pengumuman;
         $pengumuman->deskripsi_pengumuman = $request->deskripsi_pengumuman;
+        $pengumuman->flag = $request->flag;
+        $pengumuman->user_id = auth()->id();
 
         if ($request->hasFile('foto')) {
             $img = $request->file('foto');
@@ -88,11 +91,13 @@ class PengumumanController extends Controller
         $validated = $request->validate([
             'judul_pengumuman' => 'required',
             'deskripsi_pengumuman' => 'required',
+            'flag' => 'required'
         ]);
 
         $pengumuman = Pengumuman::FindOrFail($id);
         $pengumuman->judul_pengumuman = $request->judul_pengumuman;
         $pengumuman->deskripsi_pengumuman = $request->deskripsi_pengumuman;
+        $pengumuman->flag = $request->flag;
 
         if ($request->hasFile('foto')) {
             // $produk->deleteImage();

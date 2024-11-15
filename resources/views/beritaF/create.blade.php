@@ -38,8 +38,21 @@
                                     @enderror
                                 </div>
                             </div>
-
-
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label" for="basic-default-name">Flag</label>
+                                <div class="col-sm-10">
+                                    <select name="flag" id="flag" class="form-control" required>
+                                        <option value="">Pilih Flag</option>
+                                        <option value="1">Publish</option>
+                                        <option value="0">Draft</option>
+                                    </select>
+                                    @error('flag')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label" for="basic-default-name">Foto</label>
                                 <input type="file" class="form-control @error('foto') is-invalid @enderror"
