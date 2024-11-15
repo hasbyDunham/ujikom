@@ -15,8 +15,8 @@
                             <tr>
                                 <th>No</th>
                                 <th>Judul Pengumuman</th>
-                                <th>Deskripsi</th>
-                                <th>Foto</th>
+                                {{-- <th>Deskripsi</th> --}}
+                                {{-- <th>Foto</th> --}}
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -26,9 +26,10 @@
                                 <tr>
                                     <td>{{ $no++ }}</td>
                                     <td>{{ $item->judul_pengumuman }}</td>
-                                    <td>{!! $item->deskripsi_pengumuman !!}</td>
-                                    <td><img src="{{ asset('/images/pengumuman/' . $item->foto) }}" style="width: 100px;"
-                                            alt=""></td>
+                                    {{-- <td>{!! $item->deskripsi_pengumuman !!}</td> --}}
+                                    {{-- <td><img src="{{ asset('/images/pengumuman/' . $item->foto) }}" style="width: 100px;"
+                                            alt=""></td> --}}
+                                    <td>{{ $item->flag == 0 ? 'Draft':'Publish' }}</td>
                                     <td>
                                         <div class="btn-group">
                                             <button type="button"
