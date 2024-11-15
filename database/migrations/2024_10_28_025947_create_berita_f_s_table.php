@@ -13,9 +13,11 @@ return new class extends Migration
     {
         Schema::create('berita_f_s', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('judul_beritaF');
             $table->longText('deskripsiF');
             $table->string('foto');
+            $table->smallInteger('flag');
             $table->timestamps();
         });
     }

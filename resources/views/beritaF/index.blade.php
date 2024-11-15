@@ -15,8 +15,8 @@
                             <tr>
                                 <th>No</th>
                                 <th>Judul Berita</th>
-                                <th>Deskripsi</th>
-                                <th>Foto</th>
+                                {{-- <th>Deskripsi</th> --}}
+                                {{-- <th>Foto</th> --}}
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -26,9 +26,9 @@
                                 <tr>
                                     <td>{{ $no++ }}</td>
                                     <td>{{ $item->judul_beritaF }}</td>
-                                    <td>{!! $item->deskripsiF !!}</td>
-                                    <td><img src="{{ asset('/images/beritaF/' . $item->foto) }}" style="width: 100px;"
-                                            alt=""></td>
+                                    {{-- <td>{!! $item->deskripsiF !!}</td> --}}
+                                    {{-- <td><img src="{{ asset('/images/beritaF/' . $item->foto) }}" style="width: 100px;"
+                                            alt=""></td> --}}
                                     <td>
                                         <div class="btn-group">
                                             <button type="button"

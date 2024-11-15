@@ -23,14 +23,6 @@
                     <br>
                     <img src="{{ asset('/images/pengumuman/' . $pengumuman->foto) }}" class="img-fluid w-100"
                         alt="">
-                    {{-- <img width="750" height="350" src="https://uinsgd.ac.id/wp-content/uploads/2024/10/1728298036.jpg"
-                    class="attachment-full size-full wp-image-54663" alt="" srcset="https://uinsgd.ac.id/wp-content/uploads/2024/10/1728298036.jpg 1600w,
-                    https://uinsgd.ac.id/wp-content/uploads/2024/10/1728298036-300x169.jpg 300w,
-                    https://uinsgd.ac.id/wp-content/uploads/2024/10/1728298036-1024x576.jpg 1024w,
-                    https://uinsgd.ac.id/wp-content/uploads/2024/10/1728298036-768x432.jpg 768w,
-                    https://uinsgd.ac.id/wp-content/uploads/2024/10/1728298036-1536x864.jpg 1536w,
-                    https://uinsgd.ac.id/wp-content/uploads/2024/10/1728298036-650x366.jpg 650w"
-                    sizes="(max-width: 1600px) 100vw, 1600px"> --}}
 
                     <p class="my-4">{!! $pengumuman->deskripsi_pengumuman !!}
                     </p>
