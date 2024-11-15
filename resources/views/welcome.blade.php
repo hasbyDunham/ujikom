@@ -265,6 +265,11 @@
                                 <h5><b><a
                                             href="berita/{{ $item['id'] }}">{{ $item['yoast_head_json']['title'] ?? 'No Title' }}</a></b>
                                 </h5>
+                                <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i>
+                                    {{ date('d/m/Y', strtotime($item['date'])) }}
+                                    <a href="#" class="text-body d-block float-end link-hover me-3"><i
+                                            class="bi bi-person-circle"></i>
+                                        {{ $item['yoast_head_json']['author'] }}</a></small>
                             </div>
                         </div>
                         <hr class="w-100">
