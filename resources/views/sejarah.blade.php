@@ -29,24 +29,26 @@
                     <div class="section-title mb-5">
                         <h1 class="display-6 mb-4">Sejarah Fakultas Ushuluddin</h1>
                         <p class="content-text">Secara historis, Fakultas Ushuluddin termasuk fakultas yang
-                            paling awal
-                            berdiri bersamaan dengan didirikannya UIN ( saat itu masih IAIN ) Sunan Gunung Djati Bandung,
+                            paling awal berdiri bersamaan dengan didirikannya UIN ( saat itu masih IAIN ) Sunan Gunung Djati Bandung,
                             pada tahun 1968. Fakultas yang kini telah berusia 45 tahun ini, sepanjang sejarahnya telah telah
                             dipimpin oleh figur-figur yang mumpuni di bidang keilmuan Islam. Dekan Fakultas Ushuluddin yang
                             pertama adalah Prof.K.H. Anwar Musaddad, mulai tahun 1968 hingga 1970. Saat itu beliau merangkap
-                            sebagai Rektor IAIN Sunan Gunung Djati Bandung. Setelah K.H. Anwar Musaddad, Dekan berikutnya
-                            adalah Drs. H. Farichin Khumaidi,MA (almarhum). Alumni Mc.Gill University Canada ini menjabat
-                            dekan selama dua periode (1971-1974 dan 1979-1982) berselang seling dengan Drs. H. Muhammad
-                            Chalil (almarhum), yang juga menjabat Dekan Fakultas Ushuluddin dua periode (1975-1978 dan
-                            1982-1985). Nama keempat dalam sejarah Fakultas Ushuluddin adalah Drs. H. Ahmad Subandi. Beliau
-                            menjabat selama dua periode, tahun 1986 hingga1994. Selanjutnya adalah Prof.Dr.H. Dadang Kahmad,
+                            sebagai Rektor IAIN Sunan Gunung Djati Bandung.</p>
+                        <p class="content-text">Setelah K.H. Anwar Musaddad, Dekan berikutnya adalah Drs. H. Farichin Khumaidi,MA (almarhum).
+                            Alumni Mc.Gill University Canada ini menjabat dekan selama dua periode (1971-1974 dan 1979-1982)
+                            berselang seling dengan Drs. H. Muhammad Chalil (almarhum),
+                            yang juga menjabat Dekan Fakultas Ushuluddin dua periode (1975-1978 dan 1982-1985).
+                            Nama keempat dalam sejarah Fakultas Ushuluddin adalah Drs. H. Ahmad Subandi. Beliau
+                            menjabat selama dua periode, tahun 1986 hingga1994. </p>
+                        <p class="content-text"> Selanjutnya adalah Prof.Dr.H. Dadang Kahmad,
                             M.Si. Beliau menjabat selama dua periode dari tahun 1995 hingga 2004. Penerusnya adalah Prof.
                             Dr.H. Abdul Rozak, M.Ag. Beliau menjabat selama satu periode (2004-2007). Kemudian, periode
                             tahun 2007-2011, Fakultas Ushuluddin dipimpin oleh Prof. Dr.H. Muhtar Solihin,M.Ag. Semenjak
                             tahun 2011, kepemimpinan di Fakultas Ushuluddin dilanjutkan oleh Prof.Dr.H. Rosihon Anwar, M.Ag.
                             Estapeta kepemimpinan tersebut adalah buah kaderisasi dan tentu saja, untuk kemajuan di masa
                             mendatang, harus disiapkan para pemimpin Fakultas Ushuluddin yang selalu siap menghadapi
-                            tantangan zamannya. Di era kepemimpinan Prof.Dr.H. Rosihon Anwar, M.Ag, disusun Rencana
+                            tantangan zamannya. </p>
+                        <p class="content-text"> Di era kepemimpinan Prof.Dr.H. Rosihon Anwar, M.Ag, disusun Rencana
                             Strategis Fakultas Ushuluddin 2011-2015 yang diorientasikan kepada penguatan ke dalam dan ke
                             luar. Penguatan yang pertama diorientasikan kepada penggodogan mahasiswa sehingga benar-benar
                             siap untuk diserap stake holder yang ada. Ini berarti pembenahan terhadap kurikulum, kinerja

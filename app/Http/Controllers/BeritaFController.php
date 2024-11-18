@@ -53,6 +53,7 @@ class BeritaFController extends Controller
         $beritaF->judul_beritaF = $request->judul_beritaF;
         $beritaF->deskripsiF = $request->deskripsiF;
         $beritaF->flag = $request->flag;
+        $pengumuman->user_id = auth()->id();
 
         if ($request->hasFile('foto')) {
             $img = $request->file('foto');
@@ -99,6 +100,7 @@ class BeritaFController extends Controller
         $beritaF->judul_beritaF = $request->judul_beritaF;
         $beritaF->deskripsiF = $request->deskripsiF;
         $beritaF->flag = $request->flag;
+        $pengumuman->user_id = auth()->id();
 
         if($request->hasFile('foto')){
             // $beritaF->deleteImage();

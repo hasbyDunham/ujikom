@@ -98,6 +98,7 @@ class PengumumanController extends Controller
         $pengumuman->judul_pengumuman = $request->judul_pengumuman;
         $pengumuman->deskripsi_pengumuman = $request->deskripsi_pengumuman;
         $pengumuman->flag = $request->flag;
+        $pengumuman->user_id = auth()->id();
 
         if ($request->hasFile('foto')) {
             // $produk->deleteImage();
