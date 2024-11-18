@@ -55,8 +55,8 @@
         // dd($berita);
     @endphp
     @php
-        $pengumuman = \App\Models\Pengumuman::orderBy('id', 'asc')->get();
-        $beritaF = \App\Models\BeritaF::orderBy('id', 'asc')->get();
+        $pengumuman = \App\Models\Pengumuman::where('flag', '1')->orderBy('id', 'asc')->paginate(6);
+        $beritaF = \App\Models\BerandaF::where('flag', '1')->orderBy('id', 'asc')->paginate(6);
     @endphp
     <!-- Navbar & Hero Start -->
     @include('include.frontend.navbar')
