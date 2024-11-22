@@ -17,6 +17,7 @@
                                 <th>Judul Pengumuman</th>
                                 {{-- <th>Deskripsi</th> --}}
                                 {{-- <th>Foto</th> --}}
+                                <th>Flag</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -29,7 +30,7 @@
                                     {{-- <td>{!! $item->deskripsi_pengumuman !!}</td> --}}
                                     {{-- <td><img src="{{ asset('/images/pengumuman/' . $item->foto) }}" style="width: 100px;"
                                             alt=""></td> --}}
-                                    <td>{{ $item->flag == 0 ? 'Draft':'Publish' }}</td>
+                                    <td>{{ $item->flag == 0 ? 'DRAF':'PUBLISHED' }}</td>
                                     <td>
                                         <div class="btn-group">
                                             <button type="button"

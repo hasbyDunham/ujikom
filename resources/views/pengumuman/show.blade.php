@@ -15,7 +15,11 @@
                     <hr>
                     <div class="mb-2">
                         <label for="">Deskripsi</label>
-                        <b>{{$pengumuman->deskripsi_pengumuman}}</b>
+                        <p>{!!$pengumuman->deskripsi_pengumuman!!}</p>
+                    </div>
+                    <div class="mb-2">
+                        <label for="">Status</label>
+                        <b>{{$pengumuman->flag == 0 ? 'DRAF':'PUBLISHED' }}</b>
                     </div>
                     <hr>
                     <div class="mb-2">
