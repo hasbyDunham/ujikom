@@ -71,10 +71,9 @@ class BeritaFController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(BeritaF $beritaF)
+    public function show($id)
     {
-        $beritaF = BeritaF::all();
-        return view('beritaF.show', compact('beritaF'));
+        //
     }
 
     /**

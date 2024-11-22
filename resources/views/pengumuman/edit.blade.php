@@ -49,7 +49,6 @@
                                 <label class="col-sm-2 col-form-label" for="basic-default-name">Flag</label>
                                 <div class="col-sm-10">
                                     <select name="flag" id="flag" class="form-control" required>
-                                        {{ old('flag', $pengumuman->flag) }}
                                         <option value="1" @selected(old('flag', $pengumuman->flag) == 1)>PUBLISHED</option>
                                         <option value="0" @selected(old('flag', $pengumuman->flag) == 0)>DRAF</option>
                                     </select>

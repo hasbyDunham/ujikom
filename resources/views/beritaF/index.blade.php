@@ -15,7 +15,6 @@
                             <tr>
                                 <th>No</th>
                                 <th>Judul Berita</th>
-                                <th>Status</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -25,7 +24,6 @@
                                 <tr>
                                     <td>{{ $no++ }}</td>
                                     <td>{{ $item->judul_beritaF }}</td>
-                                    <td>{{ $item->flag == 0 ? 'DRAF' : 'PUBLISHED' }}</td>
                                     <td>
                                         <div class="btn-group">
                                             <button type="button"

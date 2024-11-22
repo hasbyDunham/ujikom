@@ -28,7 +28,7 @@
                                     {{-- <td>{!! $item->deskripsi_pengumuman !!}</td> --}}
                                     {{-- <td><img src="{{ asset('/images/pengumuman/' . $item->foto) }}" style="width: 100px;"
                                             alt=""></td> --}}
-                                    <td>{{ $item->flag == 0 ? 'DRAF' : 'PUBLISHED' }}</td>
+                                    <td>{{ $item->flag == 0 ? 'DRAF':'PUBLISHED' }}</td>
                                     <td>
                                         <div class="btn-group">
                                             <button type="button"
