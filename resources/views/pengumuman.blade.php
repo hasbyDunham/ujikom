@@ -34,7 +34,7 @@
         </div>
         <div class="row g-4">
             <!-- Card 1 -->
-            @foreach ($pengumuman as $item)
+            @foreach ($pengumuman->sortByDesc('created_at')->take(6) as $item)
                 <div class="col-md-4 mb-5">
                     <div class="card shadow-sm border-2">
                         <img src="{{ asset('/images/pengumuman/' . $item->foto) }}" class="card-img-top custom-img"
@@ -43,9 +43,14 @@
                             <h5 class="card-title">
                                 <a href="pengumuman/{{ $item['id'] }}">{{ $item->judul_pengumuman }}</a>
                             </h5>
-                            {{-- <p class="card-text">{!! $item->deskripsi_pengumuman !!} --}}
-                                {{ $item->author->name }}
-                            </p>
+                            <small class="text-body d-block">
+                                <div class="float-start">
+                                    <i class="fas fa-calendar-alt me-1"></i>{{ $item->created_at->format('d M Y') }}
+                                </div>
+                                <a href="#" class="text-body d-block float-end link-hover me-3"><i
+                                        class="bi bi-person-circle"></i>
+                                    Admin</a>
+                            </small>
                         </div>
                     </div>
                 </div>

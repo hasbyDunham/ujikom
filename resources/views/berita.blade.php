@@ -57,7 +57,7 @@
         </div>
         <div class="row g-4">
             <!-- Card 1 -->
-            @foreach ($paginatedBerita as $item)
+            @foreach ($paginatedBerita->sortByDesc('created_at')->take(6) as $item)
                 <div class="col-md-4 mb-5">
                     <div class="card shadow-sm border-2">
                         @if (

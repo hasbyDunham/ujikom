@@ -10,13 +10,12 @@
                     <a href="{{ route('pengumuman.create') }}" class="btn btn-sm btn-primary" style="float: right">Tambah</a>
                 </div>
                 <div class="table-responsive text-nowrap">
-                    <table class="table">
+                    <table class="table" id="dataTable">
                         <thead>
                             <tr>
                                 <th>No</th>
                                 <th>Judul Pengumuman</th>
-                                {{-- <th>Deskripsi</th> --}}
-                                {{-- <th>Foto</th> --}}
+                                <th>Status</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -29,7 +28,7 @@
                                     {{-- <td>{!! $item->deskripsi_pengumuman !!}</td> --}}
                                     {{-- <td><img src="{{ asset('/images/pengumuman/' . $item->foto) }}" style="width: 100px;"
                                             alt=""></td> --}}
-                                    <td>{{ $item->flag == 0 ? 'Draft':'Publish' }}</td>
+                                    <td>{{ $item->flag == 0 ? 'DRAF' : 'PUBLISHED' }}</td>
                                     <td>
                                         <div class="btn-group">
                                             <button type="button"
@@ -69,3 +68,10 @@
         </div>
     </div>
 @endsection
+@push('scripts')
+    <script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/2.0.8/js/dataTables.bootstrap5.js"></script>
+    <script>
+        new DataTable('#dataTable');
+    </script>
+@endpush

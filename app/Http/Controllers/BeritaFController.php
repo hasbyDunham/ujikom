@@ -46,14 +46,14 @@ class BeritaFController extends Controller
             'judul_beritaF' => 'required',
             'deskripsiF' => 'required',
             'foto' => 'required|max:2080|mimes:png,jpg',
-            'flag' => 'required'
+            'flag' => 'required',
         ]);
 
         $beritaF = new BeritaF();
         $beritaF->judul_beritaF = $request->judul_beritaF;
         $beritaF->deskripsiF = $request->deskripsiF;
         $beritaF->flag = $request->flag;
-        $pengumuman->user_id = auth()->id();
+        $beritaF->user_id = auth()->id();
 
         if ($request->hasFile('foto')) {
             $img = $request->file('foto');
@@ -73,7 +73,8 @@ class BeritaFController extends Controller
      */
     public function show(BeritaF $beritaF)
     {
-        //
+        $beritaF = BeritaF::all();
+        return view('beritaF.show', compact('beritaF'));
     }
 
     /**
@@ -91,28 +92,28 @@ class BeritaFController extends Controller
     public function update(Request $request, $id)
     {
         $validated = $request->validate([
-            'judul_beritaF'=> 'required',
-            'deskripsiF'=> 'required',
-            'flag'=> 'required',
+            'judul_beritaF' => 'required',
+            'deskripsiF' => 'required',
+            'flag' => 'required',
         ]);
 
         $beritaF = BeritaF::FindOrFail($id);
         $beritaF->judul_beritaF = $request->judul_beritaF;
         $beritaF->deskripsiF = $request->deskripsiF;
         $beritaF->flag = $request->flag;
-        $pengumuman->user_id = auth()->id();
+        $beritaF->user_id = auth()->id();
 
-        if($request->hasFile('foto')){
+        if ($request->hasFile('foto')) {
             // $beritaF->deleteImage();
             $img = $request->file('foto');
             $name = rand(1000, 9999) . $img->getClientOriginalName();
-            $img ->move('images/beritaF/', $name);
+            $img->move('images/beritaF/', $name);
             $beritaF->foto = $name;
         }
 
         $beritaF->save();
         return redirect()->route('beritaF.index')
-        ->with('success','data berhasil di edit');
+            ->with('success', 'data berhasil diperbarui');
     }
 
     /**

@@ -56,7 +56,7 @@
     @endphp
     @php
         $pengumuman = \App\Models\Pengumuman::where('flag', '1')->orderBy('id', 'asc')->paginate(6);
-        $beritaF = \App\Models\BerandaF::where('flag', '1')->orderBy('id', 'asc')->paginate(6);
+        $beritaF = \App\Models\BeritaF::where('flag', '1')->orderBy('id', 'asc')->paginate(6);
     @endphp
     <!-- Navbar & Hero Start -->
     @include('include.frontend.navbar')
@@ -204,6 +204,15 @@
                                     <h5 class="mb-2"><b><a
                                                 href="pengumuman/{{ $item['id'] }}">{{ $item->judul_pengumuman }}</a></b>
                                     </h5>
+                                    <small class="text-body d-block">
+                                        <div class="float-start">
+                                            <i
+                                                class="fas fa-calendar-alt me-1"></i>{{ $item->created_at->format('d M Y') }}
+                                        </div>
+                                        <a href="#" class="text-body d-block float-end link-hover me-3"><i
+                                                class="bi bi-person-circle"></i>
+                                            Admin</a>
+                                    </small>
                                 </div>
                             </div>
                         </div>
@@ -234,6 +243,12 @@
                             </div>
                             <div class="ms-4">
                                 <h5><b><a href="beritaF/{{ $item['id'] }}">{{ $item->judul_beritaF }}</a></b></h5>
+                                <small class="text-body d-block"><i
+                                        class="fas fa-calendar-alt me-1"></i>{{ $item->created_at->format('d M Y') }}
+                                    <a href="#" class="text-body d-block float-end link-hover me-3"><i
+                                            class="bi bi-person-circle"></i>
+                                        Admin</a>
+                                </small>
                             </div>
                         </div>
                         <hr class="w-100">

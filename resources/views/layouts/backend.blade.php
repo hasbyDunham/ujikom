@@ -69,7 +69,8 @@
     {{-- toast --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-
+    {{-- datatables styles --}}
+     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.bootstrap5.css">
 
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
@@ -122,6 +123,16 @@
 
     <script src="{{ asset('backend/assets/vendor/js/menu.js') }}"></script>
     <!-- endbuild -->
+
+    {{-- DataTable scripts --}}
+     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+     <script src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script>
+     <script src="https://cdn.datatables.net/2.0.7/js/dataTables.bootstrap5.js"></script>
+     <script>
+         $(document).ready(function() {
+             $('#dataTable').DataTable();
+         });
+     </script>
 
     <!-- Vendors JS -->
     <script src="{{ asset('backend/assets/vendor/libs/apex-charts/apexcharts.js') }}"></script>

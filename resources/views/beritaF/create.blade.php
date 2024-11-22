@@ -8,18 +8,17 @@
                 <div class="card mb-4">
                     <div class="card-header d-flex align-items-center justify-content-between">
                         <h5 class="mb-0">Tambah Data Berita Fakultas</h5>
-                        <a href="{{ route('beritaF.index') }}" class="btn btn-sm btn-primary"
-                            style="float: right">Kembali</a>
+                        <a href="{{ route('beritaF.index') }}" class="btn btn-sm btn-primary" style="float: right">Kembali</a>
                     </div>
                     <div class="card-body">
                         <form action="{{ route('beritaF.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label" for="basic-default-name">Judul Berita Fakultas</label>
+                                <label class="col-sm-2 col-form-label" for="basic-default-name">Judul Berita
+                                    Fakultas</label>
                                 <div class="col-sm-10">
-                                    <input type="text"
-                                        class="form-control @error('judul_beritaF') is-invalid @enderror"
-                                        name="judul_beritaF" id="judul_beritaF" value="{{ old('judul_beritaF')}}">
+                                    <input type="text" class="form-control @error('judul_beritaF') is-invalid @enderror"
+                                        name="judul_beritaF" id="judul_beritaF" value="{{ old('judul_beritaF') }}">
                                     @error('judul_beritaF')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -42,9 +41,9 @@
                                 <label class="col-sm-2 col-form-label" for="basic-default-name">Flag</label>
                                 <div class="col-sm-10">
                                     <select name="flag" id="flag" class="form-control" required>
-                                        <option value="">Pilih Flag</option>
-                                        <option value="1">Publish</option>
-                                        <option value="0">Draft</option>
+                                        <option value="" disabled>Pilih Flag</option>
+                                        <option value="1">PUBLISHED</option>
+                                        <option value="0">DRAF</option>
                                     </select>
                                     @error('flag')
                                         <span class="invalid-feedback" role="alert">

@@ -1,8 +1,6 @@
 @extends('layouts.backend')
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">
-    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Forms/</span> Horizontal Layouts</h4>
-
     <!-- Basic Layout & Basic with Icons -->
     <div class="row">
         <!-- Basic Layout -->
@@ -35,7 +33,7 @@
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="basic-default-name">Deskripsi</label>
                             <div class="col-sm-10">
-                                <textarea name="deskripsiF" id="deskripsi" cols="30"
+                                <textarea name="deskripsiF" id="deskripsiF" cols="30"
                                     rows="10">{{ $beritaF->deskripsiF }}</textarea>
                                 @error('deskripsiF')
                                 <span class="invalid-feedback" role="alert">
@@ -48,9 +46,9 @@
                             <label class="col-sm-2 col-form-label" for="basic-default-name">Flag</label>
                             <div class="col-sm-10">
                                 <select name="flag" id="flag" class="form-control" required>
-                                    {{old('flag', $pengumuman->flag)}}
-                                    <option value="1" @selected(old('flag', $pengumuman->flag) == 1)>Publish</option>
-                                    <option value="0" @selected(old('flag', $pengumuman->flag) == 0)>Draft</option>
+                                    {{old('flag', $beritaF->flag)}}
+                                    <option value="1" @selected(old('flag', $beritaF->flag) == 1)>PUBLISHED</option>
+                                    <option value="0" @selected(old('flag', $beritaF->flag) == 0)>DRAF</option>
                                 </select>
                                 @error('flag')
                                     <span class="invalid-feedback" role="alert">
@@ -78,3 +76,6 @@
     </div>
 </div>
 @endsection
+@push('scriptjs')
+@endpush
+
