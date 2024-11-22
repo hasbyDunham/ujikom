@@ -73,7 +73,8 @@ class BeritaFController extends Controller
      */
     public function show($id)
     {
-        //
+        $beritaF = BeritaF::FindOrFail($id);
+        return view('beritaF.show', compact('beritaF'));
     }
 
     /**
