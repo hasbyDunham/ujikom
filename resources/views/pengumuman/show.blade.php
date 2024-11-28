@@ -5,7 +5,8 @@
             <div class="card-md-8">
                 <div class="card">
                     <div class="card-header">Data Pengumuman
-                        <a href="{{ route('pengumuman.index') }}" class="btn btn-sm btn-primary" style="float: right">Kembali</a>
+                        <a href="{{ route('pengumuman.index') }}" class="btn btn-sm btn-primary"
+                            style="float: right">Kembali</a>
                     </div>
                     <hr>
                     <div class="card-body">
@@ -23,6 +24,7 @@
                                 <p>{!! $pengumuman->deskripsi_pengumuman !!}</p>
                             </div>
                         </div>
+                        <hr>
                         <div class="mb-3">
                             <label class="col-sm-2 col-form-label" for="basic-default-name">Status : </label>
                             <b>{{ $pengumuman->flag == 0 ? 'DRAF' : 'PUBLISHED' }}</b>
@@ -30,7 +32,8 @@
                         <hr>
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="basic-default-name">Gambar : </label>
-                            <img src="{{ asset('/images/pengumuman/' . $pengumuman->foto) }}" alt="" style="width: 200px">
+                            <img src="{{ asset('/images/pengumuman/' . $pengumuman->foto) }}" alt=""
+                                style="width: 200px">
                         </div>
                         <hr>
                     </div>

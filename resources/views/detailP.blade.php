@@ -18,7 +18,7 @@
                         <a href="#" class="text-dark link-hover me-3"><i class="bi bi-clock"></i>
                             {{ $pengumuman->created_at->format('d M Y') }}</a>
                         <a href="#" class="text-dark link-hover me-3"><i class="bi bi-person-circle"></i> Oleh
-                            Admin</a>
+                            {{ $item->author->name }}</a>
                     </div>
                     <br>
                     <img src="{{ asset('/images/pengumuman/' . $pengumuman->foto) }}" class="img-fluid w-100"

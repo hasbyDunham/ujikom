@@ -211,7 +211,7 @@
                                         </div>
                                         <a href="#" class="text-body d-block float-end link-hover me-3"><i
                                                 class="bi bi-person-circle"></i>
-                                            Admin</a>
+                                            {{ $item->author->name }}</a>
                                     </small>
                                 </div>
                             </div>
@@ -241,21 +241,26 @@
                                 <img src="{{ asset('/images/beritaF/' . $item->foto) }}" class="img-fluid rounded"
                                     alt="Image">
                             </div>
-                            <div class="ms-4">
-                                <h5><b><a href="beritaF/{{ $item['id'] }}">{{ $item->judul_beritaF }}</a></b></h5>
-                                <small class="text-body d-block"><i
-                                        class="fas fa-calendar-alt me-1"></i>{{ $item->created_at->format('d M Y') }}
-                                    <a href="#" class="text-body d-block float-end link-hover me-3"><i
-                                            class="bi bi-person-circle"></i>
-                                        Admin</a>
-                                </small>
+                            <div class="ms-4 w-100">
+                                <h5 class="mb-1">
+                                    <b><a href="beritaF/{{ $item['id'] }}">{{ $item->judul_beritaF }}</a></b>
+                                </h5>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <small class="text-body">
+                                        <i
+                                            class="fas fa-calendar-alt me-1"></i>{{ $item->created_at->format('d M Y') }}
+                                    </small>
+                                    <small class="text-body">
+                                        <i class="bi bi-person-circle me-1"></i>{{ $item->author->name }}
+                                    </small>
+                                </div>
                             </div>
                         </div>
                         <hr class="w-100">
                     @endforeach
                     <div class="col-12 text-center">
-                        <a class="btn btn-selengkapnya rounded-pill py-2 px-5 wow fadeInUp" data-wow-delay="0.10s"
-                            href="{{ url('beritaF') }}">Selengkapnya</a>
+                        <a class="btn btn-selengkapnya rounded-pill py-2 px-5 wow fadeInUp mt-3"
+                            data-wow-delay="0.10s" href="{{ url('beritaF') }}">Selengkapnya</a>
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.4s">
@@ -297,6 +302,46 @@
             </div>
         </div>
     </div>
+    {{-- <div class="col-12 text-center">
+        <a class="btn btn-selengkapnya rounded-pill py-2 px-5 wow fadeInUp" data-wow-delay="0.10s"
+            href="{{ url('beritaF') }}">Selengkapnya</a>
+    </div>
+    </div>
+    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.4s">
+        <div class="d-flex align-items-end">
+            <h3 class="mb-4"><b>Berita UIN</b></h3>
+        </div>
+        @foreach ($berita->sortByDesc('created_at')->take(4) as $item)
+            <div class="d-flex align-items-start ">
+                <div class="about-img">
+                    @if (!empty($item['yoast_head_json']['og_image']) && is_array($item['yoast_head_json']['og_image']) && isset($item['yoast_head_json']['og_image'][0]['url']))
+                        <img src="{{ $item['yoast_head_json']['og_image'][0]['url'] }}" class="img-fluid rounded"
+                            alt="Image">
+                    @else
+                        <img src="{{ asset('default.png') }}" class="img-fluid w-100 rounded" alt="Gambar berita">
+                    @endif
+                </div>
+                <div class="ms-4">
+                    <h5><b><a
+                                href="berita/{{ $item['id'] }}">{{ $item['yoast_head_json']['title'] ?? 'No Title' }}</a></b>
+                    </h5>
+                    <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i>
+                        {{ date('d/m/Y', strtotime($item['date'])) }}
+                        <a href="#" class="text-body d-block float-end link-hover me-3"><i
+                                class="bi bi-person-circle"></i>
+                            {{ $item['yoast_head_json']['author'] }}</a></small>
+                </div>
+            </div>
+            <hr class="w-100">
+        @endforeach
+        <div class="col-12 text-center">
+            <a class="btn btn-selengkapnya rounded-pill py-2 px-5 wow fadeInUp" data-wow-delay="0.10s"
+                href="{{ url('berita') }}">Selengkapnya</a>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div> --}}
     <!-- Berita End -->
 
     <!-- Footer Start -->
@@ -331,6 +376,25 @@
     {{-- Mengatur document title menggunakan variabel dari Laravel --}}
     <script>
         document.title = @json(config('app.title'));
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const titles = document.querySelectorAll("#news-title");
+
+            titles.forEach(title => {
+                const minLength = 30; // Panjang minimal teks
+                const currentLength = title.textContent.trim().length;
+
+                if (currentLength < minLength) {
+                    const extraSpaces = minLength - currentLength;
+
+                    // Tambahkan &nbsp; langsung ke dalam teks
+                    for (let i = 0; i < extraSpaces; i++) {
+                        title.innerHTML += "&nbsp;";
+                    }
+                }
+            });
+        });
     </script>
 </body>
 

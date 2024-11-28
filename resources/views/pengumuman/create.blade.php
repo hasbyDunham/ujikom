@@ -42,7 +42,7 @@
                                 <label class="col-sm-2 col-form-label" for="basic-default-name">Flag</label>
                                 <div class="col-sm-10">
                                     <select name="flag" id="flag" class="form-control" required>
-                                        <option value="" disabled>Pilih Flag</option>
+                                        <option value="">Pilih Flag</option>
                                         <option value="1">PUBLISHED</option>
                                         <option value="0">DRAF</option>
                                     </select>

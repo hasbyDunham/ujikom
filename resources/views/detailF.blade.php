@@ -18,7 +18,7 @@
                         <a href="#" class="text-dark link-hover me-3"><i class="bi bi-clock"></i>
                             {{ $beritaF->created_at->format('d M Y') }}</a>
                         <a href="#" class="text-dark link-hover me-3"><i class="bi bi-person-circle"></i> Oleh
-                            Admin</a>
+                            {{ $beritaF->author->name }}</a>
                     </div>
                     <br>
                     <img src="{{ asset('/images/beritaF/' . $beritaF->foto) }}" class="img-fluid w-100" alt="">

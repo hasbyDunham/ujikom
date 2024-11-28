@@ -384,6 +384,20 @@
 
 /*** Navbar End ***/
 
+.d-flex.align-items-start .ms-4 {
+    flex: 1;
+    /* Memastikan konten mengambil sisa lebar */
+}
+
+.d-flex.justify-content-between {
+    width: 100%;
+    /* Pastikan elemen tanggal dan penulis mengambil seluruh lebar */
+}
+
+.ms-4 .text-body {
+    white-space: nowrap;
+    /* Mencegah pindah baris */
+}
 
 /*** Single Page Hero Header Start ***/
 .bg-breadcrumb {
@@ -1065,6 +1079,7 @@
 .contact .office .office-item .office-content a.text-secondary:hover {
     color: var(--bs-primary) !important;
 }
+
 
 /*** Contact End ***/
 

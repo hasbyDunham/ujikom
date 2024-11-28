@@ -49,7 +49,7 @@
                                 </div>
                                 <a href="#" class="text-body d-block float-end link-hover me-3"><i
                                         class="bi bi-person-circle"></i>
-                                    Admin</a>
+                                    {{ $item->author->name }}</a>
                             </small>
                         </div>
                     </div>

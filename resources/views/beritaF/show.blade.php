@@ -23,6 +23,7 @@
                                 <p>{!! $beritaF->deskripsiF !!}</p>
                             </div>
                         </div>
+                        <hr>
                         <div class="mb-3">
                             <label class="col-sm-2 col-form-label" for="basic-default-name">Status : </label>
                             <b>{{ $beritaF->flag == 0 ? 'DRAF' : 'PUBLISHED' }}</b>
