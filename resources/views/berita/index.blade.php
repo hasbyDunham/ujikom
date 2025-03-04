@@ -6,19 +6,17 @@
             <!-- Basic Bootstrap Table -->
             <div class="card">
                 <div class="card-header d-flex align-items-center justify-content-between">
-                    <h5 class="mb-0">Data Berita</h5>
+                    <h5 class="mb-0">Data Berita UIN</h5>
                     <a href="{{ route('berita.create') }}" class="btn btn-sm btn-primary" style="float: right">Tambah</a>
                 </div>
                 <div class="table-responsive text-nowrap">
-                    <table class="table">
+                    <table class="table" id="dataTable">
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>ID</th>
-                                <th>Date</th>
-                                <th>Date GMT</th>
-                                <th>Judul</th>
-                                <th>Actions</th>
+                                <th>Judul Berita</th>
+                                <th>Status</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         @php $no = 1; @endphp
@@ -26,11 +24,8 @@
                             @foreach ($berita as $item)
                                 <tr>
                                     <td>{{ $no++ }}</td>
-                                    <td>{{ $item['id'] }}</td>
-                                    <td>{{ $item['date'] }}</td>
-                                    <td>{{ $item['date_gmt'] }}</td>
-                                    <td>{{ $item['link'] }}</td>
-                                    <td><img src="#" style="width: 100px;" alt=""></td>
+                                    <td>{{ $item->judul_berita }}</td>
+                                    <td>{{ $item->flag == 0 ? 'DRAF' : 'PUBLISHED' }}</td>
                                     <td>
                                         <div class="btn-group">
                                             <button type="button"
@@ -39,22 +34,23 @@
                                                 <i class="bx bx-dots-vertical-rounded"></i>
                                             </button>
                                             <ul class="dropdown-menu dropdown-menu-end">
-                                                <form action="#" method="POST" class="d-inline">
-                                                    @method('DELETE')
-                                                    @csrf
-                                                    <li>
-                                                        <a href="#" class="dropdown-item">Edit</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="dropdown-item">Show</a>
-                                                    </li>
-                                                    <!-- Formulir untuk hapus -->
-                                                    <li>
-                                                        <button type="submit" class="dropdown-item"
-                                                            data-confirm-delete="true">Delete</button>
-
-                                                    </li>
-                                                </form>
+                                                <li>
+                                                    <a href="{{ route('berita.edit', $item->id) }}"
+                                                        class="dropdown-item">Edit</a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ route('berita.show', $item->id) }}"
+                                                        class="dropdown-item">Show</a>
+                                                </li>
+                                                <!-- Formulir untuk hapus -->
+                                                <li>
+                                                    <form action="{{ route('berita.destroy', $item->id) }}" method="POST"
+                                                        class="d-inline">
+                                                        @method('DELETE')
+                                                        @csrf
+                                                        <button type="submit" class="dropdown-item">Delete</button>
+                                                    </form>
+                                                </li>
                                             </ul>
                                         </div>
                                     </td>
@@ -67,4 +63,42 @@
             <!--/ Basic Bootstrap Table -->
         </div>
     </div>
+
+    <script>
+        const button = document.querySelector("button"),
+            toast = document.querySelector(".toast"),
+            closeIcon = document.querySelector(".close"),
+            peogress = document.querySelector(".progress");
+
+        button.addEventListener("click", () => {
+            toast.classList.add("active");
+            progress.classList.add("active");
+
+            setTimeout(() => {
+                toast.classList.remove("active");
+            }, 5000);
+
+            setTimeout(() => {
+                progress.classList.remove("active");
+            }, 5300);
+
+        });
+
+        closeIcon.addEventListener("click", () => {
+            toast.classList.remove("active");
+
+            setTimeout(() => {
+                toast.classList.remove("active");
+            }, 300);
+        });
+    </script>
+
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 @endsection
+@push('scripts')
+    <script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/2.0.8/js/dataTables.bootstrap5.js"></script>
+    <script>
+        new DataTable('#dataTable');
+    </script>
+@endpush

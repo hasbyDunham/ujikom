@@ -22,10 +22,26 @@
     <!-- Carousel End -->
 
     <!-- About Start -->
+    {{-- @php
+        $sambutan = \App\Models\Sambutan::get();
+        // $pengumuman = \App\Models\Pengumuman::orderBy('id', 'asc')->paginate(6);
+        @endphp --}}
     <div class="container-fluid about py-4 mb-0 mt-0">
         <div class="container py-4">
             <div class="row g-5 d-flex align-items-center">
+                @foreach ($sambutan as $item)
                 <!-- Gambar di sebelah kiri -->
+                <div class="col-lg-6">
+                    <img src="{{ asset('/images/sambutan/' . $item->foto) }}" alt="image" class="img-fluid wow fadeInUp mb-5"
+                        data-wow-delay="0.3s" style="max-width: 100%; height: auto;">
+                </div>
+                <!-- Teks di sebelah kanan -->
+                <div class="col-lg-6 wow fadeInLeft d-flex flex-column text-start" data-wow-delay="0.2s">
+                    <div class="section-title mt-5">
+                        <h1 class="display-5 mb-4">Sambutan Dekan</h1>
+                        <p>{{ $item->sambutan }}</p>
+                    </div>
+                </div>
                 <div class="col-lg-6">
                     <img src="{{ asset('frontend/img/FU-DEKAN1.png') }}" alt="image" class="img-fluid wow fadeInUp mb-5"
                         data-wow-delay="0.3s" style="max-width: 100%; height: auto;">
@@ -59,6 +75,7 @@
                             Wassalamu’alaikum Warahmatullahi Wabarakatuh.</p>
                     </div>
                 </div>
+                @endforeach
             </div>
         </div>
     </div>

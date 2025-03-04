@@ -18,7 +18,7 @@
                         <a href="#" class="text-dark link-hover me-3"><i class="bi bi-clock"></i>
                             {{ $pengumuman->created_at->format('d M Y') }}</a>
                         <a href="#" class="text-dark link-hover me-3"><i class="bi bi-person-circle"></i> Oleh
-                            {{ $item->author->name }}</a>
+                            {{ $pengumuman->author->name }}</a>
                     </div>
                     <br>
                     <img src="{{ asset('/images/pengumuman/' . $pengumuman->foto) }}" class="img-fluid w-100"
@@ -55,7 +55,7 @@
                                                 </div>
                                                 <div class="col-8">
                                                     <div class="features-content d-flex flex-column">
-                                                        <a href="{{ $item['id'] }}" class="h6">
+                                                        <a href="{{ $item['slug'] }}" class="h6">
                                                             {{ $item->judul_pengumuman }}
                                                         </a>
                                                         <small class="text-body d-block"><i

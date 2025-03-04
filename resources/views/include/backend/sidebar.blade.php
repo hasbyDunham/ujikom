@@ -19,6 +19,12 @@
             </a>
         </li>
         <li class="menu-item ">
+            <a href="{{ url('admin/berita') }}" class="menu-link">
+                <i class="menu-icon tf-icons bi bi-newspaper"></i>
+                <div data-i18n="Analytics">Berita UIN</div>
+            </a>
+        </li>
+        <li class="menu-item ">
             <a href="{{ url('admin/beritaF') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-layout"></i>
                 <div data-i18n="Analytics">Berita Fakultas</div>
@@ -28,6 +34,36 @@
             <a href="{{ url('admin/pengumuman') }}" class="menu-link">
                 <i class="menu-icon bi bi-megaphone"></i></i>
                 <div data-i18n="Analytics">Pengumuman</div>
+            </a>
+        </li>
+        <li class="menu-item ">
+            <a href="{{ url('admin/pimpinan') }}" class="menu-link">
+                <i class="menu-icon bi bi-megaphone"></i></i>
+                <div data-i18n="Analytics">Pimpinan</div>
+            </a>
+        </li>
+        <li class="menu-item ">
+            <a href="{{ url('admin/sambutan') }}" class="menu-link">
+                <i class="menu-icon bi bi-megaphone"></i></i>
+                <div data-i18n="Analytics">Sambutan</div>
+            </a>
+        </li>
+        <li class="menu-item ">
+            <a href="{{ url('admin/visimisi') }}" class="menu-link">
+                <i class="menu-icon bi bi-megaphone"></i></i>
+                <div data-i18n="Analytics">Visi Misi</div>
+            </a>
+        </li>
+        <li class="menu-item ">
+            <a href="{{ url('admin/sejarah') }}" class="menu-link">
+                <i class="menu-icon bi bi-megaphone"></i></i>
+                <div data-i18n="Analytics">Sejarah</div>
+            </a>
+        </li>
+        <li class="menu-item ">
+            <a href="{{ url('admin/jurusan') }}" class="menu-link">
+                <i class="menu-icon bi bi-megaphone"></i></i>
+                <div data-i18n="Analytics">Jurusan</div>
             </a>
         </li>
         <li class="menu-item ">

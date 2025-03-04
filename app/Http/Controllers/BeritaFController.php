@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\BeritaF;
 use Illuminate\Http\Request;
+use Str;
 
 class BeritaFController extends Controller
 {
@@ -51,6 +52,12 @@ class BeritaFController extends Controller
 
         $beritaF = new BeritaF();
         $beritaF->judul_beritaF = $request->judul_beritaF;
+        $slug = Str::slug($request->judul_beritaF);
+        do {
+            $randomString = Str::random(5);
+            $uniqueSlug   = $slug . '-' . $randomString;
+        } while (BeritaF::where('slug', $uniqueSlug)->exists());
+        $beritaF->slug = $uniqueSlug;
         $beritaF->deskripsiF = $request->deskripsiF;
         $beritaF->flag = $request->flag;
         $beritaF->user_id = auth()->id();

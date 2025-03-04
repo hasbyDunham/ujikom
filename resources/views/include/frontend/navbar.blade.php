@@ -14,6 +14,9 @@
         </button>
 
         <!-- Menu Navbar -->
+        @php
+            $jurusan = \App\Models\Jurusan::orderBy('id', 'asc')->get();
+        @endphp
         <div class="collapse navbar-collapse" id="navbarNav">
             <div class="navbar-nav py-0 ms-auto me-5">
                 <a href="{{ url('/') }}" class="nav-item nav-link" id="home-link">Beranda</a>
@@ -30,13 +33,33 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link" id="jurusan-link" data-bs-toggle="dropdown"><span
                             class="dropdown-toggle">Jurusan</span></a>
+                            <div class="dropdown-menu m-0">
+                                @foreach ($jurusan as $item)
+                                {{-- <a href="https://afi.uinsgd.ac.id/" class="dropdown-item">Aqidah dan Filsafat Islam</a> --}}
+                                {{-- <a href="https://afi.uinsgd.ac.id/" class="dropdown-item" target="_blank">Aqidah dan Filsafat Islam</a> --}}
+                                {{-- <a href="http://saa.uinsgd.ac.id/" class="dropdown-item" target="_blank">Studi Agama-agama</a> --}}
+                                {{-- <a href="https://iat.uinsgd.ac.id/" class="dropdown-item" target="_blank">Ilmu Al-Qur'an dan Tafsir</a> --}}
+                                {{-- <a href="https://tp.uinsgd.ac.id/" class="dropdown-item" target="_blank">Tasawuf dan Psikoterapi</a> --}}
+                                {{-- <a href="https://ih.uinsgd.ac.id/" class="dropdown-item" target="_blank">Ilmu Hadist</a> --}}
+                                <a href="{{ route('detailjurusanF.show', $item->slug) }}" class="dropdown-item">{{ $item->nama_jurusan }}</a>
+                                {{-- <a href="{{ url('studiagama') }}" class="dropdown-item">Studi Agama-agama</a>
+                                <a href="{{ url('ilmualquran') }}" class="dropdown-item">Ilmu Al-Qur'an dan Tafsir</a>
+                                <a href="{{ url('tasawuf') }}" class="dropdown-item">Tasawuf dan Psikoterapi</a>
+                                <a href="{{ url('ilmuhadist') }}" class="dropdown-item">Ilmu Hadist</a> --}}
+                                @endforeach
+                            </div>
                     <div class="dropdown-menu m-0">
                         {{-- <a href="https://afi.uinsgd.ac.id/" class="dropdown-item">Aqidah dan Filsafat Islam</a> --}}
-                        <a href="https://afi.uinsgd.ac.id/" class="dropdown-item" target="_blank">Aqidah dan Filsafat Islam</a>
-                        <a href="http://saa.uinsgd.ac.id/" class="dropdown-item" target="_blank">Studi Agama-agama</a>
-                        <a href="https://iat.uinsgd.ac.id/" class="dropdown-item" target="_blank">Ilmu Al-Qur'an dan Tafsir</a>
-                        <a href="https://tp.uinsgd.ac.id/" class="dropdown-item" target="_blank">Tasawuf dan Psikoterapi</a>
-                        <a href="https://ih.uinsgd.ac.id/" class="dropdown-item" target="_blank">Ilmu Hadist</a>
+                        {{-- <a href="https://afi.uinsgd.ac.id/" class="dropdown-item" target="_blank">Aqidah dan Filsafat Islam</a> --}}
+                        {{-- <a href="http://saa.uinsgd.ac.id/" class="dropdown-item" target="_blank">Studi Agama-agama</a> --}}
+                        {{-- <a href="https://iat.uinsgd.ac.id/" class="dropdown-item" target="_blank">Ilmu Al-Qur'an dan Tafsir</a> --}}
+                        {{-- <a href="https://tp.uinsgd.ac.id/" class="dropdown-item" target="_blank">Tasawuf dan Psikoterapi</a> --}}
+                        {{-- <a href="https://ih.uinsgd.ac.id/" class="dropdown-item" target="_blank">Ilmu Hadist</a> --}}
+                        {{-- <a href="{{ url('aqidah') }}" class="dropdown-item">Aqidah dan Filsafat Islam</a>
+                        <a href="{{ url('studiagama') }}" class="dropdown-item">Studi Agama-agama</a>
+                        <a href="{{ url('ilmualquran') }}" class="dropdown-item">Ilmu Al-Qur'an dan Tafsir</a>
+                        <a href="{{ url('tasawuf') }}" class="dropdown-item">Tasawuf dan Psikoterapi</a>
+                        <a href="{{ url('ilmuhadist') }}" class="dropdown-item">Ilmu Hadist</a> --}}
                     </div>
                 </div>
                 <div class="nav-item dropdown">

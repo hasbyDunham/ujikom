@@ -62,7 +62,7 @@
                                                 </div>
                                                 <div class="col-8">
                                                     <div class="features-content d-flex flex-column">
-                                                        <a href="{{ $item['id'] }}" class="h6">
+                                                        <a href="{{ $item['slug'] }}" class="h6">
                                                             {{ $item->judul_beritaF }}
                                                         </a>
                                                         <small class="text-body d-block"><i

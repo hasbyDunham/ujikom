@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Pengumuman;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use Str;
 
 class PengumumanController extends Controller
 {
@@ -45,11 +46,17 @@ class PengumumanController extends Controller
             'judul_pengumuman' => 'required',
             'deskripsi_pengumuman' => 'required',
             'foto' => 'required|max:2080|mimes:png,jpg',
-            'flag' => 'required'
+            'flag' => 'required',
         ]);
 
         $pengumuman = new Pengumuman();
         $pengumuman->judul_pengumuman = $request->judul_pengumuman;
+        $slug = Str::slug($request->judul_pengumuman);
+        do {
+            $randomString = Str::random(5);
+            $uniqueSlug   = $slug . '-' . $randomString;
+        } while (Pengumuman::where('slug', $uniqueSlug)->exists());
+        $pengumuman->slug = $uniqueSlug;
         $pengumuman->deskripsi_pengumuman = $request->deskripsi_pengumuman;
         $pengumuman->flag = $request->flag;
         $pengumuman->user_id = auth()->id();

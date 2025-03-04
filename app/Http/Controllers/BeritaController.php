@@ -3,19 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Models\Berita;
+use App\Models\Pengumuman;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Str;
 
 class BeritaController extends Controller
 {
     public function getBeritaById(Request $request)
     {
-        //     // \Log::info('ID yang diterima: ' . $id);
-        // dd($request->id);
-        $response = Http::get('https://uinsgd.ac.id/wp-json/wp/v2/posts/' . $request->id);
-        // dd($response);
-        //$berita = Berita::findOrFail($request->id);
-        $berita = $response->json();
+                    //     // \Log::info('ID yang diterima: ' . $id);
+                    // dd($request->id);
+        // $response = Http::get('https://uinsgd.ac.id/wp-json/wp/v2/posts/' . $request->id);
+                    // dd($response);
+                    //$berita = Berita::findOrFail($request->id);
+        $berita = Berita::findOrFail($request->id);
         return view('detail', ['berita' => $berita]);
     }
 
@@ -64,11 +66,20 @@ class BeritaController extends Controller
             'judul_berita' => 'required',
             'deskripsi' => 'required',
             'foto' => 'required|max:2080|mimes:png,jpg',
+            'flag' => 'required'
         ]);
 
         $berita = new Berita();
         $berita->judul_berita = $request->judul_berita;
+        $slug = Str::slug($request->judul_berita);
+        do {
+            $randomString = Str::random(5);
+            $uniqueSlug   = $slug . '-' . $randomString;
+        } while (Berita::where('slug', $uniqueSlug)->exists());
+        $berita->slug = $uniqueSlug;
         $berita->deskripsi = $request->deskripsi;
+        $berita->flag = $request->flag;
+        $berita->user_id = auth()->id();
 
         if ($request->hasFile('foto')) {
             $img = $request->file('foto');
@@ -85,9 +96,10 @@ class BeritaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Berita $berita)
+    public function show($id)
     {
-        //
+        $berita = Berita::FindOrFail($id);
+        return view('berita.show', compact('berita'));
     }
 
     /**
@@ -107,11 +119,14 @@ class BeritaController extends Controller
         $validated = $request->validate([
             'judul_berita' => 'required',
             'deskripsi' => 'required',
+            'flag' => 'required',
         ]);
 
         $berita = Berita::FindOrFail($id);
         $berita->judul_berita = $request->judul_berita;
         $berita->deskripsi = $request->deskripsi;
+        $berita->flag = $request->flag;
+        $berita->user_id = auth()->id();
 
         if ($request->hasFile('foto')) {
             $berita->deleteImage();

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->longText('deskripsiF');
             $table->string('foto');
             $table->smallInteger('flag');
+            $table->string('slug');
             $table->timestamps();
         });
     }

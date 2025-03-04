@@ -26,28 +26,8 @@
 
     <!-- Berita Section Start -->
     @php
-        use Illuminate\Support\Facades\Http;
-        use Illuminate\Support\Collection;
-        use Illuminate\Pagination\LengthAwarePaginator;
-        use Illuminate\Pagination\Paginator;
-
-        // Mengambil data dari API
-        $response = Http::get('https://uinsgd.ac.id/wp-json/wp/v2/posts?per_page=100');
-        $berita = $response->successful() ? $response->json() : [];
-
-        // Mengonversi array ke koleksi
-        $berita = collect($berita);
-
-        // Konfigurasi pagination
-        $currentPage = Paginator::resolveCurrentPage('page');
-        $perPage = 6;
-        $paginatedBerita = new LengthAwarePaginator(
-            $berita->forPage($currentPage, $perPage),
-            $berita->count(),
-            $perPage,
-            $currentPage,
-            ['path' => Paginator::resolveCurrentPath()],
-        );
+        $berita = \App\Models\Berita::where('flag', '1')->orderBy('id', 'asc')->paginate(6);
+        // $beritaF = \App\Models\BeritaF::orderBy('id', 'asc')->paginate(6);
     @endphp
     <div class="container py-5">
         <div class="row">
@@ -57,34 +37,29 @@
         </div>
         <div class="row g-4">
             <!-- Card 1 -->
-            @foreach ($paginatedBerita->sortByDesc('created_at')->take(6) as $item)
+            @foreach ($berita->sortByDesc('created_at')->take(6) as $item)
                 <div class="col-md-4 mb-5">
                     <div class="card shadow-sm border-2">
-                        @if (
-                            !empty($item['yoast_head_json']['og_image']) &&
-                                is_array($item['yoast_head_json']['og_image']) &&
-                                isset($item['yoast_head_json']['og_image'][0]['url']))
-                            <img src="{{ $item['yoast_head_json']['og_image'][0]['url'] }}" class="card-img-top custom-img"
-                                alt="Berita 1">
-                        @else
-                            <img src="{{ asset('default.png') }}" class="img-fluid w-100 rounded" alt="Gambar berita">
-                        @endif
+                        <img src="{{ asset('/images/berita/' . $item->foto) }}" class="card-img-top custom-img"
+                            alt="berita 1">
                         <div class="card-body">
                             <h5 class="card-title">
-                                <a
-                                    href="berita/{{ $item['id'] }}">{{ $item['yoast_head_json']['title'] ?? 'No Title' }}</a>
+                                <a href="berita/{{ $item['slug'] }}">{{ $item->judul_berita }}</a>
                             </h5>
-                            <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i>
-                                {{ date('d/m/Y', strtotime($item['date'])) }}
+                            <small class="text-body d-block">
+                                <div class="float-start">
+                                    <i class="fas fa-calendar-alt me-1"></i>{{ $item->created_at->format('d M Y') }}
+                                </div>
                                 <a href="#" class="text-body d-block float-end link-hover me-3"><i
                                         class="bi bi-person-circle"></i>
-                                    {{ $item['yoast_head_json']['author'] }}</a></small>
+                                    {{ $item->author->name }}</a>
+                            </small>
                         </div>
                     </div>
                 </div>
             @endforeach
             <div class="d-flex justify-content-center">
-                {{ $paginatedBerita->links('vendor.pagination.custom') }}
+                {{ $berita->links() }}
             </div>
             {{-- <!-- Card 2 -->
             <div class="col-md-4 mb-5">
@@ -150,64 +125,5 @@
     {{-- Mengatur document title menggunakan variabel dari Laravel --}}
     <script>
         document.title = @json(config('app.title'));
-    </script>
-    <script>
-        const totalPages = 17; // Jumlah total halaman
-        const pagination = document.getElementById("pagination");
-        let currentPage = 1; // Halaman saat ini
-
-        function renderPagination(page) {
-            pagination.innerHTML = ''; // Reset pagination
-            let startPage = page - 1 > 0 ? page - 1 : 1;
-            let endPage = page + 1 <= totalPages ? page + 1 : totalPages;
-
-            // Tombol ke halaman sebelumnya
-            if (page > 1) {
-                const prev = document.createElement("li");
-                prev.innerHTML = "&laquo;";
-                prev.onclick = () => updatePagination(page - 1);
-                pagination.appendChild(prev);
-            }
-
-            // Menampilkan halaman yang aktif dan dua halaman di sebelah kanan
-            for (let i = startPage; i <= endPage; i++) {
-                const pageItem = document.createElement("li");
-                pageItem.innerText = i;
-                pageItem.classList.add(i === page ? "active" : "");
-                pageItem.onclick = () => updatePagination(i);
-                pagination.appendChild(pageItem);
-            }
-
-            // Jika halaman terakhir belum tercapai, tambahkan "..."
-            if (endPage < totalPages - 1) {
-                const dots = document.createElement("li");
-                dots.innerText = "...";
-                pagination.appendChild(dots);
-            }
-
-            // Halaman terakhir
-            if (endPage < totalPages) {
-                const lastPage = document.createElement("li");
-                lastPage.innerText = totalPages;
-                lastPage.onclick = () => updatePagination(totalPages);
-                pagination.appendChild(lastPage);
-            }
-
-            // Tombol ke halaman berikutnya
-            if (page < totalPages) {
-                const next = document.createElement("li");
-                next.innerHTML = "&raquo;";
-                next.onclick = () => updatePagination(page + 1);
-                pagination.appendChild(next);
-            }
-        }
-
-        function updatePagination(page) {
-            currentPage = page;
-            renderPagination(page);
-        }
-
-        // Inisialisasi pagination
-        renderPagination(currentPage);
     </script>
 @endpush

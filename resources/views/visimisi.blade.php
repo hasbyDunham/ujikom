@@ -22,9 +22,62 @@
     <!-- Carousel End -->
 
     <!-- About Start -->
+    @php
+        $visimisi = \App\Models\Visimisi::get();
+        // $pengumuman = \App\Models\Pengumuman::orderBy('id', 'asc')->paginate(6);
+        @endphp
     <div class="container-fluid about py-4 mb-0 mt-0">
         <div class="container py-4">
             <!-- Motto and Visi Section (Sejajar) -->
+            @foreach ($visimisi as $item)
+            <div class="row g-5 justify-content-center">
+                <!-- Motto Section -->
+                {{-- <div class="col-lg-6 wow fadeInLeft d-flex flex-column align-items-center text-center"
+                    data-wow-delay="0.2s">
+                    <div class="section-title mb-5">
+                        <h1 class="display-5 mb-4">Motto</h1>
+                        <p class="mb-4">"Unggul, Kompetitif, Moderat"</p>
+                    </div>
+                </div> --}}
+                <!-- Visi Section -->
+                <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.4s">
+                    <div class="section-title text-start mb-5">
+                        <center>
+                            <h1 class="display-5 mb-4">Visi</h1>
+                        </center>
+                        <p class="mb-4">
+                            {{ $item->visi }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-5 justify-content-center">
+                <!-- Misi Section -->
+                <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.4s">
+                    <div class="section-title text-start mb-5">
+                        <center>
+                            <h1 class="display-5 mb-4">Misi</h1>
+                        </center>
+                        <ol style="line-height: 1.8; padding-left: 15px;">
+                            <li>{{ $item->misi }}
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- Tujuan Section -->
+                <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.6s">
+                    <div class="section-title text-start mb-5">
+                        <center>
+                            <h1 class="display-5 mb-4">Sasaran</h1>
+                        </center>
+                        <ol style="line-height: 1.8; padding-left: 15px; text-align: left;">
+                            <li>{{ $item->tujuan }}
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            @endforeach
             <div class="row g-5 justify-content-center">
                 <!-- Motto Section -->
                 {{-- <div class="col-lg-6 wow fadeInLeft d-flex flex-column align-items-center text-center"

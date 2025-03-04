@@ -41,7 +41,7 @@
                             alt="beritaF 1">
                         <div class="card-body">
                             <h5 class="card-title">
-                                <a href="beritaF/{{ $item['id'] }}">{{ $item->judul_beritaF }}</a>
+                                <a href="beritaF/{{ $item['slug'] }}">{{ $item->judul_beritaF }}</a>
                             </h5>
                             <small class="text-body d-block">
                                 <div class="float-start">

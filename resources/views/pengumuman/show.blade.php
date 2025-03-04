@@ -12,8 +12,8 @@
                     <div class="card-body">
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="basic-default-name">Judul Pengumuman : </label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" value="{{ $pengumuman->judul_pengumuman }}">
+                            <div class="col-sm-10 form-control ms-2" style="width: 82%">
+                                <p>{!! $pengumuman->judul_pengumuman !!}</p>
                             </div>
                         </div>
                         <hr>

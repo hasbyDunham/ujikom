@@ -13,9 +13,12 @@ return new class extends Migration
     {
         Schema::create('beritas', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('judul_berita');
             $table->longText('deskripsi');
             $table->string('foto');
+            $table->smallInteger('flag');
+            $table->string('slug');
             $table->timestamps();
         });
     }

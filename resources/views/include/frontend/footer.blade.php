@@ -42,10 +42,16 @@
                     </div>
                 </div>
             </div>
+            @php
+            $jurusan = \App\Models\Jurusan::orderBy('id', 'asc')->get();
+            @endphp
             <div class="col-md-6 col-lg-6 col-xl-3">
                 <div class="footer-item d-flex flex-column">
                     <h4 class="mb-4">Jurusan</h4>
-                    <a href="https://afi.uinsgd.ac.id/" class="" target="_blank"><i class="fas fa-angle-right me-2"></i>Aqidah dan
+                    @foreach ($jurusan as $item)
+                    <a href="{{ route('detailjurusanF.show', $item->slug) }}" class=""><i class="fas fa-angle-right me-2"></i>{{ $item->nama_jurusan }}</a>
+                    @endforeach
+                    {{-- <a href="https://afi.uinsgd.ac.id/" class="" target="_blank"><i class="fas fa-angle-right me-2"></i>Aqidah dan
                         Filsafat Islam</a>
                     <a href="http://saa.uinsgd.ac.id/" class="" target="_blank"><i class="fas fa-angle-right me-2"></i>Studi
                         Agama-agama</a>
@@ -54,7 +60,7 @@
                     <a href="https://tp.uinsgd.ac.id/" class="" target="_blank"><i class="fas fa-angle-right me-2"></i>Tasawuf dan
                         Psikoterapi</a>
                     <a href="https://ih.uinsgd.ac.id/" class="" target="_blank"><i class="fas fa-angle-right me-2"></i>Ilmu
-                        Hadist</a>
+                        Hadist</a> --}}
                 </div>
             </div>
         </div>

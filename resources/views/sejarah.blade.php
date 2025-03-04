@@ -22,9 +22,21 @@
     <!-- Carousel End -->
 
     <!-- About Start -->
+    @php
+        $sejarah = \App\Models\Sejarah::get();
+    @endphp
     <div class="container-fluid about py-4 mb-0 mt-0">
         <div class="container py-4">
             <div class="row g-5 d-flex align-items-start">
+                @foreach ($sejarah as $item)
+                <div class="col-lg-12 wow fadeInLeft d-flex flex-column text-center mx-auto" data-wow-delay="0.2s">
+                    <div class="section-title mb-5">
+                        <h1 class="display-6 mb-4">Sejarah Fakultas Ushuluddin</h1>
+                        <p class="content-text">{{ $item->sejarah }}
+                        </p>
+                    </div>
+                </div>
+                @endforeach
                 <div class="col-lg-12 wow fadeInLeft d-flex flex-column text-center mx-auto" data-wow-delay="0.2s">
                     <div class="section-title mb-5">
                         <h1 class="display-6 mb-4">Sejarah Fakultas Ushuluddin</h1>
