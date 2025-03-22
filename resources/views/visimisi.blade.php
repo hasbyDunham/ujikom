@@ -78,6 +78,9 @@
                 </div>
             </div>
             @endforeach
+
+            {{-- BATAS FOREACH --}}
+
             <div class="row g-5 justify-content-center">
                 <!-- Motto Section -->
                 {{-- <div class="col-lg-6 wow fadeInLeft d-flex flex-column align-items-center text-center"

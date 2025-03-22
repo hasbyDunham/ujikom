@@ -6,6 +6,8 @@ use App\Models\BeritaF;
 use App\Models\Pengumuman;
 use App\Models\Jurusan;
 use App\Models\Sambutan;
+use App\Models\Sejarah;
+use App\Models\Pimpinan;
 
 use Illuminate\Http\Request;
 
@@ -17,8 +19,28 @@ class FrontController extends Controller
         $beritaF = BeritaF::get();
         $pengumuman = Pengumuman::get();
         $jurusan = Jurusan::get();
-        $sambutan = sambutan::get();
-        return view('welcome', compact('berita', 'beritaF', 'pengumuman', 'jurusan', 'sambutan'));
+        $sambutan = Sambutan::get();
+        $sejarah = Sejarah::get();
+        $pimpinan = Pimpinan::get();
+        return view('welcome', compact('berita', 'beritaF', 'pengumuman', 'jurusan', 'sambutan', 'sejarah','pimpinan'));
+    }
+
+    public function beritaIndex()
+    {
+        $berita = Berita::where('flag', '1')->orderBy('id', 'asc')->paginate(6);
+        return view('berita',  compact('berita'));
+    }
+
+    public function beritaFIndex()
+    {
+        $beritaF = BeritaF::where('flag', '1')->orderBy('id', 'asc')->paginate(6);
+        return view('beritaF',  compact('beritaF'));
+    }
+
+    public function pengumumanIndex()
+    {
+        $pengumuman = Pengumuman::where('flag', '1')->orderBy('id', 'asc')->paginate(6);
+        return view('pengumuman',  compact('pengumuman'));
     }
 
     public function sambutanIndex()
@@ -27,11 +49,18 @@ class FrontController extends Controller
         return view('sambutandekan',  compact('sambutan'));
     }
 
-    // public function sejarahIndex()
-    // {
-    //     $sejarah = Sejarah::get();
-    //     return view('welcome', compact('sejarah', 'sejarahF', 'pengumuman'));
-    // }
+    public function pimpinanIndex()
+    {
+        $pimpinan = Pimpinan::get();
+        return view('pimpinan',  compact('pimpinan'));
+    }
+
+    public function sejarahIndex()
+    {
+        $sejarah = Sejarah::get();
+        return view('sejarah',  compact('sejarah'));
+    }
+
 
     public function beritaShow($slug)
     {

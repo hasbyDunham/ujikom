@@ -22,10 +22,10 @@
     <!-- Carousel End -->
 
     <!-- beritaF Section Start -->
-    @php
+    {{-- @php
         $beritaF = \App\Models\BeritaF::where('flag', '1')->orderBy('id', 'asc')->paginate(6);
         // $beritaF = \App\Models\BeritaF::orderBy('id', 'asc')->paginate(6);
-    @endphp
+    @endphp --}}
     <div class="container py-5">
         <div class="row">
             <div class="col-lg-12 text-center">

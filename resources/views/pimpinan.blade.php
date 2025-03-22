@@ -38,10 +38,6 @@
         </div>
 
         <!-- Row for three images below the main image -->
-        @php
-        $pimpinan = \App\Models\Pimpinan::orderBy('id', 'asc')->get();
-        // $pengumuman = \App\Models\Pengumuman::orderBy('id', 'asc')->paginate(6);
-        @endphp
         <div class="row g-4 d-flex justify-content-center">
             @foreach ($pimpinan as $item)
             <div class="col-md-4 d-flex flex-column align-items-center text-center">
@@ -53,20 +49,30 @@
                 </div>
             </div>
             @endforeach
-            <div class="col-md-4 d-flex flex-column align-items-center text-center">
-                <img src="{{ asset('frontend/img/FU-WD-2.png') }}" class="img-fluid" alt="Gambar 2"
-                    style="max-width: 80%;">
-                <div>
-                    <h4 style="color: black; margin-top: 10px;" class="mt-2">Dr. Muhlas, S.Ag., M.Hum.</h4>
-                    <h4>Wakil Dekan II</h4>
+            <div class="row g-4 d-flex justify-content-center">
+                <div class="col-md-4 d-flex flex-column align-items-center text-center">
+                    <img src="{{ asset('frontend/img/FU-WD-1.png') }}" class="img-fluid" alt="Gambar 1"
+                        style="max-width: 80%;">
+                    <div>
+                        <h4 style="color: black; margin-top: 10px;" class="mt-2">Dr. Ecep Ismail, S.Ag., M.Ag.</h4>
+                        <h4>Wakil Dekan I</h4>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-4 d-flex flex-column align-items-center text-center">
-                <img src="{{ asset('frontend/img/FU-WD-3.png') }}" class="img-fluid" alt="Gambar 4"
-                    style="max-width: 80%;">
-                <div>
-                    <h4 style="color: black; margin-top: 10px;" class="mt-2">Dr. R. Yuli Ahmad Hambali, M.Hum.</h4>
-                    <h4>Wakil Dekan III</h4>
+                <div class="col-md-4 d-flex flex-column align-items-center text-center">
+                    <img src="{{ asset('frontend/img/FU-WD-2.png') }}" class="img-fluid" alt="Gambar 2"
+                        style="max-width: 80%;">
+                    <div>
+                        <h4 style="color: black; margin-top: 10px;" class="mt-2">Dr. Muhlas, S.Ag., M.Hum.</h4>
+                        <h4>Wakil Dekan II</h4>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex flex-column align-items-center text-center">
+                    <img src="{{ asset('frontend/img/FU-WD-3.png') }}" class="img-fluid" alt="Gambar 4"
+                        style="max-width: 80%;">
+                    <div>
+                        <h4 style="color: black; margin-top: 10px;" class="mt-2">Dr. R. Yuli Ahmad Hambali, M.Hum.</h4>
+                        <h4>Wakil Dekan III</h4>
+                    </div>
                 </div>
             </div>
         </div>

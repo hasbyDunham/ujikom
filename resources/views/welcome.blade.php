@@ -129,61 +129,20 @@
                 <h1 class="display-6 mb-4">Pimpinan Fakultas</h1>
             </div>
             <div class="row g-4">
+                @foreach ($pimpinan as $item)
                 <div class="col-lg-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="training-item">
                         <div class="training-inner">
-                            <img src="{{ asset('frontend/img/FU-DEKAN.png') }}" class="img-fluid w-100 rounded"
+                            <img src="{{ asset('/images/pimpinan/' . $item->foto) }}" class="img-fluid w-100 rounded"
                                 alt="Image">
                         </div>
-                        <div class="training-content rounded-bottom p-4 text-center" style="background-color: white">
-                            <h6 class="text-dark">Prof. Dr. Wahyudin Darmalaksana, M.Ag</h6>
-                            <p class="text-dark">DEKAN</p>
+                        <div class="training-content rounded-bottom p-4 text- center" style="background-color: white">
+                            <h6 class="text-dark">{{ $item->nama }}</h6>
+                            <p class="text-dark">{{ $item->email }}</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="training-item">
-                        <div class="training-inner">
-                            <img src="{{ asset('frontend/img/FU-WD-1.png') }}" class="img-fluid w-100 rounded"
-                                alt="Image">
-                        </div>
-                        <div class="training-content rounded-bottom p-4 text-center" style="background-color: white">
-                            <h6 class="text-dark">Dr. Ecep Ismail, S.Ag., M.Ag.</h6>
-                            <p class="text-dark">WADEK I <br>
-                                Bidang Akademik
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="training-item">
-                        <div class="training-inner">
-                            <img src="{{ asset('frontend/img/FU-WD-2.png') }}" class="img-fluid w-100 rounded"
-                                alt="Image">
-                        </div>
-                        <div class="training-content rounded-bottom p-4 text-center" style="background-color: white">
-                            <h6 class="text-dark">Dr. Muhlas, S.Ag., M.Hum.</h6>
-                            <p class="text-dark">WADEK II <br>
-                                Administrasi Perencanaan Bidang Umum, dan Keuangan
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="training-item">
-                        <div class="training-inner">
-                            <img src="{{ asset('frontend/img/FU-WD-3.png') }}" class="img-fluid w-100 rounded"
-                                alt="Image">
-                        </div>
-                        <div class="training-content rounded-bottom p-4 text-center" style="background-color: white">
-                            <h6 class="text-dark">Dr. R. Yuli Ahmad Hambali, M.Hum.</h6>
-                            <p class="text-dark">WADEK III <br>
-                                Bidang Kemahasiswaan, Alumni dan Kerja
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                @endforeach
         </div>
     </div>
     <!-- Pimpinan End -->

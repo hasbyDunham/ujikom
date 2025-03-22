@@ -38,31 +38,31 @@
         </li>
         <li class="menu-item ">
             <a href="{{ url('admin/pimpinan') }}" class="menu-link">
-                <i class="menu-icon bi bi-megaphone"></i></i>
+                <i class="menu-icon bi bi-person-badge-fill"></i></i>
                 <div data-i18n="Analytics">Pimpinan</div>
             </a>
         </li>
         <li class="menu-item ">
             <a href="{{ url('admin/sambutan') }}" class="menu-link">
-                <i class="menu-icon bi bi-megaphone"></i></i>
+                <i class="menu-icon bi bi-person-raised-hand"></i></i>
                 <div data-i18n="Analytics">Sambutan</div>
             </a>
         </li>
         <li class="menu-item ">
             <a href="{{ url('admin/visimisi') }}" class="menu-link">
-                <i class="menu-icon bi bi-megaphone"></i></i>
+                <i class="menu-icon bi bi-bullseye"></i></i>
                 <div data-i18n="Analytics">Visi Misi</div>
             </a>
         </li>
         <li class="menu-item ">
             <a href="{{ url('admin/sejarah') }}" class="menu-link">
-                <i class="menu-icon bi bi-megaphone"></i></i>
+                <i class="menu-icon bi bi-hourglass-bottom"></i></i>
                 <div data-i18n="Analytics">Sejarah</div>
             </a>
         </li>
         <li class="menu-item ">
             <a href="{{ url('admin/jurusan') }}" class="menu-link">
-                <i class="menu-icon bi bi-megaphone"></i></i>
+                <i class="menu-icon bi bi-mortarboard-fill"></i></i>
                 <div data-i18n="Analytics">Jurusan</div>
             </a>
         </li>

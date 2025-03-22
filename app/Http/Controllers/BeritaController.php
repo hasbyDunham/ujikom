@@ -83,8 +83,8 @@ class BeritaController extends Controller
 
         if ($request->hasFile('foto')) {
             $img = $request->file('foto');
-            $name = rand(1000, 9999) . $img->getClientOriginalName();
-            $img->move('images/berita/', $name);
+            $name = rand(1000, 9999) . '_' . $img->getClientOriginalName();
+            $path = $img->storeAs('public/images/berita', $name); // Simpan ke storage/app/public/images/pengumuman
             $berita->foto = $name;
         }
 
@@ -129,13 +129,12 @@ class BeritaController extends Controller
         $berita->user_id = auth()->id();
 
         if ($request->hasFile('foto')) {
-            $berita->deleteImage();
+            // $produk->deleteImage();
             $img = $request->file('foto');
             $name = rand(1000, 9999) . $img->getClientOriginalName();
             $img->move('images/berita/', $name);
             $berita->foto = $name;
         }
-
         $berita->save();
         return redirect()->route('berita.index')
             ->with('success', 'data berhasil ditedit');

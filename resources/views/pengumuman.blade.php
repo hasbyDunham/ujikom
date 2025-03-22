@@ -22,10 +22,10 @@
     <!-- Carousel End -->
 
     <!-- Pengumuman Section Start -->
-    @php
+    {{-- @php
         $pengumuman = \App\Models\Pengumuman::where('flag', '1')->orderBy('id', 'asc')->paginate(6);
         // $pengumuman = \App\Models\Pengumuman::orderBy('id', 'asc')->paginate(6);
-    @endphp
+    @endphp --}}
     <div class="container py-5">
         <div class="row">
             <div class="col-lg-12 text-center">
@@ -37,7 +37,7 @@
             @foreach ($pengumuman->sortByDesc('created_at')->take(6) as $item)
                 <div class="col-md-4 mb-5">
                     <div class="card shadow-sm border-2">
-                        <img src="{{ asset('/images/pengumuman/' . $item->foto) }}" class="card-img-top custom-img"
+                        <img src="{{ asset('storage/images/pengumuman/' . $item->foto) }}" class="card-img-top custom-img"
                             alt="Pengumuman 1">
                         <div class="card-body">
                             <h5 class="card-title">
@@ -55,9 +55,9 @@
                     </div>
                 </div>
             @endforeach
-            <div class="d-flex justify-content-center">
+            {{-- <div class="d-flex justify-content-center">
                 {{ $pengumuman->links() }}
-            </div>
+            </div> --}}
             <!-- Card 2 -->
             {{-- <div class="col-md-4 mb-5">
                 <div class="card shadow-sm border-0">

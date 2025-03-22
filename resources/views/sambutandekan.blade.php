@@ -22,10 +22,6 @@
     <!-- Carousel End -->
 
     <!-- About Start -->
-    {{-- @php
-        $sambutan = \App\Models\Sambutan::get();
-        // $pengumuman = \App\Models\Pengumuman::orderBy('id', 'asc')->paginate(6);
-        @endphp --}}
     <div class="container-fluid about py-4 mb-0 mt-0">
         <div class="container py-4">
             <div class="row g-5 d-flex align-items-center">

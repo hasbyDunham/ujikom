@@ -10,6 +10,7 @@ use App\Http\Controllers\VisimisiController;
 use App\Http\Controllers\SejarahController;
 use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,13 +18,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Route::get('/home', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/', [FrontController::class, 'index'])->name('welcome');
 Route::get('/sambutandekan', [FrontController::class, 'sambutanIndex'])->name('sambutandekan');
+Route::get('/pimpinan', [FrontController::class, 'pimpinanIndex'])->name('pimpinan');
+Route::get('/sejarah', [FrontController::class, 'sejarahIndex'])->name('sejarah');
 Route::get('berita/{slug}', [FrontController::class, 'beritaShow'])->name('berita.show');
 Route::get('pengumuman/{slug}', [FrontController::class, 'pengumumanShow'])->name('pengumuman.show');
+Route::get('pengumuman', [FrontController::class, 'pengumumanIndex'])->name('pengumuman');
+Route::get('berita', [FrontController::class, 'beritaIndex'])->name('berita');
+Route::get('beritaF', [FrontController::class, 'beritaFIndex'])->name('beritaF');
 Route::get('beritaF/{slug}', [FrontController::class, 'beritaFShow'])->name('beritaF.show');
 Route::get('jurusan/{slug}', [FrontController::class, 'jurusanFShow'])->name('detailjurusanF.show');
-
 
 Auth::routes(
     ['register' => false]
@@ -53,22 +59,22 @@ Route::get('/visimisi', function () {
 // Route::get('/sambutandekan', function () {
 //     return view('sambutandekan');
 // });
-Route::get('/sejarah', function () {
-    return view('sejarah');
-});
+// Route::get('/sejarah', function () {
+//     return view('sejarah');
+// });
 Route::get('/datadosen', function () {
     return view('datadosen');
 });
-Route::get('/pimpinan', function () {
-    return view('pimpinan');
-});
-Route::get('/berita', function () {
-    return view('berita');
-});
+// Route::get('/pimpinan', function () {
+//     return view('pimpinan');
+// });
+// Route::get('/berita', function () {
+//     return view('berita');
+// });
 
-Route::get('/pengumuman', function () {
-    return view('pengumuman');
-});
+// Route::get('/pengumuman', function () {
+//     return view('pengumuman');
+// });
 
 Route::get('/show', function () {
     return view('show');
@@ -88,9 +94,9 @@ Route::get('detailP', function () {
     return view('detailP');
 });
 
-Route::get('/beritaF', function () {
-    return view('beritaF');
-});
+// Route::get('/beritaF', function () {
+//     return view('beritaF');
+// });
 
 Route::get('beritaF/{id}', 'App\Http\Controllers\BeritaFController@getBeritaFById');
 // Route::get('berita{id}', [BeritaController::class, 'getBeritaById']);
