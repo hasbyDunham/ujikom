@@ -49,8 +49,8 @@ class PimpinanController extends Controller
 
             if ($request->hasFile('foto')) {
                 $img = $request->file('foto');
-                $name = rand(1000, 9999) . $img->getClientOriginalName();
-                $img->move('images/pimpinan/', $name);
+                $name = time() . '_' . Str::random(10) . '.' . $img->getClientOriginalExtension();
+                $img->storeAs('public/images/pimpinan', $name);
                 $pimpinan->foto = $name;
             }
             $pimpinan->save();
@@ -112,10 +112,14 @@ class PimpinanController extends Controller
             $pimpinan = Pimpinan::findOrFail($id);
             // hapus foto lama
             if ($request->hasFile('foto')) {
-                // $pimpinan->deleteImage();
+                // Hapus foto lama
+                if ($pimpinan->foto) {
+                    Storage::delete('public/images/pimpinan/' . $pimpinan->foto);
+                }
+                // Simpan foto baru
                 $img = $request->file('foto');
-                $name = rand(1000, 9999) . $img->getClientOriginalName();
-                $img->move('images/pimpinan/', $name);
+                $name = time() . '_' . Str::random(10) . '.' . $img->getClientOriginalExtension();
+                $img->storeAs('public/images/pimpinan', $name);
                 $pimpinan->foto = $name;
             }
             $pimpinan->nama = $request->nama;
@@ -146,7 +150,9 @@ class PimpinanController extends Controller
             // hapus tag pimpinan
             // $pimpinan->tag()->detach();
             // hapus foto
-            Storage::delete($pimpinan->foto);
+            if ($pimpinan->foto) {
+                Storage::delete('public/images/pimpinan/' . $pimpinan->foto);
+            }
             $pimpinan->delete();
             return response()->json([
                 'success' => true,

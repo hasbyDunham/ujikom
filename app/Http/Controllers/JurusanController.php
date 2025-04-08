@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Jurusan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 use Str;
 
 class JurusanController extends Controller
@@ -78,14 +80,14 @@ class JurusanController extends Controller
 
         if ($request->hasFile('foto1')) {
             $img = $request->file('foto1');
-            $name = rand(1000, 9999) . $img->getClientOriginalName();
-            $img->move('images/jurusan/', $name);
+            $name = rand(1000, 9999) . '_' . $img->getClientOriginalName();
+            $path = $img->storeAs('public/images/jurusan', $name); // Simpan ke storage/app/public/images/pengumuman
             $jurusan->foto1 = $name;
         }
         if ($request->hasFile('foto2')) {
             $img = $request->file('foto2');
-            $name = rand(1000, 9999) . $img->getClientOriginalName();
-            $img->move('images/jurusan/', $name);
+            $name = rand(1000, 9999) . '_' . $img->getClientOriginalName();
+            $path = $img->storeAs('public/images/jurusan', $name); // Simpan ke storage/app/public/images/pengumuman
             $jurusan->foto2 = $name;
         }
 
@@ -157,17 +159,29 @@ class JurusanController extends Controller
         $jurusan->url = $request->url;
 
         if ($request->hasFile('foto1')) {
-            $jurusan->deleteImage();
+            // Hapus foto1 lama jika ada
+            if ($jurusan->foto1) {
+                Storage::delete('public/images/jurusan/' . $jurusan->foto1);
+            }
+            // Simpan foto1 baru ke storage
             $img = $request->file('foto1');
-            $name = rand(1000, 9999) . $img->getClientOriginalName();
-            $img->move('images/jurusan/', $name);
+            $name = time() . '_' . $img->getClientOriginalName();
+            $path = $img->storeAs('public/images/jurusan', $name);
+
+            // Simpan hanya nama file di database
             $jurusan->foto1 = $name;
         }
         if ($request->hasFile('foto2')) {
-            $jurusan->deleteImage();
+            // Hapus foto2 lama jika ada
+            if ($jurusan->foto2) {
+                Storage::delete('public/images/jurusan/' . $jurusan->foto2);
+            }
+            // Simpan foto2 baru ke storage
             $img = $request->file('foto2');
-            $name = rand(1000, 9999) . $img->getClientOriginalName();
-            $img->move('images/jurusan/', $name);
+            $name = time() . '_' . $img->getClientOriginalName();
+            $path = $img->storeAs('public/images/jurusan', $name);
+
+            // Simpan hanya nama file di database
             $jurusan->foto2 = $name;
         }
 

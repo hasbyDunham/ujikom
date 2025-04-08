@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pimpinan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PimpinanController extends Controller
 {
@@ -42,8 +43,8 @@ class PimpinanController extends Controller
 
         if ($request->hasFile('foto')) {
             $img = $request->file('foto');
-            $name = rand(1000, 9999) . $img->getClientOriginalName();
-            $img->move('images/pimpinan/', $name);
+            $name = rand(1000, 9999) . '_' . $img->getClientOriginalName();
+            $path = $img->storeAs('public/images/pimpinan', $name); // Simpan ke storage/app/public/images/pimpinan
             $pimpinan->foto = $name;
         }
 
@@ -85,10 +86,16 @@ class PimpinanController extends Controller
         $pimpinan->jabatan = $request->jabatan;
 
         if ($request->hasFile('foto')) {
-            // $produk->deleteImage();
+            // Hapus foto lama jika ada
+            if ($pimpinan->foto) {
+                Storage::delete('public/images/pimpinan/' . $pimpinan->foto);
+            }
+            // Simpan foto baru ke storage
             $img = $request->file('foto');
-            $name = rand(1000, 9999) . $img->getClientOriginalName();
-            $img->move('images/pimpinan/', $name);
+            $name = time() . '_' . $img->getClientOriginalName();
+            $path = $img->storeAs('public/images/pimpinan', $name);
+
+            // Simpan hanya nama file di database
             $pimpinan->foto = $name;
         }
 

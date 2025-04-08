@@ -32,7 +32,7 @@
                         <hr>
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="basic-default-name">Gambar : </label>
-                            <img src="{{ asset('/images/pengumuman/' . $pengumuman->foto) }}" alt=""
+                            <img src="{{ asset('storage/images/pengumuman/' . $pengumuman->foto) }}" alt=""
                                 style="width: 200px">
                         </div>
                         <hr>

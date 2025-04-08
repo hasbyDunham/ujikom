@@ -133,12 +133,12 @@
                 <div class="col-lg-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="training-item">
                         <div class="training-inner">
-                            <img src="{{ asset('/images/pimpinan/' . $item->foto) }}" class="img-fluid w-100 rounded"
+                            <img src="{{ asset('storage/images/pimpinan/' . $item->foto) }}" class="img-fluid w-100 rounded"
                                 alt="Image">
                         </div>
                         <div class="training-content rounded-bottom p-4 text- center" style="background-color: white">
                             <h6 class="text-dark">{{ $item->nama }}</h6>
-                            <p class="text-dark">{{ $item->email }}</p>
+                            <p class="text-dark">{{ $item->jabatan }}</p>
                         </div>
                     </div>
                 </div>
@@ -159,7 +159,7 @@
                     <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="office-item p-4">
                             <div class="office-img mb-4">
-                                <img src="{{ asset('/images/pengumuman/' . $item->foto) }}"
+                                <img src="{{ asset('storage/images/pengumuman/' . $item->foto) }}"
                                     class="img-fluid w-100 custom-img" alt="">
                             </div>
                             <div class="office-content d-flex flex-column">
@@ -199,7 +199,7 @@
                     @foreach ($beritaF->sortByDesc('created_at')->take(4) as $item)
                     <div class="d-flex align-items-start">
                         <div class="about-img">
-                            <img src="{{ asset('/images/beritaF/' . $item->foto) }}" class="img-fluid rounded"
+                            <img src="{{ asset('storage/images/beritaF/' . $item->foto) }}" class="img-fluid rounded"
                                 alt="Image">
                         </div>
                         <div class="ms-4 w-100">
@@ -239,7 +239,7 @@
                             @else
                             <img src="{{ asset('default.png') }}" class="img-fluid w-100 rounded" alt="Gambar berita">
                             @endif --}}
-                            <img src="{{ asset('/images/berita/' . $item->foto) }}" class="img-fluid rounded"
+                            <img src="{{ asset('/storage/images/berita/' . $item->foto) }}" class="img-fluid rounded"
                                 alt="Image">
                         </div>
                         <div class="ms-4">

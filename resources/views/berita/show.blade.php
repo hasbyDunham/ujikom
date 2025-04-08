@@ -15,11 +15,11 @@
                     <hr>
                     <div class="mb-2">
                         <label for="">Deskripsi</label>
-                        <b>{{$berita->deskripsi_berita}}</b>
+                        <b>{!!$berita->deskripsi!!}</b>
                     </div>
                     <hr>
                     <div class="mb-2">
-                        <img src="{{ asset('/images/pengumuman/' . $pengumuman->foto) }}" alt="" style="width: 200px">
+                        <img src="{{ asset('storage/images/berita/' . $berita->foto) }}" alt="" style="width: 200px">
                     </div>
                     <hr>
                 </div>

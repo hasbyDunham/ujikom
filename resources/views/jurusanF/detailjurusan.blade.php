@@ -86,7 +86,7 @@
             </div>
             <div class="col-lg-6 wow fadeInRight teks-ushuluddin" data-wow-delay="0.4s">
                 <div class="pb-5">
-                    <img src="{{ asset('/images/jurusan/' . $jurusan->foto1) }}" class="img-fluid rounded w-100 img-ushuluddin"
+                    <img src="{{ asset('storage/images/jurusan/' . $jurusan->foto1) }}" class="img-fluid rounded w-100 img-ushuluddin"
                         style="object-fit: cover;" alt="Image">
                 </div>
             </div>
@@ -100,7 +100,7 @@
         <div class="row g-5 align-items-center">
             <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
                 <div class="pb-5">
-                    <img src="{{ asset('/images/jurusan/' . $jurusan->foto2) }}"
+                    <img src="{{ asset('storage/images/jurusan/' . $jurusan->foto2) }}"
                         class="img-fluid rounded w-100 img-ushuluddin" style="object-fit: cover;" alt="Image">
                 </div>
             </div>

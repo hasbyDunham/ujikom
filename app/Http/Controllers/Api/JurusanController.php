@@ -73,14 +73,14 @@ class JurusanController extends Controller
 
             if ($request->hasFile('foto1')) {
                 $img = $request->file('foto1');
-                $name = rand(1000, 9999) . $img->getClientOriginalName();
-                $img->move('images/jurusan/', $name);
+                $name = time() . '_' . Str::random(10) . '.' . $img->getClientOriginalExtension();
+                $img->storeAs('public/images/jurusan', $name);
                 $jurusan->foto1 = $name;
             }
             if ($request->hasFile('foto2')) {
                 $img = $request->file('foto2');
-                $name = rand(1000, 9999) . $img->getClientOriginalName();
-                $img->move('images/jurusan/', $name);
+                $name = time() . '_' . Str::random(10) . '.' . $img->getClientOriginalExtension();
+                $img->storeAs('public/images/jurusan', $name);
                 $jurusan->foto2 = $name;
             }
 
@@ -156,17 +156,25 @@ class JurusanController extends Controller
             $jurusan = Jurusan::findOrFail($id);
             // hapus foto lama
             if ($request->hasFile('foto1')) {
-                $jurusan->deleteImage();
+                // Hapus foto1 lama
+                if ($jurusan->foto1) {
+                    Storage::delete('public/images/jurusan/' . $jurusan->foto1);
+                }
+                // Simpan foto1 baru
                 $img = $request->file('foto1');
-                $name = rand(1000, 9999) . $img->getClientOriginalName();
-                $img->move('images/jurusan/', $name);
+                $name = time() . '_' . Str::random(10) . '.' . $img->getClientOriginalExtension();
+                $img->storeAs('public/images/jurusan', $name);
                 $jurusan->foto1 = $name;
             }
             if ($request->hasFile('foto2')) {
-                $jurusan->deleteImage();
+                // Hapus foto2 lama
+                if ($jurusan->foto2) {
+                    Storage::delete('public/images/jurusan/' . $jurusan->foto2);
+                }
+                // Simpan foto2 baru
                 $img = $request->file('foto2');
-                $name = rand(1000, 9999) . $img->getClientOriginalName();
-                $img->move('images/jurusan/', $name);
+                $name = time() . '_' . Str::random(10) . '.' . $img->getClientOriginalExtension();
+                $img->storeAs('public/images/jurusan', $name);
                 $jurusan->foto2 = $name;
             }
             $jurusan->nama_jurusan = $request->nama_jurusan;
@@ -212,7 +220,13 @@ class JurusanController extends Controller
             // hapus tag jurusan
             // $jurusan->tag()->detach();
             // hapus foto
-            Storage::delete($jurusan->foto);
+            if ($jurusan->foto1) {
+                Storage::delete('public/images/jurusan/' . $jurusan->foto1);
+            }
+            $jurusan->delete();
+            if ($jurusan->foto2) {
+                Storage::delete('public/images/jurusan/' . $jurusan->foto2);
+            }
             $jurusan->delete();
             return response()->json([
                 'success' => true,

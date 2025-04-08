@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Berita;
 use App\Models\Pengumuman;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Http;
 use Str;
 
@@ -129,10 +130,16 @@ class BeritaController extends Controller
         $berita->user_id = auth()->id();
 
         if ($request->hasFile('foto')) {
-            // $produk->deleteImage();
+            // Hapus foto lama jika ada
+            if ($berita->foto) {
+                Storage::delete('public/images/berita/' . $berita->foto);
+            }
+            // Simpan foto baru ke storage
             $img = $request->file('foto');
-            $name = rand(1000, 9999) . $img->getClientOriginalName();
-            $img->move('images/berita/', $name);
+            $name = time() . '_' . $img->getClientOriginalName();
+            $path = $img->storeAs('public/images/berita', $name);
+
+            // Simpan hanya nama file di database
             $berita->foto = $name;
         }
         $berita->save();

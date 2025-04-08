@@ -21,7 +21,7 @@
                             {{ $beritaF->author->name }}</a>
                     </div>
                     <br>
-                    <img src="{{ asset('/images/beritaF/' . $beritaF->foto) }}" class="img-fluid w-100" alt="">
+                    <img src="{{ asset('storage/images/beritaF/' . $beritaF->foto) }}" class="img-fluid w-100" alt="">
                     {{-- <img width="750" height="350" src="https://uinsgd.ac.id/wp-content/uploads/2024/10/1728298036.jpg"
                     class="attachment-full size-full wp-image-54663" alt="" srcset="https://uinsgd.ac.id/wp-content/uploads/2024/10/1728298036.jpg 1600w,
                     https://uinsgd.ac.id/wp-content/uploads/2024/10/1728298036-300x169.jpg 300w,
@@ -55,7 +55,7 @@
                                                 <div class="col-4">
                                                     <div class="rounded-circle position-relative">
                                                         <div class="">
-                                                            <img src="{{ asset('/images/beritaF/' . $item->foto) }}"
+                                                            <img src="{{ asset('storage/images/beritaF/' . $item->foto) }}"
                                                                 class="img-fluid rounded w-100" alt="">
                                                         </div>
                                                     </div>

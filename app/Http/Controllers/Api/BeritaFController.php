@@ -54,8 +54,8 @@ class BeritaFController extends Controller
 
             if ($request->hasFile('foto')) {
                 $img = $request->file('foto');
-                $name = rand(1000, 9999) . $img->getClientOriginalName();
-                $img->move('images/beritaF/', $name);
+                $name = time() . '_' . Str::random(10) . '.' . $img->getClientOriginalExtension();
+                $img->storeAs('public/images/beritaF', $name);
                 $beritaF->foto = $name;
             }
             $beritaF->save();
@@ -118,12 +118,18 @@ class BeritaFController extends Controller
             $beritaF = BeritaF::findOrFail($id);
             // hapus foto lama
             if ($request->hasFile('foto')) {
-                // $berita->deleteImage();
+                // Hapus foto lama
+                if ($beritaF->foto) {
+                    Storage::delete('public/images/beritaF/' . $beritaF->foto);
+                }
+
+                // Simpan foto baru
                 $img = $request->file('foto');
-                $name = rand(1000, 9999) . $img->getClientOriginalName();
-                $img->move('images/beritaF/', $name);
+                $name = time() . '_' . Str::random(10) . '.' . $img->getClientOriginalExtension();
+                $img->storeAs('public/images/beritaF', $name);
                 $beritaF->foto = $name;
             }
+
             $beritaF->judul_beritaF = $request->judul_beritaF;
             $beritaF->slug = Str::slug($request->judul_beritaF);
             $beritaF->deskripsiF = $request->deskripsiF;
@@ -155,7 +161,10 @@ class BeritaFController extends Controller
             // hapus tag beritaF
             // $beritaF->tag()->detach();
             // hapus foto
-            Storage::delete($beritaF->foto);
+            // Hapus foto jika ada
+            if ($beritaF->foto) {
+                Storage::delete('public/images/beritaF/' . $beritaF->foto);
+            }
             $beritaF->delete();
             return response()->json([
                 'success' => true,

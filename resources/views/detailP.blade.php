@@ -21,7 +21,7 @@
                             {{ $pengumuman->author->name }}</a>
                     </div>
                     <br>
-                    <img src="{{ asset('/images/pengumuman/' . $pengumuman->foto) }}" class="img-fluid w-100"
+                    <img src="{{ asset('storage/images/pengumuman/' . $pengumuman->foto) }}" class="img-fluid w-100"
                         alt="">
 
                     <p class="my-4">{!! $pengumuman->deskripsi_pengumuman !!}
@@ -48,7 +48,7 @@
                                                 <div class="col-4">
                                                     <div class="rounded-circle position-relative">
                                                         <div class="">
-                                                            <img src="{{ asset('/images/pengumuman/' . $item->foto) }}"
+                                                            <img src="{{ asset('storage/images/pengumuman/' . $item->foto) }}"
                                                                 class="img-fluid rounded w-100" alt="">
                                                         </div>
                                                     </div>

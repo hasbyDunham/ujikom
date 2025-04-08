@@ -21,13 +21,13 @@
                             <label class="col-sm-2 col-form-label" for="basic-default-name">Jabatan :
                             </label>
                             <div class="col-sm-10 form-control ms-2" style="width: 82%">
-                                <p>{!! $nama->jabatan !!}</p>
+                                <p>{!! $pimpinan->jabatan !!}</p>
                             </div>
                         </div>
                         <hr>
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="basic-default-name">Gambar : </label>
-                            <img src="{{ asset('/images/pimpinan/' . $pimpinan->foto) }}" alt=""
+                            <img src="{{ asset('storage/images/pimpinan/' . $pimpinan->foto) }}" alt=""
                                 style="width: 200px">
                         </div>
                         <hr>

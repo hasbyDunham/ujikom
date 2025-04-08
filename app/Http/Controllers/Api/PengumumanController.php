@@ -12,18 +12,14 @@ use Validator;
 class PengumumanController extends Controller
 {
     public function index()
-{
-    $pengumuman = Pengumuman::latest()->get()->map(function ($item) {
-        $item->foto = url('storage/images/pengumuman/' . $item->foto);
-        return $item;
-    });
-
-    return response()->json([
-        'success' => true,
-        'message' => 'daftar pengumuman',
-        'data' => $pengumuman,
-    ], 200);
-}
+    {
+        $pengumuman = Pengumuman::latest()->get();
+        return response()->json([
+            'success' => true,
+            'message' => 'daftar pengumuman',
+            'data' => $pengumuman,
+        ], 200);
+    }
 
 
     public function store(Request $request)
@@ -57,12 +53,20 @@ class PengumumanController extends Controller
             $pengumuman->user_id = $request->user_id;
             // $pengumuman->id_kategori = $request->id_kategori;
 
+            // if ($request->hasFile('foto')) {
+            //     $img = $request->file('foto');
+            //     $name = rand(1000, 9999) . $img->getClientOriginalName();
+            //     $img->move('images/pengumuman/', $name);
+            //     $pengumuman->foto = $name;
+            // }
+
             if ($request->hasFile('foto')) {
                 $img = $request->file('foto');
-                $name = rand(1000, 9999) . $img->getClientOriginalName();
-                $img->move('images/pengumuman/', $name);
+                $name = time() . '_' . Str::random(10) . '.' . $img->getClientOriginalExtension();
+                $img->storeAs('public/images/pengumuman', $name);
                 $pengumuman->foto = $name;
             }
+
             $pengumuman->save();
 
             // melampirkan banyak tag
@@ -122,13 +126,27 @@ class PengumumanController extends Controller
         try {
             $pengumuman = Pengumuman::findOrFail($id);
             // hapus foto lama
+            // if ($request->hasFile('foto')) {
+            //     // $berita->deleteImage();
+            //     $img = $request->file('foto');
+            //     $name = rand(1000, 9999) . $img->getClientOriginalName();
+            //     $img->move('images/pengumuman/', $name);
+            //     $pengumuman->foto = $name;
+            // }
+
             if ($request->hasFile('foto')) {
-                // $berita->deleteImage();
+                // Hapus foto lama
+                if ($berita->foto) {
+                    Storage::delete('public/images/berita/' . $berita->foto);
+                }
+
+                // Simpan foto baru
                 $img = $request->file('foto');
-                $name = rand(1000, 9999) . $img->getClientOriginalName();
-                $img->move('images/pengumuman/', $name);
-                $pengumuman->foto = $name;
+                $name = time() . '_' . Str::random(10) . '.' . $img->getClientOriginalExtension();
+                $img->storeAs('public/images/berita', $name);
+                $berita->foto = $name;
             }
+
             $pengumuman->judul_pengumuman = $request->judul_pengumuman;
             $pengumuman->slug = Str::slug($request->judul_pengumuman);
             $pengumuman->deskripsi_pengumuman = $request->deskripsi_pengumuman;
@@ -160,7 +178,10 @@ class PengumumanController extends Controller
             // hapus tag pengumuman
             // $pengumuman->tag()->detach();
             // hapus foto
-            Storage::delete($pengumuman->foto);
+            // Storage::delete($pengumuman->foto);
+            if ($pengumuman->foto) {
+                Storage::delete('public/images/pengumuman/' . $pengumuman->foto);
+            }
             $pengumuman->delete();
             return response()->json([
                 'success' => true,

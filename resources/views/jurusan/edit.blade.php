@@ -36,9 +36,9 @@
                                     <select name="akreditasi"
                                         class="form-control @error('akreditasi') is-invalid @enderror" id="">
                                         <option value="">Pilih Akreditasi</option>
-                                        <option value="A" @selected(old('akreditasi', $jurusan->akreditasi) == A)>A</option>
-                                        <option value="B" @selected(old('akreditasi', $jurusan->akreditasi) == B)>B</option>
-                                        <option value="C" @selected(old('akreditasi', $jurusan->akreditasi) == C)>C</option>
+                                        <option value="A" @selected(old('akreditasi', $jurusan->akreditasi))>A</option>
+                                        <option value="B" @selected(old('akreditasi', $jurusan->akreditasi))>B</option>
+                                        <option value="C" @selected(old('akreditasi', $jurusan->akreditasi))>C</option>
                                     </select>
                                     @error('akreditasi')
                                     <span class="invalid-feedback" role="alert">
@@ -112,8 +112,9 @@
                             </div>
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label" for="basic-default-name">Foto 1</label>
-                                <img src="{{ asset('images/berita/' . $berita->foto) }}"
+                                <img src="{{ asset('storage/images/jurusan/' . $jurusan->foto) }}"
                                     style="width: 200px;height: 100px;" class="mb-3">
+                                <input type="file" class="form-control" name="foto1">
                                 @error('foto1')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -148,6 +149,7 @@
                                 <label class="col-sm-2 col-form-label" for="basic-default-name">Foto 2</label>
                                 <img src="{{ asset('images/jurusan/' . $jurusan->foto2) }}"
                                     style="width: 200px;height: 100px;" class="mb-3">
+                                    <input type="file" class="form-control" name="foto2">
                                 @error('foto2')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

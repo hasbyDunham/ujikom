@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Sambutan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 
 class SambutanController extends Controller
 {
@@ -40,8 +42,8 @@ class SambutanController extends Controller
 
         if ($request->hasFile('foto')) {
             $img = $request->file('foto');
-            $name = rand(1000, 9999) . $img->getClientOriginalName();
-            $img->move('images/sambutan/', $name);
+            $name = rand(1000, 9999) . '_' . $img->getClientOriginalName();
+            $path = $img->storeAs('public/images/sambutan', $name); // Simpan ke storage/app/public/images/pengumuman
             $sambutan->foto = $name;
         }
 
@@ -81,11 +83,17 @@ class SambutanController extends Controller
         $sambutan->sambutan = $request->sambutan;
 
         if ($request->hasFile('foto')) {
-            // $produk->deleteImage();
+            // Hapus foto lama jika ada
+            if ($pengumuman->foto) {
+                Storage::delete('public/images/pengumuman/' . $pengumuman->foto);
+            }
+            // Simpan foto baru ke storage
             $img = $request->file('foto');
-            $name = rand(1000, 9999) . $img->getClientOriginalName();
-            $img->move('images/sambutan/', $name);
-            $sambutan->foto = $name;
+            $name = time() . '_' . $img->getClientOriginalName();
+            $path = $img->storeAs('public/images/pengumuman', $name);
+
+            // Simpan hanya nama file di database
+            $pengumuman->foto = $name;
         }
 
         $sambutan->save();

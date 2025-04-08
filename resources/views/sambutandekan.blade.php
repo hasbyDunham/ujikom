@@ -28,7 +28,7 @@
                 @foreach ($sambutan as $item)
                 <!-- Gambar di sebelah kiri -->
                 <div class="col-lg-6">
-                    <img src="{{ asset('/images/sambutan/' . $item->foto) }}" alt="image" class="img-fluid wow fadeInUp mb-5"
+                    <img src="{{ asset('storage/images/sambutan/' . $item->foto) }}" alt="image" class="img-fluid wow fadeInUp mb-5"
                         data-wow-delay="0.3s" style="max-width: 100%; height: auto;">
                 </div>
                 <!-- Teks di sebelah kanan -->

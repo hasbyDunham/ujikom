@@ -41,7 +41,7 @@
         <div class="row g-4 d-flex justify-content-center">
             @foreach ($pimpinan as $item)
             <div class="col-md-4 d-flex flex-column align-items-center text-center">
-                <img src="{{ asset('/images/pimpinan/' . $item->foto) }}" class="img-fluid" alt="Gambar 1"
+                <img src="{{ asset('storage/images/pimpinan/' . $item->foto) }}" class="img-fluid" alt="Gambar 1"
                     style="max-width: 80%;">
                 <div>
                     <h4 style="color: black; margin-top: 10px;" class="mt-2">{{ $item->nama }}</h4>

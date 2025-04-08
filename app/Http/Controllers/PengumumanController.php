@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Pengumuman;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Str;
 
 class PengumumanController extends Controller
@@ -63,8 +64,8 @@ class PengumumanController extends Controller
 
         if ($request->hasFile('foto')) {
             $img = $request->file('foto');
-            $name = rand(1000, 9999) . $img->getClientOriginalName();
-            $img->move('images/pengumuman/', $name);
+            $name = rand(1000, 9999) . '_' . $img->getClientOriginalName();
+            $path = $img->storeAs('public/images/pengumuman', $name); // Simpan ke storage/app/public/images/pengumuman
             $pengumuman->foto = $name;
         }
 
@@ -109,10 +110,16 @@ class PengumumanController extends Controller
         $pengumuman->user_id = auth()->id();
 
         if ($request->hasFile('foto')) {
-            // $produk->deleteImage();
+            // Hapus foto lama jika ada
+            if ($pengumuman->foto) {
+                Storage::delete('public/images/pengumuman/' . $pengumuman->foto);
+            }
+            // Simpan foto baru ke storage
             $img = $request->file('foto');
-            $name = rand(1000, 9999) . $img->getClientOriginalName();
-            $img->move('images/pengumuman/', $name);
+            $name = time() . '_' . $img->getClientOriginalName();
+            $path = $img->storeAs('public/images/pengumuman', $name);
+
+            // Simpan hanya nama file di database
             $pengumuman->foto = $name;
         }
 

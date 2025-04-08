@@ -161,7 +161,6 @@ class BeritaController extends Controller
             if ($berita->foto) {
                 Storage::delete('public/images/berita/' . $berita->foto);
             }
-
             $berita->delete();
 
             return response()->json([

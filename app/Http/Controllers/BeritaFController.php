@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\BeritaF;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Str;
 
 class BeritaFController extends Controller
@@ -64,8 +65,8 @@ class BeritaFController extends Controller
 
         if ($request->hasFile('foto')) {
             $img = $request->file('foto');
-            $name = rand(1000, 9999) . $img->getClientOriginalName();
-            $img->move('images/beritaF/', $name);
+            $name = rand(1000, 9999) . '_' . $img->getClientOriginalName();
+            $path = $img->storeAs('public/images/beritaF', $name); // Simpan ke storage/app/public/images/pengumuman
             $beritaF->foto = $name;
         }
 
@@ -111,10 +112,16 @@ class BeritaFController extends Controller
         $beritaF->user_id = auth()->id();
 
         if ($request->hasFile('foto')) {
-            // $beritaF->deleteImage();
+            // Hapus foto lama jika ada
+            if ($beritaF->foto) {
+                Storage::delete('public/images/beritaF/' . $beritaF->foto);
+            }
+            // Simpan foto baru ke storage
             $img = $request->file('foto');
-            $name = rand(1000, 9999) . $img->getClientOriginalName();
-            $img->move('images/beritaF/', $name);
+            $name = time() . '_' . $img->getClientOriginalName();
+            $path = $img->storeAs('public/images/beritaF', $name);
+
+            // Simpan hanya nama file di database
             $beritaF->foto = $name;
         }
 

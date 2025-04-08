@@ -47,8 +47,8 @@ class SambutanController extends Controller
 
             if ($request->hasFile('foto')) {
                 $img = $request->file('foto');
-                $name = rand(1000, 9999) . $img->getClientOriginalName();
-                $img->move('images/sambutan/', $name);
+                $name = time() . '_' . Str::random(10) . '.' . $img->getClientOriginalExtension();
+                $img->storeAs('public/images/sambutan', $name);
                 $sambutan->foto = $name;
             }
             $sambutan->save();
@@ -109,10 +109,15 @@ class SambutanController extends Controller
             $sambutan = Sambutan::findOrFail($id);
             // hapus foto lama
             if ($request->hasFile('foto')) {
-                // $sambutan->deleteImage();
+                // Hapus foto lama
+                if ($sambutan->foto) {
+                    Storage::delete('public/images/sambutan/' . $sambutan->foto);
+                }
+
+                // Simpan foto baru
                 $img = $request->file('foto');
-                $name = rand(1000, 9999) . $img->getClientOriginalName();
-                $img->move('images/sambutan/', $name);
+                $name = time() . '_' . Str::random(10) . '.' . $img->getClientOriginalExtension();
+                $img->storeAs('public/images/sambutan', $name);
                 $sambutan->foto = $name;
             }
             $sambutan->sambutan = $request->sambutan;
@@ -141,7 +146,9 @@ class SambutanController extends Controller
             // hapus tag sambutan
             // $sambutan->tag()->detach();
             // hapus foto
-            Storage::delete($sambutan->foto);
+            if ($sambutan->foto) {
+                Storage::delete('public/images/sambutan/' . $sambutan->foto);
+            }
             $sambutan->delete();
             return response()->json([
                 'success' => true,
