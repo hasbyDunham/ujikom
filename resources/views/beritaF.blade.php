@@ -37,7 +37,7 @@
             @foreach ($beritaF->sortByDesc('created_at')->take(6) as $item)
                 <div class="col-md-4 mb-5">
                     <div class="card shadow-sm border-2">
-                        <img src="{{ asset('/images/beritaF/' . $item->foto) }}" class="card-img-top custom-img"
+                        <img src="{{ asset('storage/images/beritaF/' . $item->foto) }}" class="card-img-top custom-img"
                             alt="beritaF 1">
                         <div class="card-body">
                             <h5 class="card-title">

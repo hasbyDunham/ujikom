@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header d-flex align-items-center justify-content-between">
                     <h5 class="mb-0">Data Sejarah</h5>
-                    <a href="{{ route('visimisi.create') }}" class="btn btn-sm btn-primary" style="float: right">Tambah</a>
+                    <a href="{{ route('sejarah.create') }}" class="btn btn-sm btn-primary" style="float: right">Tambah</a>
                 </div>
                 <div class="table-responsive text-nowrap">
                     <table class="table" id="dataTable">
@@ -23,7 +23,7 @@
                             @foreach ($sejarah as $item)
                                 <tr>
                                     <td>{{ $no++ }}</td>
-                                    <td>{{ $item->sejarah }}</td>
+                                    <td>{!! $item->sejarah !!}</td>
                                     <td>
                                         <div class="btn-group">
                                             <button type="button"

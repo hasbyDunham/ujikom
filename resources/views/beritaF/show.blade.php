@@ -31,7 +31,7 @@
                         <hr>
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="basic-default-name">Gambar : </label>
-                            <img src="{{ asset('/images/beritaF/' . $beritaF->foto) }}" alt="" style="width: 200px">
+                            <img src="{{ asset('storage/images/beritaF/' . $beritaF->foto) }}" alt="" style="width: 200px">
                         </div>
                         <hr>
                     </div>

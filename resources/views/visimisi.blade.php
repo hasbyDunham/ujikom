@@ -46,7 +46,7 @@
                             <h1 class="display-5 mb-4">Visi</h1>
                         </center>
                         <p class="mb-4">
-                            {{ $item->visi }}
+                            {!! $item->visi !!}
                         </p>
                     </div>
                 </div>
@@ -59,7 +59,7 @@
                             <h1 class="display-5 mb-4">Misi</h1>
                         </center>
                         <ol style="line-height: 1.8; padding-left: 15px;">
-                            <li>{{ $item->misi }}
+                            <li>{!! $item->misi !!}
                             </li>
                         </ol>
                     </div>
@@ -71,7 +71,7 @@
                             <h1 class="display-5 mb-4">Sasaran</h1>
                         </center>
                         <ol style="line-height: 1.8; padding-left: 15px; text-align: left;">
-                            <li>{{ $item->tujuan }}
+                            <li>{!! $item->tujuan !!}
                             </li>
                         </ol>
                     </div>

@@ -25,9 +25,9 @@
                             @foreach ($visimisi as $item)
                                 <tr>
                                     <td>{{ $no++ }}</td>
-                                    <td>{{ $item->visi }}</td>
-                                    <td>{{ $item->misi }}</td>
-                                    <td>{{ $item->tujuan }}</td>
+                                    <td>{!! $item->visi !!}</td>
+                                    <td>{!! $item->misi !!}</td>
+                                    <td>{!! $item->tujuan !!}</td>
                                     <td>
                                         <div class="btn-group">
                                             <button type="button"

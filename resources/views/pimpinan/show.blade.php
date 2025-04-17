@@ -12,8 +12,11 @@
                     <div class="card-body">
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="basic-default-name">Nama Pimpinan : </label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" value="{{ $pimpinan->nama }}">
+                            <div class="col-sm-10 form-control ms-2" style="width: 82%">
+                                {{-- <input type="text" class="form-control" value="{{ $pimpinan->id }}"> --}}
+                                {{-- <input type="text" class="form-control" value="{{ $pimpinan->id }}"> --}}
+                                {{-- <input type="text" class="form-control" value="{{ $pimpinan->nama }}"> --}}
+                                <p>{!! $pimpinan->nama !!}</p>
                             </div>
                         </div>
                         <hr>

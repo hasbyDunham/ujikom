@@ -39,11 +39,11 @@
                                             <ul class="dropdown-menu dropdown-menu-end">
                                                 <li>
                                                     <a href="{{ route('pengumuman.edit', $item->id) }}"
-                                                        class="dropdown-item">Edit</a>
+                                                        class="dropdown-item"><i class="fas fa-edit me-1"></i>Edit</a>
                                                 </li>
                                                 <li>
                                                     <a href="{{ route('pengumuman.show', $item->id) }}"
-                                                        class="dropdown-item">Show</a>
+                                                        class="dropdown-item"><i class="fas fa-eye me-1"></i>Show</a>
                                                 </li>
                                                 <!-- Formulir untuk hapus -->
                                                 <li>
@@ -52,7 +52,7 @@
                                                         @method('DELETE')
                                                         @csrf
                                                         <button type="submit" class="dropdown-item"
-                                                            onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Tersebut?')">Delete</button>
+                                                            onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Tersebut?')"><i class="fas fa-trash-alt me-1"></i>Delete</button>
                                                     </form>
                                                 </li>
                                             </ul>

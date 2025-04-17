@@ -16,11 +16,11 @@
                     <h4 class="text-center mb-1">Sosial Media</h4>
                     <div class="d-flex justify-content-center">
                         @if (env('SOS_FACEBOOK'))
-                            <a class="btn mx-2 fs-5" href={{ env('SOS_FACEBOOK') }}><i
+                            <a class="btn mx-2 fs-5" target="_blank" href={{ env('SOS_FACEBOOK') }}><i
                                     class="fab fa-facebook-f"></i></a>
                         @endif
                         @if (env('SOS_TWITTER'))
-                            <a class="btn mx-2 fs-5" href={{ env('SOS_TWITTER') }}><svg
+                            <a class="btn mx-2 fs-5" target="_blank" href={{ env('SOS_TWITTER') }}><svg
                                     xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="bi bi-twitter-x" viewBox="0 0 16 16">
                                     <path
@@ -28,14 +28,14 @@
                                 </svg></a>
                         @endif
                         @if (env('SOS_INSTAGRAM'))
-                            <a class="btn mx-2 fs-5" href={{ env('SOS_INSTAGRAM') }}><i
+                            <a class="btn mx-2 fs-5" target="_blank" href={{ env('SOS_INSTAGRAM') }}><i
                                     class="fab fa-instagram"></i></a>
                         @endif
                         @if (env('SOS_YOUTUBE'))
-                            <a class="btn mx-2 fs-5" href={{ env('SOS_YOUTUBE') }}><i class="fab fa-youtube"></i></a>
+                            <a class="btn mx-2 fs-5" target="_blank" href={{ env('SOS_YOUTUBE') }}><i class="fab fa-youtube"></i></a>
                         @endif
                         @if (env('SOS_TIKTOK'))
-                            <a class="btn mx-2 fs-5" href={{ env('SOS_TIKTOK') }}><i class="fab fa-tiktok"></i></a>
+                            <a class="btn mx-2 fs-5" target="_blank" href={{ env('SOS_TIKTOK') }}><i class="fab fa-tiktok"></i></a>
                         @endif
                         {{-- <a class="btn mx-2 fs-5" href="https://id.linkedin.com/company/uinbandung"><i
                                 class="fab fa-linkedin-in"></i></a> --}}

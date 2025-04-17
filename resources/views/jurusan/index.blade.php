@@ -43,7 +43,7 @@
                                             <ul class="dropdown-menu dropdown-menu-end">
                                                 <li>
                                                     <a href="{{ route('jurusan.edit', $item->id) }}"
-                                                        class="dropdown-item">Edit</a>
+                                                        class="dropdown-item"><i class="fas fa-edit me-1"></i>Edit</a>
                                                 </li>
                                                 <li>
                                                     <a href="{{ route('jurusan.show', $item->id) }}"

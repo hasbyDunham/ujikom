@@ -36,11 +36,11 @@
                                             <ul class="dropdown-menu dropdown-menu-end">
                                                 <li>
                                                     <a href="{{ route('beritaF.edit', $item->id) }}"
-                                                        class="dropdown-item">Edit</a>
+                                                        class="dropdown-item"><i class="fas fa-edit me-1"></i>Edit</a>
                                                 </li>
                                                 <li>
                                                     <a href="{{ route('beritaF.show', $item->id) }}"
-                                                        class="dropdown-item">Show</a>
+                                                        class="dropdown-item"><i class="fas fa-eye me-1"></i>Show</a>
                                                 </li>
                                                 <!-- Formulir untuk hapus -->
                                                 <li>
@@ -48,7 +48,7 @@
                                                         class="d-inline">
                                                         @method('DELETE')
                                                         @csrf
-                                                        <button type="submit" class="dropdown-item">Delete</button>
+                                                        <button type="submit" class="dropdown-item"><i class="fas fa-trash-alt me-1"></i>Delete</button>
                                                     </form>
                                                 </li>
                                             </ul>

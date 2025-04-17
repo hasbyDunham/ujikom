@@ -12,7 +12,8 @@ class VisimisiController extends Controller
      */
     public function index()
     {
-         
+        $visimisi = Visimisi::latest()->get();
+        return view('visimisi.index', compact('visimisi'));
     }
 
     /**
