@@ -19,7 +19,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['http://192.168.0.247:PORT_FLUTTER'],
+    'allowed_origins' => ['*'],
 
     'allowed_origins_patterns' => [],
 

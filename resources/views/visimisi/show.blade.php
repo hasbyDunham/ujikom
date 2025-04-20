@@ -13,24 +13,27 @@
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="basic-default-name">Visi</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" value="{{ $visimisi->visi }}">
+                                {{-- <input type="text" class="form-control" value="{!! $visimisi->visi !!}"> --}}
+                                <p>{!! $visimisi->visi !!}</p>
                             </div>
                         </div>
                         <hr>
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="basic-default-name">Misi</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" value="{{ $visimisi->misi }}">
+                                {{-- <input type="text" class="form-control" value="{{ $visimisi->misi }}"> --}}
+                                <p>{!! $visimisi->misi !!}</p>
                             </div>
                         </div>
                         <hr>
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="basic-default-name">Tujuan</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" value="{{ $visimisi->tujuan }}">
+                                {{-- <input type="text" class="form-control" value="{{ $visimisi->tujuan }}"> --}}
+                                <p>{!! $visimisi->tujuan !!}</p>
                             </div>
                         </div>
-                        <hr> 
+                        <hr>
                     </div>
                 </div>
             </div>

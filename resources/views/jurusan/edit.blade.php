@@ -112,7 +112,7 @@
                             </div>
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label" for="basic-default-name">Foto 1</label>
-                                <img src="{{ asset('storage/images/jurusan/' . $jurusan->foto) }}"
+                                <img src="{{ asset('storage/images/jurusan/' . $jurusan->foto1) }}"
                                     style="width: 200px;height: 100px;" class="mb-3">
                                 <input type="file" class="form-control" name="foto1">
                                 @error('foto1')
@@ -147,7 +147,7 @@
                             </div>
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label" for="basic-default-name">Foto 2</label>
-                                <img src="{{ asset('images/jurusan/' . $jurusan->foto2) }}"
+                                <img src="{{ asset('storage/images/jurusan/' . $jurusan->foto2) }}"
                                     style="width: 200px;height: 100px;" class="mb-3">
                                     <input type="file" class="form-control" name="foto2">
                                 @error('foto2')

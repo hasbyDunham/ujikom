@@ -11,34 +11,38 @@ use App\Http\Controllers\Api\SejarahController;
 use App\Http\Controllers\Api\VisimisiController;
 use App\Http\Controllers\Api\JurusanController;
 
-// Handle OPTIONS requests for CORS preflight
-Route::options('/{any}', function () {
-    return response()->json([], 204)
-        ->header('Access-Control-Allow-Origin', '*')
-        ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
-        ->header('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With');
-})->where('any', '.*');
 
-Route::middleware([\App\Http\Middleware\HandleCors::class])->group(function () {
-    // Authentication routes
-    Route::post('/register', [\App\Http\Controllers\Api\AuthController::class, 'register']);
-    Route::post('/login', [\App\Http\Controllers\Api\AuthController::class, 'login']);
+/*
+|--------------------------------------------------------------------------
+| API Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register API routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| is assigned the "api" middleware group. Enjoy building your API!
+|
+*/
 
-    // Authenticated routes
-    Route::middleware('auth:sanctum')->group(function () {
-        Route::get('/user', function (Request $request) {
-            return $request->user();
-        });
-        Route::post('/logout', [\App\Http\Controllers\Api\AuthController::class, 'logout']);
-    });
+Route::get('/user', function (Request $request) {
+    return $request->user();
+})->middleware('auth:sanctum');
 
-    // Resource routes
-    Route::apiResource('berita', BeritaController::class);
-    Route::apiResource('beritaF', BeritaFController::class);
-    Route::apiResource('pengumuman', PengumumanController::class);
-    Route::apiResource('pimpinan', PimpinanController::class);
-    Route::apiResource('sambutan', SambutanController::class);
-    Route::apiResource('sejarah', SejarahController::class);
-    Route::apiResource('visimisi', VisimisiController::class);
-    Route::apiResource('jurusan', JurusanController::class);
+Route::post('/register', [\App\Http\Controllers\Api\AuthController::class, 'register']);
+Route::post('/login', [\App\Http\Controllers\Api\AuthController::class, 'login']);
+
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    return $request->user();
 });
+
+Route::middleware('auth:sanctum')->group(function () {
+    Route::post('/logout', [\App\Http\Controllers\Api\AuthController::class, 'logout']);
+});
+
+Route::resource('berita', BeritaController::class)->except(['edit', 'create']);
+Route::resource('beritaF', BeritaFController::class)->except(['edit', 'create']);
+Route::resource('pengumuman', PengumumanController::class)->except(['edit', 'create']);
+Route::resource('pimpinan', PimpinanController::class)->except(['edit', 'create']);
+Route::resource('sambutan', SambutanController::class)->except(['edit', 'create']);
+Route::resource('sejarah', SejarahController::class)->except(['edit', 'create']);
+Route::resource('visimisi', VisimisiController::class)->except(['edit', 'create']);
+Route::resource('jurusan', JurusanController::class)->except(['edit', 'create']);

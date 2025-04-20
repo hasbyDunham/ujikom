@@ -57,7 +57,7 @@
                             </div>
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label" for="basic-default-name">Image</label>
-                                <img src="{{ asset('images/beritaF/' . $beritaF->foto) }}"
+                                <img src="{{ asset('storage/images/beritaF/' . $beritaF->foto) }}"
                                     style="width: 200px;height: 100px;" class="mb-3">
                                 <input type="file" class="form-control" name="foto">
                             </div>

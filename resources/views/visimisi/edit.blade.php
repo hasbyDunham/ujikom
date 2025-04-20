@@ -20,7 +20,7 @@
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label" for="basic-default-name">Visi</label>
                                 <div class="col-sm-10">
-                                    <textarea name="visi" id="visi" cols="30" rows="10">{{ $visimisi->visi }}</textarea>
+                                    <textarea name="visi" id="deskripsi" cols="30" rows="10">{!! $visimisi->visi !!}</textarea>
                                     @error('visi')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -31,7 +31,7 @@
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label" for="basic-default-name">Misi</label>
                                 <div class="col-sm-10">
-                                    <textarea name="misi" id="misi" cols="30" rows="10">{{ $visimisi->misi }}</textarea>
+                                    <textarea name="misi" id="deskripsi" cols="30" rows="10">{{ $visimisi->misi }}</textarea>
                                     @error('misi')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>

@@ -69,7 +69,7 @@
                             <label class="col-sm-2 col-form-label" for="basic-default-name">Foto 1 :
                             </label>
                             <div class="col-sm-10 form-control ms-2" style="width: 82%">
-                                <img src="{{ asset('/images/jurusan/' . $jurusan->foto1) }}" alt="" style="width: 200px">
+                                <img src="{{ asset('storage/images/jurusan/' . $jurusan->foto1) }}" alt="" style="width: 200px">
                             </div>
                         </div>
                         <hr>
@@ -93,7 +93,7 @@
                             <label class="col-sm-2 col-form-label" for="basic-default-name">Foto 2 :
                             </label>
                             <div class="col-sm-10 form-control ms-2" style="width: 82%">
-                                <img src="{{ asset('/images/jurusan/' . $jurusan->foto2) }}" alt="" style="width: 200px">
+                                <img src="{{ asset('storage/images/jurusan/' . $jurusan->foto2) }}" alt="" style="width: 200px">
                             </div>
                         </div>
                         <hr>
